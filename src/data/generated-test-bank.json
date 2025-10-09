@@ -1,0 +1,525 @@
+[
+    {
+        "id": "otr-domain1-q1",
+        "domain": "Domain 1: Evaluation and Assessment",
+        "weight": 0.25,
+        "type": "single_best",
+        "stem": "A 58-year-old client with Guillain-Barre syndrome is in the acute rehab unit three weeks post-onset. The OTR wants to prioritize evaluation tasks for today's session. Which action best aligns with the initial occupational profile for this diagnosis?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Assess fine motor coordination using the Nine Hole Peg Test."
+            },
+            {
+                "key": "B",
+                "text": "Interview the client and family about home routines and preferred occupations."
+            },
+            {
+                "key": "C",
+                "text": "Administer the Assessment of Motor and Process Skills (AMPS)."
+            },
+            {
+                "key": "D",
+                "text": "Observe the client performing meal preparation in the inpatient kitchen."
+            }
+        ],
+        "answerKey": "B",
+        "rationale": "Early in the OT process, Domain 1 emphasizes gathering subjective and environmental information to define priorities. Guillain-Barre syndrome limits endurance and movement; understanding valued roles guides later assessment choices. Standardized performance tests (options A, C, D) require higher exertion and come after the foundational profile.",
+        "references": [
+            "Pedretti & Early, Occupational Therapy for Physical Dysfunction, Chapter 36",
+            "NBCOT OTR Domain 1 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain1-q2",
+        "domain": "Domain 1: Evaluation and Assessment",
+        "weight": 0.25,
+        "type": "single_best",
+        "stem": "The OTR is completing a home safety evaluation for an older adult with mild cognitive impairment who lives alone. Which data collection step directly supports Domain 1 task of identifying occupational performance risks?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Review medication refill history through the client's pharmacy portal."
+            },
+            {
+                "key": "B",
+                "text": "Recommend enrolling in a community delivered-meal program."
+            },
+            {
+                "key": "C",
+                "text": "Provide a color-coded medication organizer."
+            },
+            {
+                "key": "D",
+                "text": "Contact the client's primary care physician about driving status."
+            }
+        ],
+        "answerKey": "A",
+        "rationale": "Domain 1 focuses on collecting relevant data. Accessing refill history reveals adherence patterns and potential hazards. Options B and C are interventions (Domain 3). Option D is an advocacy/communication activity tied to Domain 4.",
+        "references": [
+            "AOTA Practice Guidelines for Productive Aging",
+            "NBCOT OTR Domain 1 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain2-q1",
+        "domain": "Domain 2: Formulation of Conclusions",
+        "weight": 0.23,
+        "type": "single_best",
+        "stem": "Findings for a 3-year-old with autism spectrum disorder include limited joint attention, sensory defensiveness, and delayed play skills. Which conclusion should the OTR draw when selecting initial intervention goals?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Sensory integration activities should be postponed until the child tolerates tabletop play."
+            },
+            {
+                "key": "B",
+                "text": "Caregiver coaching on engaging shared toy play will support foundational social communication."
+            },
+            {
+                "key": "C",
+                "text": "Visual schedules will not be effective until receptive language improves."
+            },
+            {
+                "key": "D",
+                "text": "Fine-motor strengthening should precede any play-based interaction goals."
+            }
+        ],
+        "answerKey": "B",
+        "rationale": "Domain 2 requires synthesizing findings to prioritize needs. Joint attention deficits and sensory defensiveness indicate caregiver-facilitated, play-based interaction as a priority. Options A, C, and D misinterpret evidence or delay essential social goals.",
+        "references": [
+            "Case-Smith & O'Brien, Occupational Therapy for Children",
+            "NBCOT OTR Domain 2 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain2-q2",
+        "domain": "Domain 2: Formulation of Conclusions",
+        "weight": 0.23,
+        "type": "single_best",
+        "stem": "During acute care rounds, the OTR reviews an occupational profile for a client with a new C6 spinal cord injury. Which conclusion best informs the intervention plan-of-care meeting later that day?",
+        "options": [
+            {
+                "key": "A",
+                "text": "The client is not ready for tenodesis training until hand edema resolves."
+            },
+            {
+                "key": "B",
+                "text": "Family education on pressure injury prevention must begin before discharge planning."
+            },
+            {
+                "key": "C",
+                "text": "Upper extremity strengthening should wait until outpatient rehab."
+            },
+            {
+                "key": "D",
+                "text": "Community transportation options will not be relevant until a power chair is prescribed."
+            }
+        ],
+        "answerKey": "B",
+        "rationale": "Synthesizing profile and medical data highlights pressure injury prevention as critical for C6 SCI clients early on. Tenodesis training (A) can begin with edema management simultaneously. Strengthening (C) begins with gravity-minimized activity even in acute care. Community access (D) planning starts alongside mobility discussions.",
+        "references": [
+            "Spinal Cord Injury Rehabilitation Evidence (SCIRE)",
+            "NBCOT OTR Domain 2 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain3-q1",
+        "domain": "Domain 3: Select Interventions",
+        "weight": 0.37,
+        "type": "single_best",
+        "stem": "A 45-year-old postal worker with lateral epicondylosis returns to modified duty. The OTR wants to select an intervention to reduce cumulative trauma while maintaining job demands. Which option best addresses this goal?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Fabricate a static volar wrist splint for full-time wear."
+            },
+            {
+                "key": "B",
+                "text": "Implement an eccentric loading exercise program combined with activity modification strategies."
+            },
+            {
+                "key": "C",
+                "text": "Recommend job rotation to clerical tasks for three months."
+            },
+            {
+                "key": "D",
+                "text": "Provide moist heat before each shift to increase tissue extensibility."
+            }
+        ],
+        "answerKey": "B",
+        "rationale": "Evidence supports eccentric strengthening plus ergonomics for tendinopathy. A addresses immobilization but can impede function. C removes the client from essential job tasks. D offers temporary comfort without addressing the tendon load.",
+        "references": [
+            "Michlovitz et al., Modalities for Physical Agents",
+            "NBCOT OTR Domain 3 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain3-q2",
+        "domain": "Domain 3: Select Interventions",
+        "weight": 0.37,
+        "type": "single_best",
+        "stem": "An inpatient psychiatric unit adopts a recovery model. Which OT intervention best aligns with Domain 3 tasks for supporting participation?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Lead a lecture explaining DSM-5 diagnostic criteria."
+            },
+            {
+                "key": "B",
+                "text": "Facilitate a peer-led cooking group focused on collaborative meal planning."
+            },
+            {
+                "key": "C",
+                "text": "Administer the Routine Task Inventory weekly."
+            },
+            {
+                "key": "D",
+                "text": "Create a poster about unit rules and expectations."
+            }
+        ],
+        "answerKey": "B",
+        "rationale": "Domain 3 interventions promote engagement in meaningful occupations. A lecture (A) and rule posters (D) are didactic/administrative. Weekly assessment (C) is evaluation rather than occupation-based participation.",
+        "references": [
+            "AOTA Mental Health Practice Guidelines",
+            "NBCOT OTR Domain 3 directives"
+        ]
+    },
+    {
+        "id": "otr-domain4-q1",
+        "domain": "Domain 4: Management and Professional Issues",
+        "weight": 0.15,
+        "type": "single_best",
+        "stem": "The OT manager must justify purchase of a new driving simulator. Which action reflects Domain 4 tasks related to advocacy and resource allocation?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Survey clients about satisfaction with current services."
+            },
+            {
+                "key": "B",
+                "text": "Collect outcome data showing reduced community discharge barriers after simulator training."
+            },
+            {
+                "key": "C",
+                "text": "Schedule in-service training on adaptive driving devices."
+            },
+            {
+                "key": "D",
+                "text": "Request donations from a local charity thrift shop."
+            }
+        ],
+        "answerKey": "B",
+        "rationale": "Domain 4 includes using data to support programmatic decisions. Outcome metrics directly justify capital investments. Client satisfaction (A) is helpful but less tied to resource allocation. Training staff (C) is implementation, not justification. Donations (D) lack sustainability evidence.",
+        "references": [
+            "AOTA Guidelines for Supervision, Roles, and Responsibilities",
+            "NBCOT OTR Domain 4 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain4-q2",
+        "domain": "Domain 4: Management and Professional Issues",
+        "weight": 0.15,
+        "type": "single_best",
+        "stem": "An OTR supervising two COTAs identifies inconsistent documentation. Which management action satisfies Domain 4 expectations while promoting ethical practice?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Send a reminder email summarizing documentation policies."
+            },
+            {
+                "key": "B",
+                "text": "Schedule one-to-one mentoring sessions that include joint chart reviews and feedback."
+            },
+            {
+                "key": "C",
+                "text": "Notify the facility administrator to start corrective action."
+            },
+            {
+                "key": "D",
+                "text": "Revise the productivity targets to allow more charting time."
+            }
+        ],
+        "answerKey": "B",
+        "rationale": "Domain 4 emphasizes supervision, quality assurance, and ethical oversight. Direct mentoring with real-time chart audits addresses competence and supports learning. Email reminders (A) lack accountability. Escalation (C) is premature. Changing productivity targets (D) may be necessary later but fails to address skill gaps.",
+        "references": [
+            "AOTA Supervision Guidelines",
+            "NBCOT OTR Domain 4 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain1-q3",
+        "domain": "Domain 1: Evaluation and Assessment",
+        "weight": 0.25,
+        "type": "multi_select",
+        "stem": "A community-based OT is preparing for a dementia-friendly home evaluation. Which TWO preparatory actions most directly support the occupational profile and hazard identification tasks for this visit?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Review the caregiver-completed Activities of Daily Living Questionnaire."
+            },
+            {
+                "key": "B",
+                "text": "Schedule a joint call with the client's neurologist to review medication adjustments."
+            },
+            {
+                "key": "C",
+                "text": "Analyze a three-day sleep and activity log maintained by the caregiver."
+            },
+            {
+                "key": "D",
+                "text": "Download neighborhood crime statistics to evaluate environmental risk."
+            }
+        ],
+        "answerKey": [
+            "A",
+            "C"
+        ],
+        "rationale": "Domain 1 requires synthesizing performance information gathered from caregivers and activity tracking to determine occupational risks. Medication changes (B) and neighborhood crime data (D) are informative but do not directly support the pre-visit profile/hazard tasks.",
+        "references": [
+            "AOTA Dementia Practice Guidelines",
+            "NBCOT OTR Domain 1 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain1-q4",
+        "domain": "Domain 1: Evaluation and Assessment",
+        "weight": 0.25,
+        "type": "ordered",
+        "stem": "Sequence the initial data-collection steps for an OT completing an ergonomic workstation assessment for a remote employee reporting neck pain.",
+        "options": [
+            {
+                "key": "A",
+                "text": "Request photographs or a brief video of the current workstation."
+            },
+            {
+                "key": "B",
+                "text": "Conduct a virtual interview focusing on work routines and symptom triggers."
+            },
+            {
+                "key": "C",
+                "text": "Administer the QuickDASH to capture functional limitations."
+            },
+            {
+                "key": "D",
+                "text": "Complete on-screen posture analysis while the client performs typical tasks."
+            }
+        ],
+        "answerKey": [
+            "B",
+            "A",
+            "D",
+            "C"
+        ],
+        "rationale": "Begin with the subjective interview (B), gather environmental visuals (A), observe posture during routine work (D), and finish with standardized outcome measurement (C).",
+        "references": [
+            "AOTA Work and Industry SIS best practices",
+            "NBCOT OTR Domain 1 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain2-q3",
+        "domain": "Domain 2: Formulation of Conclusions",
+        "weight": 0.23,
+        "type": "single_best",
+        "stem": "Following assessment, a 45-year-old client post-stroke demonstrates intact memory, decreased insight, and impulsive transfers. Which conclusion best guides initial goal setting?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Prioritize cognitive remediation to improve delayed recall."
+            },
+            {
+                "key": "B",
+                "text": "Recommend 24-hour supervision and focus goals on family education."
+            },
+            {
+                "key": "C",
+                "text": "Emphasize metacognitive strategies to increase awareness during transfers."
+            },
+            {
+                "key": "D",
+                "text": "Refer the client to vocational rehabilitation before discharge."
+            }
+        ],
+        "answerKey": "C",
+        "rationale": "Domain 2 conclusions synthesize impairments (impulsivity, reduced insight) with occupational risk (unsafe transfers). Metacognitive strategies directly address awareness and safety. Options A and D do not connect to the immediate risk; B may be part of discharge planning but does not leverage the client's strengths in initial goal setting.",
+        "references": [
+            "Toglia Metacognitive Rehabilitation Framework",
+            "NBCOT OTR Domain 2 directives"
+        ]
+    },
+    {
+        "id": "otr-domain2-q4",
+        "domain": "Domain 2: Formulation of Conclusions",
+        "weight": 0.23,
+        "type": "multi_select",
+        "stem": "An OT evaluates a high-school student with ADHD who struggles to complete homework and forgets to submit assignments. Which TWO conclusions should guide collaborative goal development?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Executive function supports (planners, reminders) are required for assignment tracking."
+            },
+            {
+                "key": "B",
+                "text": "Fine-motor strengthening is needed to improve pencil grasp speed."
+            },
+            {
+                "key": "C",
+                "text": "Shared strategies with teachers are necessary to reinforce routines."
+            },
+            {
+                "key": "D",
+                "text": "Handwriting remediation must be prioritized before addressing organization."
+            }
+        ],
+        "answerKey": [
+            "A",
+            "C"
+        ],
+        "rationale": "The profile indicates organization and submission deficits; conclusions should highlight executive supports (A) and collaborative routines with teachers (C). Strengthening (B) and handwriting remediation (D) are unrelated to the functional problem.",
+        "references": [
+            "AOTA Occupational Therapy Practice Guidelines for Children and Youth",
+            "NBCOT OTR Domain 2 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain3-q3",
+        "domain": "Domain 3: Select Interventions",
+        "weight": 0.37,
+        "type": "multi_select",
+        "stem": "A middle-aged client with multiple sclerosis experiences heat sensitivity and fatigue affecting IADLs. Which TWO interventions align with Domain 3 priorities for promoting occupational performance?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Introduce cooling garments and schedule activity in climate-controlled periods."
+            },
+            {
+                "key": "B",
+                "text": "Implement resistive strengthening to failure to build endurance."
+            },
+            {
+                "key": "C",
+                "text": "Train the client to use pacing and energy-conservation checklists."
+            },
+            {
+                "key": "D",
+                "text": "Discontinue all outdoor mobility until fall/winter seasons."
+            }
+        ],
+        "answerKey": [
+            "A",
+            "C"
+        ],
+        "rationale": "Evidence supports cooling equipment and energy-conservation training to maintain participation for clients with MS. High-intensity strengthening (B) risks fatigue; eliminating outdoor mobility (D) unnecessarily limits participation.",
+        "references": [
+            "AOTA Multiple Sclerosis Practice Guidelines",
+            "NBCOT OTR Domain 3 directives"
+        ]
+    },
+    {
+        "id": "otr-domain3-q4",
+        "domain": "Domain 3: Select Interventions",
+        "weight": 0.37,
+        "type": "ordered",
+        "stem": "Order the intervention steps for grading a meal-preparation task for a client with early dementia to maximize independence while ensuring safety.",
+        "options": [
+            {
+                "key": "A",
+                "text": "Introduce a visual recipe with photo steps."
+            },
+            {
+                "key": "B",
+                "text": "Provide hand-over-hand assistance for knife skills."
+            },
+            {
+                "key": "C",
+                "text": "Fade cues to verbal prompts once sequencing improves."
+            },
+            {
+                "key": "D",
+                "text": "Prepare and gather ingredients in advance to reduce task complexity."
+            }
+        ],
+        "answerKey": [
+            "D",
+            "A",
+            "B",
+            "C"
+        ],
+        "rationale": "Simplify the task first (D), provide external visual supports (A), offer physical assistance for safety-critical steps (B), and then fade to verbal prompting (C) as performance improves.",
+        "references": [
+            "AOTA Dementia Practice Guidelines",
+            "NBCOT OTR Domain 3 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain4-q3",
+        "domain": "Domain 4: Management and Professional Issues",
+        "weight": 0.15,
+        "type": "multi_select",
+        "stem": "A clinic is launching a new telehealth service. Which TWO managerial actions reflect Domain 4 responsibilities for ethical practice and service management?",
+        "options": [
+            {
+                "key": "A",
+                "text": "Develop documentation templates that capture informed consent and platform limitations."
+            },
+            {
+                "key": "B",
+                "text": "Assign COTAs to deliver sessions independently without additional training."
+            },
+            {
+                "key": "C",
+                "text": "Establish a data security protocol aligned with HIPAA requirements."
+            },
+            {
+                "key": "D",
+                "text": "Bill every telehealth visit using the same CPT code regardless of service provided."
+            }
+        ],
+        "answerKey": [
+            "A",
+            "C"
+        ],
+        "rationale": "Domain 4 management duties include ensuring documentation and legal compliance. Independent COTA practice without training (B) and blanket billing (D) violate supervision and reimbursement standards.",
+        "references": [
+            "AOTA Telehealth Position Paper",
+            "NBCOT OTR Domain 4 task statements"
+        ]
+    },
+    {
+        "id": "otr-domain4-q4",
+        "domain": "Domain 4: Management and Professional Issues",
+        "weight": 0.15,
+        "type": "ordered",
+        "stem": "Sequence the steps an OT director should take when a payer audit requests justification for high-frequency pediatric services.",
+        "options": [
+            {
+                "key": "A",
+                "text": "Compile outcome data and progress notes demonstrating medical necessity."
+            },
+            {
+                "key": "B",
+                "text": "Notify treating therapists about the audit and review documentation expectations."
+            },
+            {
+                "key": "C",
+                "text": "Submit a comprehensive response with supporting documentation before the deadline."
+            },
+            {
+                "key": "D",
+                "text": "Conduct an internal chart audit to verify that services align with the plan of care."
+            }
+        ],
+        "answerKey": [
+            "B",
+            "D",
+            "A",
+            "C"
+        ],
+        "rationale": "Inform staff first (B), verify compliance internally (D), assemble data supporting necessity (A), and provide the organized response (C).",
+        "references": [
+            "AOTA Guidelines for Supervision, Roles, and Responsibilities",
+            "NBCOT OTR Domain 4 directives"
+        ]
+    }
+]

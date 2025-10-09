@@ -1,0 +1,314 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  CANDIDATE
+  ADMIN
+  SUPPORT
+}
+
+enum PurchaseStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+  CANCELED
+}
+
+enum ExamStatus {
+  DRAFT
+  IN_PROGRESS
+  SUBMITTED
+  REVIEW
+  ARCHIVED
+}
+
+enum QuestionType {
+  SINGLE_BEST
+  MULTI_SELECT
+  ORDERING
+  HOT_SPOT
+  CLINICAL_SIM
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETE
+  SKIPPED
+}
+
+enum TaskCategory {
+  STUDY
+  EXAM
+  FLASHCARDS
+  REVIEW
+  ADMIN
+}
+
+enum SnapshotScope {
+  USER_DAILY
+  USER_WEEKLY
+  GLOBAL_DAILY
+  GLOBAL_WEEKLY
+}
+
+model User {
+  id                String             @id @default(uuid())
+  email             String             @unique
+  emailVerified     DateTime?
+  passwordHash      String?
+  firstName         String?
+  lastName          String?
+  role              UserRole           @default(CANDIDATE)
+  timezone          String?            @map("time_zone")
+  preferences       Json?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  purchases         Purchase[]
+  examSessions      ExamSession[]
+  flashcardReviews  FlashcardReview[]
+  studyPlanTasks    StudyPlanTask[]
+  analyticsEvents   AnalyticsEvent[]
+  snapshots         AnalyticsSnapshot[]
+  accounts          Account[]
+  sessions          Session[]
+}
+
+model Product {
+  id           String      @id @default(uuid())
+  sku          String      @unique
+  name         String
+  description  String?
+  priceCents   Int
+  currency     String      @default("usd")
+  isActive     Boolean     @default(true)
+  accessWindow Int?
+  metadata     Json?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  purchases    Purchase[]
+}
+
+model Purchase {
+  id               String         @id @default(uuid())
+  user             User           @relation(fields: [userId], references: [id])
+  userId           String
+  product          Product        @relation(fields: [productId], references: [id])
+  productId        String
+  stripeSessionId  String?        @unique
+  stripePaymentId  String?        @unique
+  status           PurchaseStatus
+  totalCents       Int
+  currency         String         @default("usd")
+  accessStart      DateTime       @default(now())
+  accessEnd        DateTime?
+  createdAt        DateTime       @default(now())
+}
+
+model ExamTemplate {
+  id           String        @id @default(uuid())
+  slug         String        @unique
+  title        String
+  description  String?
+  durationMins Int
+  scoringMode  String
+  blueprint    Json
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  sessions     ExamSession[]
+}
+
+model ExamSession {
+  id              String          @id @default(uuid())
+  user            User            @relation(fields: [userId], references: [id])
+  userId          String
+  template        ExamTemplate?   @relation(fields: [templateId], references: [id])
+  templateId      String?
+  status          ExamStatus      @default(DRAFT)
+  startedAt       DateTime?
+  submittedAt     DateTime?
+  completedAt     DateTime?
+  durationMins    Int?
+  scoreRaw        Int?
+  scoreScaled     Int?
+  metadata        Json?
+  responses       ExamResponse[]
+  analyticsEvents AnalyticsEvent[]
+}
+
+model ExamResponse {
+  id              String       @id @default(uuid())
+  session         ExamSession  @relation(fields: [sessionId], references: [id])
+  sessionId       String
+  question        Question     @relation(fields: [questionId], references: [id])
+  questionId      String
+  selectedOption  String?
+  selectedOptions String[]     @default([])
+  responseValue   Json?
+  isCorrect       Boolean?
+  reviewedAt      DateTime?
+  flagged         Boolean      @default(false)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+model Question {
+  id              String            @id @default(uuid())
+  sourceId        String?           @unique
+  type            QuestionType
+  stem            String
+  media           Json?
+  domain          String
+  rationale       String?
+  difficulty      Int?
+  metadata        Json?
+  variants        QuestionVariant[]
+  flashcards      Flashcard[]
+  responses       ExamResponse[]
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+}
+
+model QuestionVariant {
+  id          String   @id @default(uuid())
+  question    Question @relation(fields: [questionId], references: [id])
+  questionId  String
+  label       String
+  content     String
+  isCorrect   Boolean?
+  sortOrder   Int      @default(0)
+  metadata    Json?
+}
+
+model FlashcardDeck {
+  id          String      @id @default(uuid())
+  slug        String      @unique
+  title       String
+  description String?
+  domain      String?
+  isPublic    Boolean     @default(true)
+  flashcards  Flashcard[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Flashcard {
+  id               String          @id @default(uuid())
+  deck             FlashcardDeck   @relation(fields: [deckId], references: [id])
+  deckId           String
+  prompt           String
+  answer           String
+  hint             String?
+  mnemonics        String?
+  question         Question?       @relation(fields: [linkedQuestionId], references: [id])
+  linkedQuestionId String?
+  metadata         Json?
+  reviews          FlashcardReview[]
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+}
+
+model FlashcardReview {
+  id          String    @id @default(uuid())
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  flashcard   Flashcard @relation(fields: [flashcardId], references: [id])
+  flashcardId String
+  rating      Int
+  reviewedAt  DateTime  @default(now())
+  reviewData  Json?
+
+  @@index([userId])
+  @@index([flashcardId])
+}
+
+model StudyPlanTask {
+  id            String       @id @default(uuid())
+  user          User         @relation(fields: [userId], references: [id])
+  userId        String
+  title         String
+  description   String?
+  dueDate       DateTime?
+  status        TaskStatus    @default(PENDING)
+  progress      Int           @default(0)
+  category      TaskCategory  @default(STUDY)
+  metadata      Json?
+  completedAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([userId])
+}
+
+model AnalyticsEvent {
+  id        String       @id @default(uuid())
+  user      User?        @relation(fields: [userId], references: [id])
+  userId    String?
+  session   ExamSession? @relation(fields: [sessionId], references: [id])
+  sessionId String?
+  eventName String
+  eventTime DateTime     @default(now())
+  payload   Json
+  context   Json?
+
+  @@index([userId])
+  @@index([sessionId])
+}
+
+model AnalyticsSnapshot {
+  id          String         @id @default(uuid())
+  user        User?          @relation(fields: [userId], references: [id])
+  userId      String?
+  scope       SnapshotScope
+  periodStart DateTime
+  periodEnd   DateTime
+  metrics     Json
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([userId])
+  @@index([scope, periodStart])
+}
+
+model Account {
+  id                String  @id @default(uuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
