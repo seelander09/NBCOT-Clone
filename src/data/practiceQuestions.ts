@@ -5,6 +5,12 @@ type RawPracticeQuestionOption = {
   label: string;
 };
 
+type RawBookAnswer = {
+  title: string;
+  excerpt: string;
+  source?: string;
+};
+
 type RawPracticeScenarioItem = {
   id: string;
   prompt: string;
@@ -21,6 +27,7 @@ type RawPracticeQuestion = {
   headline: string;
   images: string[];
   content: string;
+  bookAnswer?: RawBookAnswer;
   answerKey?: string | string[];
   prompt?: string;
   options?: RawPracticeQuestionOption[];
@@ -36,6 +43,12 @@ type PracticeQuestionOption = {
   label: string;
 };
 
+export type BookAnswer = {
+  title: string;
+  excerpt: string;
+  source?: string;
+};
+
 export type PracticeQuestion = {
   id: string;
   order: number;
@@ -46,6 +59,7 @@ export type PracticeQuestion = {
   content: string;
   remediationPrompt: string;
   keywords: string[];
+  bookAnswer?: BookAnswer;
   answerKey?: string[];
   prompt?: string;
   options?: PracticeQuestionOption[];
@@ -191,10 +205,17 @@ const practiceQuestions = (practiceQuestionsRaw as RawPracticeQuestion[])
   .map<PracticeQuestion>((item) => {
     const headline = item.headline.trim();
     const { category, subheadline } = resolveCategory(headline);
-    const imagePaths = item.images.map((imageId) => `/practice-test/${imageId}.png`);
-    const content = item.content.trim();
-    const answerKey = normalizeAnswerKey(item.answerKey);
-    const options = normalizeOptions(item.options);
+  const imagePaths = item.images.map((imageId) => `/practice-test/${imageId}.png`);
+  const content = item.content.trim();
+  const answerKey = normalizeAnswerKey(item.answerKey);
+  const options = normalizeOptions(item.options);
+  const bookAnswer = item.bookAnswer
+    ? {
+        title: item.bookAnswer.title.trim(),
+        excerpt: item.bookAnswer.excerpt.trim(),
+        source: item.bookAnswer.source?.trim() || undefined,
+      }
+    : undefined;
 
     return {
       id: `q${item.order}`,
@@ -206,6 +227,7 @@ const practiceQuestions = (practiceQuestionsRaw as RawPracticeQuestion[])
       content,
       remediationPrompt: buildRemediationPrompt(headline, content, subheadline),
       keywords: extractKeywords(item.content),
+      bookAnswer,
       answerKey,
       prompt: item.prompt?.trim() || undefined,
       options,

@@ -6,8 +6,6 @@ import ReactMarkdown, { type Components } from "react-markdown";
 
 import type { PracticeQuestion } from "@/data/practiceQuestions";
 
-const ANSWER_KEYS = ["A", "B", "C", "D"];
-const DEFAULT_OPTIONS = ANSWER_KEYS.map((key) => ({ key, label: key }));
 const EXPORT_SUCCESS_RESET_MS = 2500;
 
 const categoryBadgeClasses: Record<PracticeQuestion["category"], string> = {
@@ -32,7 +30,7 @@ type PracticeTestShellProps = {
   questions: PracticeQuestion[];
 };
 
-type AnswerState = Record<string, string | undefined>;
+type AnswerState = Record<string, string[] | undefined>;
 
 type ReviewFlagState = Record<string, boolean>;
 
@@ -272,13 +270,36 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
   const elapsedFormatted = formatDuration(elapsedMs);
   const canExport = answeredCount > 0;
 
-  const activeAnswer = answers[activeQuestion.id] ?? [];
-  const choiceOptions = activeQuestion.options ?? DEFAULT_OPTIONS;
+  const rawActiveAnswer = answers[activeQuestion.id];
+  const activeAnswer = useMemo(() => rawActiveAnswer ?? [], [rawActiveAnswer]);
+  const choiceOptions = activeQuestion.options ?? [];
+  const hasSelectableOptions = choiceOptions.length > 0;
+  const vectorItems = useMemo(
+    () => (remediationState?.status === "ready" ? remediationState.items : []),
+    [remediationState],
+  );
+  const bookAnswerFallback = useMemo(() => {
+    if (!activeQuestion.bookAnswer) {
+      return undefined;
+    }
+    return {
+      id: `${activeQuestion.id}-book-fallback`,
+      title: activeQuestion.bookAnswer.title,
+      excerpt: activeQuestion.bookAnswer.excerpt,
+      source: activeQuestion.bookAnswer.source,
+    };
+  }, [activeQuestion.bookAnswer, activeQuestion.id]);
+  const hasVectorMatches = vectorItems.length > 0;
+  const topRemediationItem = hasVectorMatches ? vectorItems[0] : bookAnswerFallback;
+  const additionalRemediationItems = useMemo(
+    () => (hasVectorMatches ? vectorItems.slice(1) : []),
+    [hasVectorMatches, vectorItems],
+  );
+  const hasAnyBookSupport = Boolean(topRemediationItem);
+  const remediationStatus = remediationState?.status ?? "idle";
   const requiredSelections = activeQuestion.requiredSelections ?? activeQuestion.answerKey?.length ?? 0;
-  const isMultiSelect = requiredSelections > 1;
+  const isMultiSelect = hasSelectableOptions && requiredSelections > 1;
   const activeAnswerIsCorrect = selectionsMatch(activeAnswer, activeQuestion.answerKey);
-
-  const showVectorRemediation = remediationState?.status === "ready" && remediationState.items.length > 0;
 
   const exportRows = useMemo(
     () =>
@@ -352,6 +373,9 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
   }
 
   function handleSelectAnswer(choice: string) {
+    if (!hasSelectableOptions) {
+      return;
+    }
     setAnswers((prev) => {
       const existing = prev[activeQuestion.id] ?? [];
       let updated: string[];
@@ -571,29 +595,37 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
           )}
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            {isMultiSelect ? (
-              <p className="w-full text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Select {requiredSelections || (activeQuestion.answerKey?.length ?? 0)} choices
+            {hasSelectableOptions ? (
+              <>
+                {isMultiSelect ? (
+                  <p className="w-full text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    Select {requiredSelections || (activeQuestion.answerKey?.length ?? 0)} choices
+                  </p>
+                ) : null}
+                {choiceOptions.map((choice) => {
+                  const isSelected = activeAnswer.includes(choice.key);
+                  return (
+                    <button
+                      key={choice.key}
+                      type="button"
+                      onClick={() => handleSelectAnswer(choice.key)}
+                      className={classNames(
+                        "flex min-h-[3rem] w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left transition",
+                        isSelected
+                          ? "border-sky-500 bg-sky-50 text-sky-700"
+                          : "border-slate-200 text-slate-600 hover:border-slate-400 hover:bg-slate-50",
+                      )}
+                    >
+                      <span className="text-base font-semibold">{choice.label}</span>
+                    </button>
+                  );
+                })}
+              </>
+            ) : (
+              <p className="w-full rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+                This knowledge card doesn’t have multiple-choice responses. Review the summary below and continue when you’re ready.
               </p>
-            ) : null}
-            {choiceOptions.map((choice) => {
-              const isSelected = activeAnswer.includes(choice.key);
-              return (
-                <button
-                  key={choice.key}
-                  type="button"
-                  onClick={() => handleSelectAnswer(choice.key)}
-                  className={classNames(
-                    "flex min-h-[3rem] w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left transition",
-                    isSelected
-                      ? "border-sky-500 bg-sky-50 text-sky-700"
-                      : "border-slate-200 text-slate-600 hover:border-slate-400 hover:bg-slate-50",
-                  )}
-                >
-                  <span className="text-base font-semibold">{choice.label}</span>
-                </button>
-              );
-            })}
+            )}
             <button
               type="button"
               onClick={toggleReviewFlag}
@@ -628,6 +660,65 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
               <p>Answer key not imported for this question yet. Your response will still be included in the export.</p>
             )}
           </div>
+
+          <div className="mt-6 space-y-4">
+            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">AI answer breakdown</p>
+              {activeQuestion.content ? (
+                <div className="mt-3 text-sm text-slate-700">
+                  <ReactMarkdown components={markdownComponents}>{activeQuestion.content}</ReactMarkdown>
+                </div>
+              ) : (
+                <p className="mt-3 text-sm text-slate-600">
+                  We do not have a written rationale imported for this question yet. Use the screenshot above and jot your takeaway so the team can backfill the explanation.
+                </p>
+              )}
+            </article>
+
+            <article className="rounded-2xl border border-indigo-200 bg-indigo-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">Book answer</p>
+              {remediationStatus === "loading" && !hasAnyBookSupport ? (
+                <p className="mt-3 text-sm text-slate-600">Pulling textbook matches from the vector store.</p>
+              ) : null}
+              {remediationStatus === "loading" && hasAnyBookSupport ? (
+                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-indigo-500">
+                  Vector lookup in progress - showing saved reference meanwhile.
+                </p>
+              ) : null}
+              {remediationStatus === "error" && !hasAnyBookSupport ? (
+                <p className="mt-3 text-sm text-slate-600">
+                  Vector store lookup unavailable right now. Use the study log highlights below while the integration is offline.
+                </p>
+              ) : null}
+              {remediationStatus === "error" && hasAnyBookSupport ? (
+                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-indigo-500">
+                  Vector store offline - displaying the saved citation instead.
+                </p>
+              ) : null}
+              {hasAnyBookSupport ? (
+                <div className="mt-3 space-y-2 text-sm text-slate-700">
+                  <p className="text-base font-semibold text-slate-900">{topRemediationItem!.title}</p>
+                  <p>{topRemediationItem!.excerpt}</p>
+                  {topRemediationItem!.source ? (
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-500">{topRemediationItem!.source}</p>
+                  ) : null}
+                  {additionalRemediationItems.length > 0 ? (
+                    <p className="text-xs text-indigo-600">
+                      More matched excerpts are listed in the book anchor panel below.
+                    </p>
+                  ) : null}
+                </div>
+              ) : remediationStatus === "ready" ? (
+                <p className="mt-3 text-sm text-slate-600">
+                  No book excerpts retrieved for this question yet. Try adding keywords to the vector store or reference your study log notes.
+                </p>
+              ) : (
+                <p className="mt-3 text-sm text-slate-600">
+                  Select an answer to trigger the textbook lookup or reference your study log notes.
+                </p>
+              )}
+            </article>
+          </div>
         </section>
 
         <section className="space-y-6">
@@ -646,17 +737,9 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
 
           <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
             <h2 className="font-heading text-xl text-slate-900">Book anchor (vector store)</h2>
-            {remediationState?.status === "loading" ? (
-              <p className="mt-4 text-sm text-slate-500">Pulling textbook matches from the vector store.</p>
-            ) : null}
-            {remediationState?.status === "error" ? (
-              <p className="mt-4 text-sm text-slate-500">
-                Vector store lookup unavailable right now. Use the manual notes below while the integration is offline.
-              </p>
-            ) : null}
-            {showVectorRemediation ? (
+            {additionalRemediationItems.length > 0 ? (
               <div className="mt-4 space-y-3">
-                {remediationState.items.map((item) => (
+                {additionalRemediationItems.map((item) => (
                   <div key={item.id} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                     <p className="text-sm font-semibold text-slate-900">{item.title}</p>
                     <p className="mt-1 text-sm text-slate-600">{item.excerpt}</p>
@@ -668,12 +751,27 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
                   </div>
                 ))}
               </div>
-            ) : null}
-            {!showVectorRemediation && remediationState?.status === "ready" ? (
+            ) : remediationStatus === "ready" ? (
+              hasAnyBookSupport ? (
+                <p className="mt-4 text-sm text-slate-500">
+                  Your primary citation is highlighted with the answer recap above. No additional vector matches were returned for this question.
+                </p>
+              ) : (
+                <p className="mt-4 text-sm text-slate-500">
+                  No direct vector matches found yet. Use the highlights below or add keywords to the vector store to backfill a citation.
+                </p>
+              )
+            ) : remediationStatus === "loading" ? (
+              <p className="mt-4 text-sm text-slate-500">Pulling textbook matches from the vector store.</p>
+            ) : remediationStatus === "error" ? (
               <p className="mt-4 text-sm text-slate-500">
-                No direct vector matches found for this prompt. Use the highlights from your imported study notes below.
+                Vector store lookup unavailable right now. Use the manual notes below while the integration is offline.
               </p>
-            ) : null}
+            ) : (
+              <p className="mt-4 text-sm text-slate-500">
+                Select an answer to trigger the book lookup or drop keywords into the store.
+              </p>
+            )}
             {referenceSnippets.length > 0 ? (
               <div className="mt-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
@@ -688,7 +786,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
                 </ul>
               </div>
             ) : null}
-            {referenceSnippets.length === 0 && remediationState?.status !== "loading" && !showVectorRemediation ? (
+            {referenceSnippets.length === 0 && remediationStatus === "ready" && !hasAnyBookSupport ? (
               <p className="mt-4 text-sm text-slate-500">
                 Drop keywords (e.g., Pedretti chapter titles or ICD-10 terminology) into the vector store to backfill a citation for this question.
               </p>
