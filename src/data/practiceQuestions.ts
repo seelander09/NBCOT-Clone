@@ -38,9 +38,18 @@ type RawPracticeQuestion = {
 
 type QuestionCategory = "task" | "knowledge" | "mixed" | "other";
 
+export type PracticeQuestionDomainId = "domain1" | "domain2" | "domain3" | "domain4";
+
 type PracticeQuestionOption = {
   key: string;
   label: string;
+};
+
+export type PracticeQuestionDomain = {
+  id: PracticeQuestionDomainId;
+  title: string;
+  shortTitle: string;
+  summary: string;
 };
 
 export type BookAnswer = {
@@ -59,6 +68,7 @@ export type PracticeQuestion = {
   content: string;
   remediationPrompt: string;
   keywords: string[];
+  domain: PracticeQuestionDomain;
   bookAnswer?: BookAnswer;
   answerKey?: string[];
   prompt?: string;
@@ -85,6 +95,123 @@ const CATEGORY_HINTS: Record<QuestionCategory, string[]> = {
   mixed: ["mixed"],
   other: [],
 };
+
+const DOMAIN_METADATA: Record<PracticeQuestionDomainId, PracticeQuestionDomain> = {
+  domain1: {
+    id: "domain1",
+    title: "Domain 1 - Evaluate & Analyze Needs",
+    shortTitle: "Domain 1",
+    summary:
+      "Collect occupational profiles, select assessments, and interpret performance data to surface risks and opportunities for intervention.",
+  },
+  domain2: {
+    id: "domain2",
+    title: "Domain 2 - Formulate Conclusions & Priorities",
+    shortTitle: "Domain 2",
+    summary:
+      "Synthesize findings with the client and team, set priorities and goals, and recommend the service mix that addresses occupational needs.",
+  },
+  domain3: {
+    id: "domain3",
+    title: "Domain 3 - Select & Implement Interventions",
+    shortTitle: "Domain 3",
+    summary:
+      "Design, implement, and adjust interventions, education, and environmental modifications that drive client-centered outcomes.",
+  },
+  domain4: {
+    id: "domain4",
+    title: "Domain 4 - Manage & Direct Services",
+    shortTitle: "Domain 4",
+    summary:
+      "Address supervision, program quality, ethics, documentation, and advocacy responsibilities that keep services safe and compliant.",
+  },
+};
+
+const DOMAIN_PATTERN_SETS: Record<PracticeQuestionDomainId, RegExp[]> = {
+  domain1: [
+    /\bassessment\b/,
+    /\bassess\b/,
+    /\bevaluation\b/,
+    /\bevaluate\b/,
+    /\bscreen(ing)?\b/,
+    /\boccupational profile\b/,
+    /\bchart review\b/,
+    /\bdata (collection|gathering)\b/,
+    /\bobservation\b/,
+    /\bobserve\b/,
+    /\bmeasure\b/,
+    /\bstandardized\b/,
+    /\btest(s|ing)?\b/,
+    /\bhome (assessment|safety|visit)\b/,
+    /\breassessment\b/,
+  ],
+  domain2: [
+    /\bgoal(s)?\b/,
+    /\bpriorit(y|ies|ize)\b/,
+    /\bplan of care\b/,
+    /\bservice delivery\b/,
+    /\bsequenc(e|ing)\b/,
+    /\bestablish\b/,
+    /\bcollaborat(e|ion)\b/,
+    /\bcoordinate\b/,
+    /\bschedule\b/,
+    /\bfrequency\b/,
+    /\bintensity\b/,
+    /\bduration\b/,
+    /\breferral\b/,
+    /\bconsult\b/,
+    /\bdischarge plan(n|ning)?\b/,
+    /\bcare conference\b/,
+  ],
+  domain3: [
+    /\bintervention(s)?\b/,
+    /\bimplement\b/,
+    /\btrain(ing)?\b/,
+    /\bteach(ing)?\b/,
+    /\bcoach(ing)?\b/,
+    /\bhome (exercise|program)\b/,
+    /\bexercise\b/,
+    /\bpractice\b/,
+    /\bhabituation\b/,
+    /\bcompensatory\b/,
+    /\badapt(ation|ive|ing)\b/,
+    /\bmodif(y|ication)\b/,
+    /\bfabricat(e|ion)\b/,
+    /\bsplint\b/,
+    /\beducation\b/,
+    /\bgraded\b/,
+    /\bremediation\b/,
+    /\benvironmental modification\b/,
+  ],
+  domain4: [
+    /\bsupervis(e|ion|ory)\b/,
+    /\bdelegate\b/,
+    /\baide(s)?\b/,
+    /\bassistan(t|ce|ts)\b/,
+    /\bcota\b/,
+    /\blicensure\b/,
+    /\bcompetency\b/,
+    /\bmedicare\b/,
+    /\bbilling\b/,
+    /\breimbursement\b/,
+    /\bdocumentation\b/,
+    /\bpolicy\b/,
+    /\bprocedure\b/,
+    /\bproductivity\b/,
+    /\badvocacy\b/,
+    /\bethic(s|al)\b/,
+    /\bregulation\b/,
+    /\bquality\b/,
+    /\bprogram\b/,
+    /\bcompliance\b/,
+    /\bmanager\b/,
+    /\brisk management\b/,
+  ],
+};
+
+const DOMAIN_PRIORITY: PracticeQuestionDomainId[] = ["domain4", "domain1", "domain3", "domain2"];
+
+const DOMAIN_OVERRIDES: Partial<Record<number, PracticeQuestionDomainId>> = {};
 
 function resolveCategory(headline: string): { category: QuestionCategory; subheadline?: string } {
   const [rawLabel, ...rest] = headline
@@ -200,22 +327,105 @@ function buildRemediationPrompt(headline: string, content: string, subheadline?:
   return raw.length > 750 ? `${raw.slice(0, 747)}...` : raw;
 }
 
+function resolveDomain(
+  item: RawPracticeQuestion,
+  context: {
+    headline: string;
+    prompt?: string;
+    content: string;
+    category: QuestionCategory;
+  },
+): PracticeQuestionDomain {
+  const overrideId = DOMAIN_OVERRIDES[item.order];
+  if (overrideId) {
+    return DOMAIN_METADATA[overrideId];
+  }
+
+  const text = [
+    item.headline,
+    context.headline,
+    context.prompt ?? "",
+    context.content,
+    item.content,
+    item.scenarioStem ?? "",
+    item.bookAnswer?.title ?? "",
+    item.bookAnswer?.excerpt ?? "",
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  const scores: Record<PracticeQuestionDomainId, number> = {
+    domain1: 0,
+    domain2: 0,
+    domain3: 0,
+    domain4: 0,
+  };
+
+  for (const [domainId, patterns] of Object.entries(DOMAIN_PATTERN_SETS) as [
+    PracticeQuestionDomainId,
+    RegExp[],
+  ][]) {
+    for (const pattern of patterns) {
+      if (pattern.test(text)) {
+        scores[domainId] += 1;
+      }
+    }
+  }
+
+  if (context.category === "task") {
+    scores.domain3 += 0.5;
+  } else if (context.category === "knowledge") {
+    scores.domain2 += 0.5;
+  }
+
+  const priorityIndex = new Map<PracticeQuestionDomainId, number>();
+  DOMAIN_PRIORITY.forEach((domainId, index) => {
+    priorityIndex.set(domainId, index);
+  });
+
+  let selected: PracticeQuestionDomainId = "domain3";
+  let bestScore = scores[selected];
+
+  for (const domainId of DOMAIN_PRIORITY) {
+    const score = scores[domainId];
+    const currentIndex = priorityIndex.get(domainId) ?? 0;
+    const selectedIndex = priorityIndex.get(selected) ?? DOMAIN_PRIORITY.length;
+
+    if (
+      score > bestScore ||
+      (score === bestScore && score > 0 && currentIndex < selectedIndex)
+    ) {
+      selected = domainId;
+      bestScore = score;
+    }
+  }
+
+  return DOMAIN_METADATA[selected];
+}
+
 const practiceQuestions = (practiceQuestionsRaw as RawPracticeQuestion[])
   .filter((item) => Boolean(item.headline) || item.images.length > 0)
   .map<PracticeQuestion>((item) => {
     const headline = item.headline.trim();
     const { category, subheadline } = resolveCategory(headline);
-  const imagePaths = item.images.map((imageId) => `/practice-test/${imageId}.png`);
-  const content = item.content.trim();
-  const answerKey = normalizeAnswerKey(item.answerKey);
-  const options = normalizeOptions(item.options);
-  const bookAnswer = item.bookAnswer
-    ? {
-        title: item.bookAnswer.title.trim(),
-        excerpt: item.bookAnswer.excerpt.trim(),
-        source: item.bookAnswer.source?.trim() || undefined,
-      }
-    : undefined;
+    const imagePaths = item.images.map((imageId) => `/practice-test/${imageId}.png`);
+    const content = item.content.trim();
+    const prompt = item.prompt?.trim() || undefined;
+    const answerKey = normalizeAnswerKey(item.answerKey);
+    const options = normalizeOptions(item.options);
+    const bookAnswer = item.bookAnswer
+      ? {
+          title: item.bookAnswer.title.trim(),
+          excerpt: item.bookAnswer.excerpt.trim(),
+          source: item.bookAnswer.source?.trim() || undefined,
+        }
+      : undefined;
+    const domain = resolveDomain(item, {
+      headline,
+      prompt,
+      content,
+      category,
+    });
 
     return {
       id: `q${item.order}`,
@@ -223,13 +433,14 @@ const practiceQuestions = (practiceQuestionsRaw as RawPracticeQuestion[])
       headline,
       subheadline: subheadline && subheadline.length > 0 ? subheadline : undefined,
       category,
+      domain,
       imagePaths,
       content,
       remediationPrompt: buildRemediationPrompt(headline, content, subheadline),
-      keywords: extractKeywords(item.content),
+      keywords: extractKeywords(content),
       bookAnswer,
       answerKey,
-      prompt: item.prompt?.trim() || undefined,
+      prompt,
       options,
       requiredSelections: item.requiredSelections,
       scenarioStem: item.scenarioStem?.trim() || undefined,

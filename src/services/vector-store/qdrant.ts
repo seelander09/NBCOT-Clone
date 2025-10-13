@@ -8,6 +8,12 @@ type ScoredPoint = {
   payload?: Record<string, unknown>;
 };
 
+type EmbeddingOutput =
+  | { data: Float32Array }
+  | { data: Float32Array }[];
+
+type EmbeddingPipeline = (input: string, options?: { pooling?: string; normalize?: boolean }) => Promise<EmbeddingOutput>;
+
 const DEFAULT_COLLECTION = process.env.NBCOT_VECTOR_COLLECTION ?? 'nbcot_sources';
 const QDRANT_URL = process.env.QDRANT_URL ?? 'http://127.0.0.1:6333';
 
@@ -20,13 +26,14 @@ async function getClient() {
   return client;
 }
 
-let embeddingPipelinePromise: Promise<any> | null = null;
+let embeddingPipelinePromise: Promise<EmbeddingPipeline> | null = null;
 
 async function getEmbeddingPipeline() {
   if (!embeddingPipelinePromise) {
     embeddingPipelinePromise = import('@xenova/transformers').then(async (mod) => {
       const { pipeline } = mod;
-      return pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
+      const extractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
+      return extractor as EmbeddingPipeline;
     });
   }
   return embeddingPipelinePromise;

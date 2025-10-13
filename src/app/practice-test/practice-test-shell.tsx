@@ -1,30 +1,22 @@
 'use client';
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import ReactMarkdown, { type Components } from "react-markdown";
 
 import type { PracticeQuestion } from "@/data/practiceQuestions";
 
 const EXPORT_SUCCESS_RESET_MS = 2500;
+const SESSION_STORAGE_KEY = "nbcot-practice-session-v1";
+const SESSION_ANALYTICS_KEY = "nbcot-practice-analytics-v1";
 
-const categoryBadgeClasses: Record<PracticeQuestion["category"], string> = {
-  task: "bg-sky-100 text-sky-700 border border-sky-200",
-  knowledge: "bg-emerald-100 text-emerald-700 border border-emerald-200",
-  mixed: "bg-amber-100 text-amber-700 border border-amber-200",
-  other: "bg-slate-200 text-slate-700 border border-slate-300",
+const domainBadgeClasses: Record<PracticeQuestion["domain"]["id"], string> = {
+  domain1: "bg-emerald-100 text-emerald-700 border border-emerald-200",
+  domain2: "bg-amber-100 text-amber-700 border border-amber-200",
+  domain3: "bg-sky-100 text-sky-700 border border-sky-200",
+  domain4: "bg-slate-200 text-slate-700 border border-slate-300",
 };
 
-const CATEGORY_RATIONALE: Record<PracticeQuestion["category"], string> = {
-  task:
-    "NBCOT leans on task-based vignettes to confirm you can translate textbook frameworks into safe, functional choices in real occupations.",
-  knowledge:
-    "Pure knowledge checks appear when NBCOT wants fast recall of standards, contraindications, or frameworks tied to safety and ethics.",
-  mixed:
-    "Mixed prompts intentionally combine recall and clinical reasoning so you must weigh evidence, contraindications, and client cues in the same breath.",
-  other:
-    "This scenario type often appears as an edge case and is meant to test your flexibility with less common practice situations.",
-};
 
 type PracticeTestShellProps = {
   questions: PracticeQuestion[];
@@ -47,6 +39,57 @@ type RemediationState = {
 };
 
 type ExportState = "idle" | "success";
+
+type DomainSummaryRow = {
+  domainId: PracticeQuestion["domain"]["id"];
+  domainTitle: string;
+  shortTitle: string;
+  total: number;
+  answered: number;
+  correct: number;
+  timeMs: number;
+};
+
+function computeDomainSummary(
+  questions: PracticeQuestion[],
+  answers: AnswerState,
+  questionTimers: Record<string, number>,
+): DomainSummaryRow[] {
+  const domainMap = new Map<PracticeQuestion["domain"]["id"], DomainSummaryRow>();
+
+  for (const question of questions) {
+    const existing =
+      domainMap.get(question.domain.id) ??
+      {
+        domainId: question.domain.id,
+        domainTitle: question.domain.title,
+        shortTitle: question.domain.shortTitle,
+        total: 0,
+        answered: 0,
+        correct: 0,
+        timeMs: 0,
+      };
+
+    const responses = normalizeSelections(answers[question.id]);
+    const comparison = selectionsMatch(responses, question.answerKey);
+    const timeOnQuestionSeconds = questionTimers[question.id] ?? 0;
+
+    existing.total += 1;
+    if (responses.length > 0) {
+      existing.answered += 1;
+    }
+    if (comparison === true) {
+      existing.correct += 1;
+    }
+    if (timeOnQuestionSeconds > 0) {
+      existing.timeMs += timeOnQuestionSeconds * 1000;
+    }
+
+    domainMap.set(question.domain.id, existing);
+  }
+
+  return Array.from(domainMap.values());
+}
 
 const markdownComponents: Components = {
   p: ({ children }) => <p className="mt-3 text-sm text-slate-700 first:mt-0">{children}</p>,
@@ -154,8 +197,100 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     }>;
   } | null>(null);
 
-  const [sessionStart] = useState(() => Date.now());
+  const [sessionStart, setSessionStart] = useState(() => Date.now());
   const [elapsedMs, setElapsedMs] = useState(0);
+  const [isSessionHydrated, setIsSessionHydrated] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    try {
+      const raw = window.localStorage.getItem(SESSION_STORAGE_KEY);
+      if (!raw) {
+        setIsSessionHydrated(true);
+        return;
+      }
+
+      const parsed = JSON.parse(raw) as Partial<{
+        answers: AnswerState;
+        revealedAnswers: Record<string, boolean>;
+        reviewFlags: ReviewFlagState;
+        activeIndex: number;
+        questionTimers: Record<string, number>;
+        questionTimerEnabled: boolean;
+        elapsedMs: number;
+        isSubmitted: boolean;
+        submissionSummary: PracticeTestShell["submissionSummary"];
+      }>;
+
+      setAnswers(parsed.answers ?? {});
+      setRevealedAnswers(parsed.revealedAnswers ?? {});
+      setReviewFlags(parsed.reviewFlags ?? {});
+
+      const safeIndex = Math.min(parsed.activeIndex ?? 0, Math.max(questions.length - 1, 0));
+      setActiveIndex(safeIndex);
+
+      if (parsed.questionTimers) {
+        setQuestionTimers(parsed.questionTimers);
+      }
+      if (typeof parsed.questionTimerEnabled === "boolean") {
+        setQuestionTimerEnabled(parsed.questionTimerEnabled);
+      }
+
+      if (typeof parsed.elapsedMs === "number" && Number.isFinite(parsed.elapsedMs)) {
+        setElapsedMs(parsed.elapsedMs);
+        setSessionStart(Date.now() - parsed.elapsedMs);
+      }
+
+      if (parsed.isSubmitted) {
+        setIsSubmitted(true);
+      }
+      if (parsed.submissionSummary) {
+        setSubmissionSummary(parsed.submissionSummary);
+      }
+    } catch (error) {
+      console.warn("Failed to hydrate practice test session", error);
+    } finally {
+      setIsSessionHydrated(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!isSessionHydrated || typeof window === "undefined") {
+      return;
+    }
+
+    try {
+      const payload = {
+        answers,
+        revealedAnswers,
+        reviewFlags,
+        activeIndex,
+        questionTimers,
+        questionTimerEnabled,
+        elapsedMs,
+        isSubmitted,
+        submissionSummary,
+      };
+      window.localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(payload));
+    } catch (error) {
+      console.warn("Failed to persist practice test session", error);
+    }
+  }, [
+    answers,
+    revealedAnswers,
+    reviewFlags,
+    activeIndex,
+    questionTimers,
+    questionTimerEnabled,
+    elapsedMs,
+    isSubmitted,
+    submissionSummary,
+    isSessionHydrated,
+  ]);
 
   useEffect(() => {
     const handle = window.setInterval(() => {
@@ -187,7 +322,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
 
   const activeQuestion = questions[activeIndex];
   const remediationState = remediationById[activeQuestion.id];
-  const keywordKey = activeQuestion.keywords.join("|");
+  const keywords = useMemo(() => activeQuestion.keywords, [activeQuestion.keywords]);
   const isAnswerRevealed = Boolean(revealedAnswers[activeQuestion.id]);
 
   useEffect(() => {
@@ -199,7 +334,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
       return;
     }
 
-    if (!activeQuestion.remediationPrompt && activeQuestion.keywords.length === 0) {
+    if (!activeQuestion.remediationPrompt && keywords.length === 0) {
       setRemediationById((prev) => ({
         ...prev,
         [activeQuestion.id]: { status: "error", items: [] },
@@ -220,7 +355,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         questionId: activeQuestion.id,
-        keywords: activeQuestion.keywords,
+        keywords,
         prompt: activeQuestion.remediationPrompt,
         limit: 3,
       }),
@@ -270,7 +405,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
       cancelled = true;
       controller.abort();
     };
-  }, [activeQuestion.id, activeQuestion.remediationPrompt, keywordKey, isAnswerRevealed]);
+  }, [activeQuestion.id, activeQuestion.remediationPrompt, isAnswerRevealed, keywords, remediationState?.status]);
 
   const referenceSnippets = useMemo(
     () => extractReferenceSnippets(activeQuestion.content),
@@ -312,7 +447,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
 
   const rawActiveAnswer = answers[activeQuestion.id];
   const activeAnswer = useMemo(() => rawActiveAnswer ?? [], [rawActiveAnswer]);
-  const choiceOptions = activeQuestion.options ?? [];
+  const choiceOptions = useMemo(() => activeQuestion.options ?? [], [activeQuestion.options]);
   const hasSelectableOptions = choiceOptions.length > 0;
   const vectorItems = useMemo(
     () => (remediationState?.status === "ready" ? remediationState.items : []),
@@ -368,6 +503,20 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     [answers, questions, reviewFlags],
   );
 
+  const domainSummaryForUi = useMemo(() => {
+    const rows = computeDomainSummary(questions, answers, questionTimers);
+    return rows.map((entry) => {
+      const accuracyRatio = entry.answered > 0 ? entry.correct / entry.answered : null;
+      return {
+        ...entry,
+        accuracyRatio,
+        accuracyPercent: accuracyRatio !== null ? Math.round(accuracyRatio * 100) : null,
+        timeSeconds: Math.round(entry.timeMs / 1000),
+        timeFormatted: formatDuration(entry.timeMs),
+      };
+    });
+  }, [answers, questionTimers, questions]);
+
   const answerStatus = useMemo(() => {
     return questions.reduce<Record<string, "unanswered" | "correct" | "incorrect">>((acc, question) => {
       const response = normalizeSelections(answers[question.id]);
@@ -389,6 +538,39 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
   const incorrectQuestionOrders = submissionSummary
     ? submissionSummary.details.filter((detail) => !detail.isCorrect).map((detail) => detail.order)
     : [];
+
+  const printableSummaryRows = useMemo(() => {
+    if (!submissionSummary) {
+      return [];
+    }
+
+    return submissionSummary.details
+      .map((detail) => {
+        const question = questions.find((item) => item.id === detail.questionId);
+        if (!question) {
+          return null;
+        }
+
+        const baseSnippet = question.prompt ?? question.content ?? question.headline;
+        const normalizedSnippet = baseSnippet.replace(/\s+/g, " ").trim();
+        const snippet =
+          normalizedSnippet.length > 140 ? `${normalizedSnippet.slice(0, 137)}...` : normalizedSnippet;
+        const timeSeconds = questionTimers[question.id] ?? 0;
+
+        return {
+          questionId: detail.questionId,
+          order: detail.order,
+          domainId: question.domain.id,
+          domainTitle: question.domain.title,
+          domainShort: question.domain.shortTitle,
+          isCorrect: detail.isCorrect,
+          timeSeconds,
+          timeFormatted: formatDuration(timeSeconds * 1000),
+          snippet,
+        };
+      })
+      .filter((row): row is NonNullable<typeof row> => row !== null);
+  }, [questionTimers, questions, submissionSummary]);
 
   function handleExport(format: "json" | "csv") {
     if (!canExport) {
@@ -444,45 +626,48 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     window.setTimeout(() => setExportState("idle"), EXPORT_SUCCESS_RESET_MS);
   }
 
-  function handleSelectAnswer(choice: string) {
-    if (!hasSelectableOptions || isSubmitted) {
-      return;
-    }
-    setAnswers((prev) => {
-      const existing = prev[activeQuestion.id] ?? [];
-      let updated: string[];
+  const handleSelectAnswer = useCallback(
+    (choice: string) => {
+      if (!hasSelectableOptions || isSubmitted) {
+        return;
+      }
+      setAnswers((prev) => {
+        const existing = prev[activeQuestion.id] ?? [];
+        let updated: string[];
 
-      if (isMultiSelect) {
-        if (existing.includes(choice)) {
-          updated = existing.filter((value) => value !== choice);
-        } else {
-          updated = [...existing, choice];
-          const limit = requiredSelections > 0 ? requiredSelections : undefined;
-          if (limit && updated.length > limit) {
-            updated = updated.slice(updated.length - limit);
+        if (isMultiSelect) {
+          if (existing.includes(choice)) {
+            updated = existing.filter((value) => value !== choice);
+          } else {
+            updated = [...existing, choice];
+            const limit = requiredSelections > 0 ? requiredSelections : undefined;
+            if (limit && updated.length > limit) {
+              updated = updated.slice(updated.length - limit);
+            }
           }
+        } else if (existing.length === 1 && existing[0] === choice) {
+          updated = [];
+        } else {
+          updated = [choice];
         }
-      } else if (existing.length === 1 && existing[0] === choice) {
-        updated = [];
-      } else {
-        updated = [choice];
-      }
 
-      const next: AnswerState = { ...prev };
-      if (updated.length > 0) {
-        next[activeQuestion.id] = updated;
-      } else {
-        delete next[activeQuestion.id];
-      }
-      return next;
-    });
-  }
+        const next: AnswerState = { ...prev };
+        if (updated.length > 0) {
+          next[activeQuestion.id] = updated;
+        } else {
+          delete next[activeQuestion.id];
+        }
+        return next;
+      });
+    },
+    [activeQuestion.id, hasSelectableOptions, isMultiSelect, isSubmitted, requiredSelections],
+  );
 
-  function handleRevealAnswer() {
+  const handleRevealAnswer = useCallback(() => {
     setRevealedAnswers((prev) => ({ ...prev, [activeQuestion.id]: true }));
-  }
+  }, [activeQuestion.id]);
 
-  function handleHideAnswer() {
+  const handleHideAnswer = useCallback(() => {
     setRevealedAnswers((prev) => {
       if (!prev[activeQuestion.id]) {
         return prev;
@@ -491,7 +676,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
       delete next[activeQuestion.id];
       return next;
     });
-  }
+  }, [activeQuestion.id]);
 
   function toggleReviewFlag() {
     setReviewFlags((prev) => ({ ...prev, [activeQuestion.id]: !prev[activeQuestion.id] }));
@@ -509,6 +694,8 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
       return;
     }
 
+    const domainSummaryRows = computeDomainSummary(questions, answers, questionTimers);
+
     const details = exportRows.map((row) => ({
       questionId: row.questionId,
       order: row.order,
@@ -519,6 +706,42 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
 
     const correct = details.filter((detail) => detail.isCorrect).length;
 
+    const domainBreakdown = domainSummaryRows.map((entry) => {
+      const accuracyRatio = entry.answered > 0 ? entry.correct / entry.answered : null;
+      return {
+        ...entry,
+        timeSeconds: Math.round(entry.timeMs / 1000),
+        accuracyRatio,
+        accuracyPercent: accuracyRatio !== null ? Math.round(accuracyRatio * 100) : null,
+      };
+    });
+
+    const overallAccuracyRatio = scorableCount > 0 ? correctCount / scorableCount : null;
+    const overallAccuracyPercent = overallAccuracyRatio !== null ? Math.round(overallAccuracyRatio * 100) : null;
+
+    const analyticsPayload = {
+      submittedAt: new Date().toISOString(),
+      totalDurationMs: elapsedMs,
+      totalQuestions: questions.length,
+      answered: answeredCount,
+      scorable: scorableCount,
+      correct: correctCount,
+      accuracyRatio: overallAccuracyRatio,
+      accuracyPercent: overallAccuracyPercent,
+      domainBreakdown,
+    };
+
+    if (typeof window !== "undefined") {
+      try {
+        const existingRaw = window.localStorage.getItem(SESSION_ANALYTICS_KEY);
+        const existing = existingRaw ? JSON.parse(existingRaw) : [];
+        const nextLog = Array.isArray(existing) ? [...existing, analyticsPayload] : [analyticsPayload];
+        window.localStorage.setItem(SESSION_ANALYTICS_KEY, JSON.stringify(nextLog));
+      } catch (error) {
+        console.warn("Failed to persist practice test analytics", error);
+      }
+    }
+
     setSubmissionSummary({
       correct,
       total: details.length,
@@ -526,6 +749,110 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     });
     setIsSubmitted(true);
   }
+
+  function handleResetSession() {
+    if (typeof window !== "undefined") {
+      const confirmed = window.confirm("Reset this practice session? All saved progress will be cleared.");
+      if (!confirmed) {
+        return;
+      }
+    }
+
+    setAnswers({});
+    setRevealedAnswers({});
+    setReviewFlags({});
+    setQuestionTimers({});
+    setQuestionTimerEnabled(true);
+    setIsSubmitted(false);
+    setSubmissionSummary(null);
+    setActiveIndex(0);
+    setRemediationById({});
+    setElapsedMs(0);
+    setSessionStart(Date.now());
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem(SESSION_STORAGE_KEY);
+    }
+  }
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.metaKey || event.ctrlKey || event.altKey) {
+        return;
+      }
+
+      const target = event.target as HTMLElement | null;
+      if (target) {
+        const tagName = target.tagName;
+        if (tagName === "INPUT" || tagName === "TEXTAREA" || target.getAttribute("contenteditable") === "true") {
+          return;
+        }
+      }
+
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        if (activeIndex < questions.length - 1) {
+          setActiveIndex(activeIndex + 1);
+        }
+        return;
+      }
+
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        if (activeIndex > 0) {
+          setActiveIndex(activeIndex - 1);
+        }
+        return;
+      }
+
+      if (event.key === "Enter") {
+        if (isSubmitted) {
+          return;
+        }
+        if (!isAnswerRevealed && activeAnswer.length > 0) {
+          event.preventDefault();
+          handleRevealAnswer();
+        } else if (isAnswerRevealed) {
+          event.preventDefault();
+          handleHideAnswer();
+        }
+        return;
+      }
+
+      if (!hasSelectableOptions || isSubmitted) {
+        return;
+      }
+
+      const numericIndex = Number.parseInt(event.key, 10);
+      if (!Number.isNaN(numericIndex) && numericIndex >= 1 && numericIndex <= choiceOptions.length) {
+        event.preventDefault();
+        handleSelectAnswer(choiceOptions[numericIndex - 1].key);
+        return;
+      }
+
+      if (event.key.length === 1) {
+        const letter = event.key.toLowerCase();
+        const match = choiceOptions.find((option) => option.key.toLowerCase() === letter);
+        if (match) {
+          event.preventDefault();
+          handleSelectAnswer(match.key);
+        }
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [
+    activeAnswer,
+    activeIndex,
+    choiceOptions,
+    handleHideAnswer,
+    handleRevealAnswer,
+    handleSelectAnswer,
+    hasSelectableOptions,
+    isAnswerRevealed,
+    isSubmitted,
+    questions.length,
+  ]);
 
   return (
     <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 pb-16 pt-8 lg:grid-cols-[280px_1fr] lg:px-8">
@@ -551,7 +878,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
             </div>
             <div className="flex items-center justify-between">
               <dt>Accuracy</dt>
-              <dd className="font-semibold text-slate-900">{accuracy !== null ? `${accuracy}%` : "�"}</dd>
+              <dd className="font-semibold text-slate-900">{accuracy !== null ? `${accuracy}%` : "n/a"}</dd>
             </div>
           </dl>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -580,6 +907,13 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
               )}
             >
               Export CSV
+            </button>
+            <button
+              type="button"
+              onClick={handleResetSession}
+              className="rounded-full border border-rose-200 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-rose-600 transition hover:border-rose-300 hover:bg-rose-50"
+            >
+              Reset session
             </button>
           </div>
           {exportState === "success" ? (
@@ -646,10 +980,104 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
                 </p>
               </div>
             </div>
-            <p className="mt-4 text-xs text-slate-500">
-              Use the question navigator to jump back to specific items. Circles are color-coded once the
-              test is submitted.
-            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <p className="text-xs text-slate-500">Detailed breakdown</p>
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.print();
+                  }
+                }}
+                className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 transition hover:border-slate-400 hover:bg-slate-100"
+              >
+                Print summary
+              </button>
+            </div>
+            {domainSummaryForUi.length > 0 ? (
+              <div className="mt-4 space-y-3 text-sm text-slate-600">
+                {domainSummaryForUi.map((domain) => (
+                  <div
+                    key={domain.domainId}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 p-4"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="font-semibold text-slate-900">{domain.domainTitle}</span>
+                      <span className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
+                        {domain.timeFormatted}
+                      </span>
+                    </div>
+                    <div className="mt-2 flex flex-wrap items-center gap-4 text-xs text-slate-600">
+                      <span>
+                        {domain.correct} / {domain.answered} correct
+                      </span>
+                      <span>
+                        {domain.answered} answered of {domain.total}
+                      </span>
+                      <span>
+                        Accuracy: {domain.accuracyPercent !== null ? `${domain.accuracyPercent}%` : "n/a"}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+            {printableSummaryRows.length > 0 ? (
+              <div className="mt-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  Question review
+                </p>
+                <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200">
+                  <div className="max-h-80 overflow-auto">
+                    <table className="min-w-full text-left text-xs text-slate-600">
+                      <caption className="sr-only">Session question summary with domains and time spent</caption>
+                      <thead className="bg-slate-50 text-[11px] uppercase tracking-[0.2em] text-slate-500">
+                        <tr>
+                          <th scope="col" className="px-4 py-3 font-semibold">#</th>
+                          <th scope="col" className="px-4 py-3 font-semibold">Domain</th>
+                          <th scope="col" className="px-4 py-3 font-semibold">Status</th>
+                          <th scope="col" className="px-4 py-3 font-semibold">Time</th>
+                          <th scope="col" className="px-4 py-3 font-semibold">Prompt snippet</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {printableSummaryRows.map((row) => (
+                          <tr
+                            key={row.questionId}
+                            className={classNames(
+                              "border-t border-slate-200",
+                              row.isCorrect ? "bg-white" : "bg-rose-50/40",
+                            )}
+                          >
+                            <td className="px-4 py-3 text-sm font-semibold text-slate-900">{row.order}</td>
+                            <td className="px-4 py-3 text-xs text-slate-600">{row.domainShort}</td>
+                            <td
+                              className={classNames(
+                                "px-4 py-3 text-xs font-semibold",
+                                row.isCorrect ? "text-emerald-600" : "text-rose-600",
+                              )}
+                            >
+                              {row.isCorrect ? "Correct" : "Needs review"}
+                            </td>
+                            <td className="px-4 py-3 text-xs text-slate-500">{row.timeFormatted}</td>
+                            <td className="px-4 py-3 text-xs text-slate-600">{row.snippet}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <p className="mt-3 text-xs text-slate-500">
+                  Rows in rose highlight items that need review. Use the question navigator to jump back to specific
+                  questions and revisit rationales.
+                </p>
+              </div>
+            ) : (
+              <p className="mt-4 text-xs text-slate-500">
+                Use the question navigator to jump back to specific items. Circles are color-coded once the
+                test is submitted.
+              </p>
+            )}
           </section>
         ) : null}
 
@@ -706,12 +1134,10 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
             <span
               className={classNames(
                 "rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide",
-                categoryBadgeClasses[activeQuestion.category],
+                domainBadgeClasses[activeQuestion.domain.id],
               )}
             >
-              {activeQuestion.category === "other"
-                ? "Scenario"
-                : `${activeQuestion.category.charAt(0).toUpperCase()}${activeQuestion.category.slice(1)} based`}
+              {activeQuestion.domain.title}
             </span>
             {reviewFlags[activeQuestion.id] ? (
               <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
@@ -837,7 +1263,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
               </>
             ) : (
               <p className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-600">
-                This knowledge card doesn't have multiple-choice responses. Review the summary below and continue when you're ready.
+                This knowledge card does not have multiple-choice responses. Review the summary below and continue when you are ready.
               </p>
             )}
             <div className="flex flex-wrap items-center gap-3">
@@ -1030,7 +1456,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
 
           <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
             <h2 className="font-heading text-xl text-slate-900">Why NBCOT asks this question</h2>
-            <p className="mt-4 text-sm text-slate-600">{CATEGORY_RATIONALE[activeQuestion.category]}</p>
+            <p className="mt-4 text-sm text-slate-600">{activeQuestion.domain.summary}</p>
             {activeQuestion.keywords.length > 0 ? (
               <div className="mt-4">
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
@@ -1054,6 +1480,10 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     </div>
   );
 }
+
+
+
+
 
 
 
