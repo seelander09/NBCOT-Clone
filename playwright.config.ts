@@ -38,6 +38,9 @@ export default defineConfig({
     env: {
       SKIP_AUTH: 'true',
       NBCOT_VECTOR_FIXTURE: 'mock',
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: '',
+      STRIPE_SECRET_KEY: '',
+      STRIPE_WEBHOOK_SECRET: '',
     },
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

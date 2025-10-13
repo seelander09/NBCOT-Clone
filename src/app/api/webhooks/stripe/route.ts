@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 
 import { prisma } from "@/lib/prisma";
-import { stripe } from "@/lib/stripe";
+import { getStripeClient } from "@/lib/stripe";
 import { PurchaseStatus } from "@prisma/client";
 
 export const runtime = "nodejs";
@@ -25,6 +25,12 @@ export async function POST(request: Request) {
 
   let event: Stripe.Event;
 
+  const stripe = getStripeClient();
+  if (!stripe) {
+    console.error("Stripe webhook invoked but STRIPE_SECRET_KEY is not configured.");
+    return NextResponse.json({ error: "Stripe is not configured" }, { status: 500 });
+  }
+
   try {
     event = stripe.webhooks.constructEvent(payload, signature, webhookSecret);
   } catch (error) {
@@ -37,6 +43,11 @@ export async function POST(request: Request) {
       case "checkout.session.completed": {
         const checkout = event.data.object as Stripe.Checkout.Session;
         await handleCheckoutCompleted(checkout);
+        break;
+      }
+      case "checkout.session.expired": {
+        const checkout = event.data.object as Stripe.Checkout.Session;
+        await handleCheckoutExpired(checkout);
         break;
       }
       case "payment_intent.payment_failed": {
@@ -72,6 +83,10 @@ async function handleCheckoutCompleted(checkout: Stripe.Checkout.Session) {
   });
 
   const product = purchase?.product ?? (productId ? await prisma.product.findUnique({ where: { id: productId } }) : null);
+
+  if (purchase?.status === PurchaseStatus.COMPLETED) {
+    return;
+  }
 
   if (!purchase && userId && product) {
     const accessStart = new Date();
@@ -118,10 +133,32 @@ async function handlePaymentFailed(paymentIntent: Stripe.PaymentIntent) {
   await prisma.purchase.updateMany({
     where: {
       stripePaymentId: paymentIntentId,
+      status: {
+        in: [PurchaseStatus.PENDING, PurchaseStatus.FAILED],
+      },
     },
     data: {
       status: PurchaseStatus.FAILED,
     },
+  });
+}
+
+async function handleCheckoutExpired(checkout: Stripe.Checkout.Session) {
+  const purchase = await prisma.purchase.findFirst({
+    where: { stripeSessionId: checkout.id },
+  });
+
+  if (!purchase) {
+    return;
+  }
+
+  if (purchase.status === PurchaseStatus.COMPLETED || purchase.status === PurchaseStatus.REFUNDED) {
+    return;
+  }
+
+  await prisma.purchase.update({
+    where: { id: purchase.id },
+    data: { status: PurchaseStatus.CANCELED },
   });
 }
 

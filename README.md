@@ -33,11 +33,19 @@ Log in with the seeded preview account on `/signup` (email `candidate@example.co
 
 Set the following env vars to enable checkout and webhook flows:
 
-- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
-- `STRIPE_SECRET_KEY`
-- `STRIPE_WEBHOOK_SECRET`
+- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` – publishable key used by `@stripe/stripe-js` in the checkout page.
+- `STRIPE_SECRET_KEY` – server-side secret key for creating sessions and verifying webhooks.
+- `STRIPE_WEBHOOK_SECRET` – obtained from the Stripe CLI or dashboard when registering the webhook endpoint.
 
-An optional `STRIPE_TEST_PRICE_ID` can be used to map the seeded product to a live Price; otherwise the checkout route will create on-the-fly price data using the Prisma product values.
+> If any of these variables are missing, the app stays online but checkout routes return a 503 so you can still develop other features without Stripe configured.
+
+**Local Stripe workflow**
+
+1. Install and log into the Stripe CLI: `stripe login`.
+2. Start your dev server on `http://localhost:3000`.
+3. Run `stripe listen --forward-to http://localhost:3000/api/webhooks/stripe` to forward events locally. The CLI prints a webhook signing secret — copy it into `STRIPE_WEBHOOK_SECRET` in `.env`.
+4. Optionally set `STRIPE_TEST_PRICE_ID` to an existing test-mode Price so the seeded product reuses that price instead of the on-the-fly amount in Prisma.
+5. Use the `/checkout` page to launch Stripe Checkout and the `/checkout/success` page to verify entitlements after test payments.
 
 ## Vector Store Integration
 

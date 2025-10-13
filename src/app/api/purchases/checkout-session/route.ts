@@ -5,7 +5,7 @@ import Stripe from "stripe";
 import { authOptions } from "@/lib/auth-options";
 import { hasActiveEntitlement } from "@/lib/entitlements";
 import { prisma } from "@/lib/prisma";
-import { stripe } from "@/lib/stripe";
+import { getStripeClient } from "@/lib/stripe";
 import { PurchaseStatus } from "@prisma/client";
 
 export async function POST(request: Request) {
@@ -67,6 +67,17 @@ export async function POST(request: Request) {
       },
       quantity: 1,
     };
+  }
+
+  const stripe = getStripeClient();
+
+  if (!stripe) {
+    return NextResponse.json(
+      {
+        error: "Payments are offline. Try again later or contact support to complete your purchase.",
+      },
+      { status: 503 },
+    );
   }
 
   const checkoutSession = await stripe.checkout.sessions.create({

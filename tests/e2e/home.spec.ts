@@ -22,10 +22,13 @@ test.describe('Landing page experience', () => {
   test('navigates to the tour page from the secondary CTA', async ({ page }) => {
     await page.goto('/');
 
-    await Promise.all([
-      page.waitForURL('**/tour', { timeout: 15_000 }),
-      page.getByRole('link', { name: /Preview study tools/i }).click(),
-    ]);
+    const navigation = page.waitForNavigation({
+      url: '**/tour',
+      waitUntil: 'domcontentloaded',
+      timeout: 15_000,
+    });
+    await page.getByRole('link', { name: /Preview study tools/i }).click();
+    await navigation;
     await expect(
       page.getByRole('heading', { level: 1, name: /Explore the workflows you'll rely on/i }),
     ).toBeVisible();
