@@ -1,0 +1,75 @@
+{
+  "pipeline_info": {
+    "name": "NBCOT Test Files Pipeline (Simple)",
+    "version": "1.0",
+    "processed_at": "2025-08-24T12:26:56.356202",
+    "requires_qdrant": false
+  },
+  "processing_summary": {
+    "total_files": 6,
+    "successful_files": 6,
+    "failed_files": 0
+  },
+  "file_results": {
+    "Case-Smith_s-Occupational-Therapy-for-Children-and-Adolescents (1).pdf": {
+      "filename": "Case-Smith_s-Occupational-Therapy-for-Children-and-Adolescents (1).pdf",
+      "file_path": "NBCOT Test files\\Case-Smith_s-Occupational-Therapy-for-Children-and-Adolescents (1).pdf",
+      "file_size": 334449818,
+      "file_hash": "f25b4073e97b862a1c6850b0e45a0a1a",
+      "chunk_count": 922,
+      "total_text_length": 4981378,
+      "processed_at": "2025-08-24T12:19:26.618939",
+      "source": "NBCOT_Test_Files"
+    },
+    "Copy of 524643756-Pedretti-s-Occupational-Therapy-Practice-Skills-for-Physical-Dysfunction-by-Heidi-McHugh-Pendleton-Winifred-Schultz-Krohn-Z-lib-org (1).pdf": {
+      "filename": "Copy of 524643756-Pedretti-s-Occupational-Therapy-Practice-Skills-for-Physical-Dysfunction-by-Heidi-McHugh-Pendleton-Winifred-Schultz-Krohn-Z-lib-org (1).pdf",
+      "file_path": "NBCOT Test files\\Copy of 524643756-Pedretti-s-Occupational-Therapy-Practice-Skills-for-Physical-Dysfunction-by-Heidi-McHugh-Pendleton-Winifred-Schultz-Krohn-Z-lib-org (1).pdf",
+      "file_size": 55324082,
+      "file_hash": "3d7d5fe7f24590cea7a328eb0b448d80",
+      "chunk_count": 1258,
+      "total_text_length": 6565502,
+      "processed_at": "2025-08-24T12:22:43.974379",
+      "source": "NBCOT_Test_Files"
+    },
+    "Copy of Willard-and-Spackman\u2019s-Occupational-Therapy-13th-Edition (1).pdf": {
+      "filename": "Copy of Willard-and-Spackman\u2019s-Occupational-Therapy-13th-Edition (1).pdf",
+      "file_path": "NBCOT Test files\\Copy of Willard-and-Spackman\u2019s-Occupational-Therapy-13th-Edition (1).pdf",
+      "file_size": 30433400,
+      "file_hash": "38fdd923a6fd8c0be6323796fc4c731b",
+      "chunk_count": 1126,
+      "total_text_length": 5970135,
+      "processed_at": "2025-08-24T12:25:32.428386",
+      "source": "NBCOT_Test_Files"
+    },
+    "Functional Cognition and OT.pdf": {
+      "filename": "Functional Cognition and OT.pdf",
+      "file_path": "NBCOT Test files\\Functional Cognition and OT.pdf",
+      "file_size": 42738663,
+      "file_hash": "fa9d3a02cfb425870f3c03cc29802456",
+      "chunk_count": 203,
+      "total_text_length": 1147292,
+      "processed_at": "2025-08-24T12:25:45.101358",
+      "source": "NBCOT_Test_Files"
+    },
+    "milestones.pdf": {
+      "filename": "milestones.pdf",
+      "file_path": "NBCOT Test files\\milestones.pdf",
+      "file_size": 225286,
+      "file_hash": "48b74c57664504b23082317360c02056",
+      "chunk_count": 3,
+      "total_text_length": 13423,
+      "processed_at": "2025-08-24T12:25:45.782441",
+      "source": "NBCOT_Test_Files"
+    },
+    "Occupational Therapy in Mental Health A Vision for Participation.pdf": {
+      "filename": "Occupational Therapy in Mental Health A Vision for Participation.pdf",
+      "file_path": "NBCOT Test files\\Occupational Therapy in Mental Health A Vision for Participation.pdf",
+      "file_size": 37851609,
+      "file_hash": "d9bae2c9902442de4b80e9ef0a1086bb",
+      "chunk_count": 1085,
+      "total_text_length": 5932169,
+      "processed_at": "2025-08-24T12:26:55.805201",
+      "source": "NBCOT_Test_Files"
+    }
+  }
+}

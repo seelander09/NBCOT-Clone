@@ -1,0 +1,9 @@
+﻿{
+  "browser": "chromium",
+  "headless": false,
+  "allowedHosts": ["localhost", "127.0.0.1"],
+  "outputDir": "E:/Projects/NBCOT-Clone/.mcp/playwright-output",
+  "saveTrace": true,
+  "saveVideo": "1280x720",
+  "timeoutAction": 10000
+}

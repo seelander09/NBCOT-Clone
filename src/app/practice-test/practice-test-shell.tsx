@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
@@ -135,9 +135,24 @@ function selectionsMatch(selected: string[] | undefined, answerKey: string[] | u
 export function PracticeTestShell({ questions }: PracticeTestShellProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerState>({});
+  const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
   const [reviewFlags, setReviewFlags] = useState<ReviewFlagState>({});
   const [remediationById, setRemediationById] = useState<Record<string, RemediationState>>({});
   const [exportState, setExportState] = useState<ExportState>("idle");
+  const [questionTimers, setQuestionTimers] = useState<Record<string, number>>({});
+  const [questionTimerEnabled, setQuestionTimerEnabled] = useState(true);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submissionSummary, setSubmissionSummary] = useState<{
+    correct: number;
+    total: number;
+    details: Array<{
+      questionId: string;
+      order: number;
+      answerKey: string[];
+      response: string[];
+      isCorrect: boolean;
+    }>;
+  } | null>(null);
 
   const [sessionStart] = useState(() => Date.now());
   const [elapsedMs, setElapsedMs] = useState(0);
@@ -150,11 +165,36 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     return () => window.clearInterval(handle);
   }, [sessionStart]);
 
+  useEffect(() => {
+    if (!questionTimerEnabled || isSubmitted) {
+      return;
+    }
+
+    const questionId = questions[activeIndex].id;
+    setQuestionTimers((prev) =>
+      prev[questionId] !== undefined ? prev : { ...prev, [questionId]: 0 },
+    );
+
+    const handle = window.setInterval(() => {
+      setQuestionTimers((prev) => {
+        const current = prev[questionId] ?? 0;
+        return { ...prev, [questionId]: current + 1 };
+      });
+    }, 1000);
+
+    return () => window.clearInterval(handle);
+  }, [activeIndex, questionTimerEnabled, isSubmitted, questions]);
+
   const activeQuestion = questions[activeIndex];
   const remediationState = remediationById[activeQuestion.id];
   const keywordKey = activeQuestion.keywords.join("|");
+  const isAnswerRevealed = Boolean(revealedAnswers[activeQuestion.id]);
 
   useEffect(() => {
+    if (!isAnswerRevealed) {
+      return;
+    }
+
     if (remediationState?.status === "loading" || remediationState?.status === "ready" || remediationState?.status === "error") {
       return;
     }
@@ -230,7 +270,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
       cancelled = true;
       controller.abort();
     };
-  }, [activeQuestion.id, activeQuestion.remediationPrompt, activeQuestion.keywords, activeQuestion.keywords.length, keywordKey, remediationState?.status]);
+  }, [activeQuestion.id, activeQuestion.remediationPrompt, keywordKey, isAnswerRevealed]);
 
   const referenceSnippets = useMemo(
     () => extractReferenceSnippets(activeQuestion.content),
@@ -300,6 +340,16 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
   const requiredSelections = activeQuestion.requiredSelections ?? activeQuestion.answerKey?.length ?? 0;
   const isMultiSelect = hasSelectableOptions && requiredSelections > 1;
   const activeAnswerIsCorrect = selectionsMatch(activeAnswer, activeQuestion.answerKey);
+  const answerKeySet = useMemo(
+    () => new Set(activeQuestion.answerKey ?? []),
+    [activeQuestion.answerKey],
+  );
+  const showRevealFeedback = isAnswerRevealed && answerKeySet.size > 0;
+  const activeQuestionSeconds = questionTimers[activeQuestion.id] ?? 0;
+  const formattedQuestionTime = formatDuration(activeQuestionSeconds * 1000);
+  const hasStoredAnswerKey = (activeQuestion.answerKey?.length ?? 0) > 0;
+  const hasActiveSelection = activeAnswer.length > 0;
+  const revealButtonDisabled = !isAnswerRevealed && activeAnswer.length === 0;
 
   const exportRows = useMemo(
     () =>
@@ -317,6 +367,28 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
       }),
     [answers, questions, reviewFlags],
   );
+
+  const answerStatus = useMemo(() => {
+    return questions.reduce<Record<string, "unanswered" | "correct" | "incorrect">>((acc, question) => {
+      const response = normalizeSelections(answers[question.id]);
+      const comparison = selectionsMatch(response, question.answerKey);
+      if (response.length === 0) {
+        acc[question.id] = "unanswered";
+      } else if (comparison === true) {
+        acc[question.id] = "correct";
+      } else {
+        acc[question.id] = "incorrect";
+      }
+      return acc;
+    }, {});
+  }, [answers, questions]);
+
+  const correctQuestionOrders = submissionSummary
+    ? submissionSummary.details.filter((detail) => detail.isCorrect).map((detail) => detail.order)
+    : [];
+  const incorrectQuestionOrders = submissionSummary
+    ? submissionSummary.details.filter((detail) => !detail.isCorrect).map((detail) => detail.order)
+    : [];
 
   function handleExport(format: "json" | "csv") {
     if (!canExport) {
@@ -373,7 +445,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
   }
 
   function handleSelectAnswer(choice: string) {
-    if (!hasSelectableOptions) {
+    if (!hasSelectableOptions || isSubmitted) {
       return;
     }
     setAnswers((prev) => {
@@ -406,8 +478,53 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     });
   }
 
+  function handleRevealAnswer() {
+    setRevealedAnswers((prev) => ({ ...prev, [activeQuestion.id]: true }));
+  }
+
+  function handleHideAnswer() {
+    setRevealedAnswers((prev) => {
+      if (!prev[activeQuestion.id]) {
+        return prev;
+      }
+      const next = { ...prev };
+      delete next[activeQuestion.id];
+      return next;
+    });
+  }
+
   function toggleReviewFlag() {
     setReviewFlags((prev) => ({ ...prev, [activeQuestion.id]: !prev[activeQuestion.id] }));
+  }
+
+  function handleToggleQuestionTimer() {
+    if (isSubmitted) {
+      return;
+    }
+    setQuestionTimerEnabled((prev) => !prev);
+  }
+
+  function handleSubmitTest() {
+    if (isSubmitted) {
+      return;
+    }
+
+    const details = exportRows.map((row) => ({
+      questionId: row.questionId,
+      order: row.order,
+      answerKey: row.answerKey,
+      response: row.response,
+      isCorrect: row.isCorrect,
+    }));
+
+    const correct = details.filter((detail) => detail.isCorrect).length;
+
+    setSubmissionSummary({
+      correct,
+      total: details.length,
+      details,
+    });
+    setIsSubmitted(true);
   }
 
   return (
@@ -434,7 +551,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
             </div>
             <div className="flex items-center justify-between">
               <dt>Accuracy</dt>
-              <dd className="font-semibold text-slate-900">{accuracy !== null ? `${accuracy}%` : "—"}</dd>
+              <dd className="font-semibold text-slate-900">{accuracy !== null ? `${accuracy}%` : "�"}</dd>
             </div>
           </dl>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -492,6 +609,50 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
           </div>
         </section>
 
+        {isSubmitted && submissionSummary ? (
+          <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Results summary
+            </div>
+            <div className="mt-4 space-y-2 text-sm text-slate-600">
+              <p>
+                Score:{" "}
+                <span className="font-semibold text-slate-900">
+                  {submissionSummary.correct} / {submissionSummary.total}
+                </span>
+              </p>
+              <p>
+                Accuracy:{" "}
+                <span className="font-semibold text-slate-900">
+                  {Math.round((submissionSummary.correct / submissionSummary.total) * 100)}%
+                </span>
+              </p>
+            </div>
+            <div className="mt-4 grid gap-4 text-sm text-slate-600 md:grid-cols-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600">
+                  Correct
+                </p>
+                <p className="mt-2 text-xs">
+                  {correctQuestionOrders.length > 0 ? correctQuestionOrders.join(", ") : "-"}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rose-600">
+                  Needs review
+                </p>
+                <p className="mt-2 text-xs">
+                  {incorrectQuestionOrders.length > 0 ? incorrectQuestionOrders.join(", ") : "-"}
+                </p>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-slate-500">
+              Use the question navigator to jump back to specific items. Circles are color-coded once the
+              test is submitted.
+            </p>
+          </section>
+        ) : null}
+
         <section className="rounded-3xl border border-slate-200 bg-white p-4">
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
             Navigate questions
@@ -501,6 +662,22 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
               const isActive = index === activeIndex;
               const isAnswered = (answers[question.id]?.length ?? 0) > 0;
               const isFlagged = Boolean(reviewFlags[question.id]);
+              const status = answerStatus[question.id] ?? "unanswered";
+
+              let baseClasses = "border-slate-200 bg-white text-slate-600 hover:border-slate-400";
+              if (isSubmitted) {
+                if (status === "correct") {
+                  baseClasses = "border-emerald-500 bg-emerald-50 text-emerald-700";
+                } else if (status === "incorrect") {
+                  baseClasses = "border-rose-400 bg-rose-50 text-rose-700";
+                } else {
+                  baseClasses = "border-slate-200 bg-white text-slate-500";
+                }
+              } else if (isActive) {
+                baseClasses = "border-sky-500 bg-sky-50 text-sky-600";
+              } else if (isAnswered) {
+                baseClasses = "border-emerald-200 bg-emerald-50 text-emerald-600";
+              }
 
               return (
                 <button
@@ -509,9 +686,8 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
                   onClick={() => setActiveIndex(index)}
                   className={classNames(
                     "flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold transition",
-                    isActive && "border-sky-500 bg-sky-50 text-sky-600",
-                    !isActive && "border-slate-200 bg-white text-slate-600 hover:border-slate-400",
-                    isAnswered && !isActive && "bg-emerald-50 text-emerald-600 border-emerald-200",
+                    baseClasses,
+                    isActive && "ring-2 ring-offset-2 ring-sky-300",
                     isFlagged && "ring-2 ring-offset-2 ring-amber-400",
                   )}
                   aria-label={`Jump to question ${question.order}`}
@@ -564,13 +740,34 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
                 <ReactMarkdown components={markdownComponents}>{activeQuestion.prompt}</ReactMarkdown>
               </div>
             ) : null}
-          </div>
+        </div>
 
-          {activeQuestion.imagePaths.length > 0 ? (
-            <div className="mt-6 space-y-4">
-              {activeQuestion.imagePaths.map((imagePath, index) => (
-                <div
-                  key={imagePath}
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-600">
+          <span>
+            <span className="font-semibold text-slate-700">Time on this question:</span> {formattedQuestionTime}
+          </span>
+          <button
+            type="button"
+            onClick={handleToggleQuestionTimer}
+            disabled={isSubmitted}
+            className={classNames(
+              "rounded-full border px-3 py-1 text-xs font-semibold transition",
+              isSubmitted
+                ? "cursor-not-allowed border-slate-200 text-slate-400"
+                : questionTimerEnabled
+                  ? "border-slate-300 text-slate-600 hover:border-slate-400 hover:bg-slate-100"
+                  : "border-emerald-300 text-emerald-600 hover:border-emerald-400 hover:bg-emerald-50",
+            )}
+          >
+            {questionTimerEnabled ? "Pause timer" : "Resume timer"}
+          </button>
+        </div>
+
+        {activeQuestion.imagePaths.length > 0 ? (
+          <div className="mt-6 space-y-4">
+            {activeQuestion.imagePaths.map((imagePath, index) => (
+              <div
+                key={imagePath}
                   className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100"
                 >
                   <div className="relative mx-auto w-full max-w-3xl">
@@ -588,213 +785,251 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
                 </div>
               ))}
             </div>
-          ) : (
-            <div className="mt-6 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-500">
-              No uploaded screenshot for this item yet. Use the rationale panel below to review the written prompt.
-            </div>
-          )}
+            ) : null}
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 space-y-4">
             {hasSelectableOptions ? (
               <>
                 {isMultiSelect ? (
-                  <p className="w-full text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                     Select {requiredSelections || (activeQuestion.answerKey?.length ?? 0)} choices
                   </p>
                 ) : null}
-                {choiceOptions.map((choice) => {
-                  const isSelected = activeAnswer.includes(choice.key);
-                  return (
-                    <button
-                      key={choice.key}
-                      type="button"
-                      onClick={() => handleSelectAnswer(choice.key)}
-                      className={classNames(
-                        "flex min-h-[3rem] w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left transition",
-                        isSelected
-                          ? "border-sky-500 bg-sky-50 text-sky-700"
-                          : "border-slate-200 text-slate-600 hover:border-slate-400 hover:bg-slate-50",
-                      )}
-                    >
-                      <span className="text-base font-semibold">{choice.label}</span>
-                    </button>
-                  );
-                })}
+                <div className="flex flex-col gap-3">
+                  {choiceOptions.map((choice) => {
+                    const isSelected = activeAnswer.includes(choice.key);
+                    const isCorrectChoice = answerKeySet.has(choice.key);
+                    return (
+                      <button
+                        key={choice.key}
+                        type="button"
+                        data-testid="answer-option"
+                        data-choice-key={choice.key}
+                        onClick={() => handleSelectAnswer(choice.key)}
+                        className={classNames(
+                          "flex min-h-[3rem] w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left transition",
+                          showRevealFeedback
+                            ? isCorrectChoice
+                              ? "border-emerald-500 bg-emerald-50 text-emerald-700"
+                              : isSelected
+                                ? "border-rose-400 bg-rose-50 text-rose-700"
+                                : "border-slate-200 text-slate-600"
+                            : isSelected
+                              ? "border-sky-500 bg-sky-50 text-sky-700"
+                              : "border-slate-200 text-slate-600 hover:border-slate-400 hover:bg-slate-50",
+                        )}
+                      >
+                        <span className="text-base font-semibold">
+                          <span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-xs font-semibold uppercase text-slate-500">
+                            {choice.key}
+                          </span>
+                          {choice.label}
+                          {showRevealFeedback && isCorrectChoice ? (
+                            <span className="ml-3 inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+                              Correct
+                            </span>
+                          ) : null}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </>
             ) : (
-              <p className="w-full rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-600">
-                This knowledge card doesn’t have multiple-choice responses. Review the summary below and continue when you’re ready.
+              <p className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+                This knowledge card doesn't have multiple-choice responses. Review the summary below and continue when you're ready.
               </p>
             )}
-            <button
-              type="button"
-              onClick={toggleReviewFlag}
-              className={classNames(
-                "ml-auto rounded-full border px-4 py-2 text-sm font-semibold transition",
-                reviewFlags[activeQuestion.id]
-                  ? "border-amber-300 bg-amber-50 text-amber-700"
-                  : "border-slate-200 text-slate-500 hover:border-slate-400 hover:bg-slate-50",
+            <div className="flex flex-wrap items-center gap-3">
+              {hasSelectableOptions ? (
+                <button
+                  type="button"
+                  onClick={isAnswerRevealed ? handleHideAnswer : handleRevealAnswer}
+                  className={classNames(
+                    "rounded-full px-4 py-2 text-sm font-semibold transition",
+                    isAnswerRevealed
+                      ? "border border-slate-200 bg-slate-100 text-slate-600 hover:border-slate-300 hover:bg-slate-200"
+                      : "border border-sky-500 bg-sky-50 text-sky-700 hover:border-sky-500/80 hover:bg-sky-100 disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400",
+                  )}
+                  disabled={revealButtonDisabled}
+                >
+                  {isAnswerRevealed ? "Hide answer & rationale" : "Reveal answer & rationale"}
+                </button>
+              ) : null}
+              <button
+                type="button"
+                onClick={toggleReviewFlag}
+                className={classNames(
+                  "ml-auto rounded-full border px-4 py-2 text-sm font-semibold transition",
+                  reviewFlags[activeQuestion.id]
+                    ? "border-amber-300 bg-amber-50 text-amber-700"
+                    : "border-slate-200 text-slate-500 hover:border-slate-400 hover:bg-slate-50",
+                )}
+              >
+                {reviewFlags[activeQuestion.id] ? "Remove review flag" : "Mark for review"}
+              </button>
+            </div>
+            <div className="pt-2">
+              {!isSubmitted ? (
+                <button
+                  type="button"
+                  onClick={handleSubmitTest}
+                  className={classNames(
+                    "rounded-full border px-4 py-2 text-sm font-semibold transition",
+                    answeredCount > 0
+                      ? "border-emerald-500 bg-emerald-50 text-emerald-700 hover:border-emerald-600 hover:bg-emerald-100"
+                      : "cursor-not-allowed border-slate-200 text-slate-400",
+                  )}
+                  disabled={answeredCount === 0}
+                >
+                  Submit practice test
+                </button>
+              ) : (
+                <span className="text-sm font-semibold text-emerald-600">
+                  Test submitted. Use the navigator to review each item.
+                </span>
               )}
-            >
-              {reviewFlags[activeQuestion.id] ? "Remove review flag" : "Mark for review"}
-            </button>
+            </div>
           </div>
 
           <div className="mt-4 text-sm text-slate-600">
-            {activeQuestion.answerKey?.length ? (
-              activeAnswer.length > 0 ? (
+            {hasStoredAnswerKey ? (
+              isAnswerRevealed ? (
                 <p>
                   {activeAnswerIsCorrect === true
-                    ? "✅ Your selections match the stored answer key for this question."
-                    : `📝 Stored answer key: ${activeQuestion.answerKey.join(", ")}. Your selections: ${normalizeSelections(activeAnswer).join(", ") || "—"}.`}
+                    ? "Correct! Your selections match the stored answer key for this question."
+                    : `Stored answer key: ${activeQuestion.answerKey!.join(", ")}. Your selections: ${normalizeSelections(activeAnswer).join(", ") || "-"}.`}
+                </p>
+              ) : hasActiveSelection ? (
+                <p>
+                  Answer saved. Click <span className="font-semibold text-slate-800">Reveal answer &amp; rationale</span> when you want to check your work.
                 </p>
               ) : (
                 <p>
-                  Answer key loaded.{" "}
-                  {isMultiSelect
-                    ? `Select ${requiredSelections || activeQuestion.answerKey.length} choices to compare against the stored key (${activeQuestion.answerKey.join(", ")}).`
-                    : `Select a choice to compare against the stored key (${activeQuestion.answerKey.join(", ")}).`}
+                  Select an option to capture your response. Reveal the answer only after you&apos;re ready to check the stored key.
                 </p>
               )
-            ) : (
+            ) : isAnswerRevealed ? (
               <p>Answer key not imported for this question yet. Your response will still be included in the export.</p>
+            ) : (
+              <p>No stored answer key for this question yet. We&apos;ll keep your response logged for the session export.</p>
             )}
           </div>
 
-          <div className="mt-6 space-y-4">
-            <article className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">AI answer breakdown</p>
-              {activeQuestion.content ? (
-                <div className="mt-3 text-sm text-slate-700">
-                  <ReactMarkdown components={markdownComponents}>{activeQuestion.content}</ReactMarkdown>
-                </div>
-              ) : (
-                <p className="mt-3 text-sm text-slate-600">
-                  We do not have a written rationale imported for this question yet. Use the screenshot above and jot your takeaway so the team can backfill the explanation.
-                </p>
-              )}
-            </article>
-
-            <article className="rounded-2xl border border-indigo-200 bg-indigo-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">Book answer</p>
-              {remediationStatus === "loading" && !hasAnyBookSupport ? (
-                <p className="mt-3 text-sm text-slate-600">Pulling textbook matches from the vector store.</p>
-              ) : null}
-              {remediationStatus === "loading" && hasAnyBookSupport ? (
-                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-indigo-500">
-                  Vector lookup in progress - showing saved reference meanwhile.
-                </p>
-              ) : null}
-              {remediationStatus === "error" && !hasAnyBookSupport ? (
-                <p className="mt-3 text-sm text-slate-600">
-                  Vector store lookup unavailable right now. Use the study log highlights below while the integration is offline.
-                </p>
-              ) : null}
-              {remediationStatus === "error" && hasAnyBookSupport ? (
-                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-indigo-500">
-                  Vector store offline - displaying the saved citation instead.
-                </p>
-              ) : null}
-              {hasAnyBookSupport ? (
-                <div className="mt-3 space-y-2 text-sm text-slate-700">
-                  <p className="text-base font-semibold text-slate-900">{topRemediationItem!.title}</p>
-                  <p>{topRemediationItem!.excerpt}</p>
-                  {topRemediationItem!.source ? (
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-500">{topRemediationItem!.source}</p>
-                  ) : null}
-                  {additionalRemediationItems.length > 0 ? (
-                    <p className="text-xs text-indigo-600">
-                      More matched excerpts are listed in the book anchor panel below.
-                    </p>
-                  ) : null}
-                </div>
-              ) : remediationStatus === "ready" ? (
-                <p className="mt-3 text-sm text-slate-600">
-                  No book excerpts retrieved for this question yet. Try adding keywords to the vector store or reference your study log notes.
-                </p>
-              ) : (
-                <p className="mt-3 text-sm text-slate-600">
-                  Select an answer to trigger the textbook lookup or reference your study log notes.
-                </p>
-              )}
-            </article>
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600">
+            {isAnswerRevealed ? (
+              <p>
+                Review the detailed rationale and supporting citations in the panels to the right to confirm your understanding.
+              </p>
+            ) : (
+              <p>Reveal the answer to view the detailed rationale.</p>
+            )}
           </div>
         </section>
 
         <section className="space-y-6">
           <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
             <h2 className="font-heading text-xl text-slate-900">AI deep dive & rationale</h2>
-            {activeQuestion.content ? (
-              <div className="mt-3">
-                <ReactMarkdown components={markdownComponents}>{activeQuestion.content}</ReactMarkdown>
-              </div>
+            {isAnswerRevealed ? (
+              activeQuestion.content ? (
+                <div className="mt-3">
+                  <ReactMarkdown components={markdownComponents}>{activeQuestion.content}</ReactMarkdown>
+                </div>
+              ) : (
+                <p className="mt-4 text-sm text-slate-500">
+                  We do not have a written rationale imported for this question yet. Use the screenshot above and jot your takeaway so the team can backfill the explanation.
+                </p>
+              )
             ) : (
-              <p className="mt-4 text-sm text-slate-500">
-                We do not have a written rationale imported for this question yet. Use the screenshot above and jot your takeaway so the team can backfill the explanation.
+              <p className="mt-4 text-sm text-slate-600">
+                Reveal the answer when you&apos;re ready to see the full walkthrough and explanation.
               </p>
             )}
           </article>
 
           <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
             <h2 className="font-heading text-xl text-slate-900">Book anchor (vector store)</h2>
-            {additionalRemediationItems.length > 0 ? (
-              <div className="mt-4 space-y-3">
-                {additionalRemediationItems.map((item) => (
-                  <div key={item.id} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                    <p className="text-sm font-semibold text-slate-900">{item.title}</p>
-                    <p className="mt-1 text-sm text-slate-600">{item.excerpt}</p>
-                    {item.source ? (
+            {isAnswerRevealed ? (
+              <>
+                {topRemediationItem ? (
+                  <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                    <p className="text-sm font-semibold text-slate-900">{topRemediationItem.title}</p>
+                    <p className="mt-1 text-sm text-slate-600">{topRemediationItem.excerpt}</p>
+                    {topRemediationItem.source ? (
                       <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                        {item.source}
+                        {topRemediationItem.source}
                       </p>
                     ) : null}
                   </div>
-                ))}
-              </div>
-            ) : remediationStatus === "ready" ? (
-              hasAnyBookSupport ? (
-                <p className="mt-4 text-sm text-slate-500">
-                  Your primary citation is highlighted with the answer recap above. No additional vector matches were returned for this question.
-                </p>
-              ) : (
-                <p className="mt-4 text-sm text-slate-500">
-                  No direct vector matches found yet. Use the highlights below or add keywords to the vector store to backfill a citation.
-                </p>
-              )
-            ) : remediationStatus === "loading" ? (
-              <p className="mt-4 text-sm text-slate-500">Pulling textbook matches from the vector store.</p>
-            ) : remediationStatus === "error" ? (
-              <p className="mt-4 text-sm text-slate-500">
-                Vector store lookup unavailable right now. Use the manual notes below while the integration is offline.
-              </p>
+                ) : null}
+                {additionalRemediationItems.length > 0 ? (
+                  <div className="mt-4 space-y-3">
+                    {additionalRemediationItems.map((item) => (
+                      <div key={item.id} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                        <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+                        <p className="mt-1 text-sm text-slate-600">{item.excerpt}</p>
+                        {item.source ? (
+                          <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                            {item.source}
+                          </p>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
+                ) : hasVectorMatches ? (
+                  <p className="mt-4 text-sm text-slate-500">
+                    This excerpt is the closest match from the vector store. No additional anchors were returned for this query.
+                  </p>
+                ) : remediationStatus === "ready" ? (
+                  hasAnyBookSupport ? (
+                    <p className="mt-4 text-sm text-slate-500">
+                      Your primary citation is highlighted with the answer recap above. No additional vector matches were returned for this question.
+                    </p>
+                  ) : (
+                    <p className="mt-4 text-sm text-slate-500">
+                      No direct vector matches found yet. Use the highlights below or add keywords to the vector store to backfill a citation.
+                    </p>
+                  )
+                ) : remediationStatus === "loading" ? (
+                  <p className="mt-4 text-sm text-slate-500">Pulling textbook matches from the vector store.</p>
+                ) : remediationStatus === "error" ? (
+                  <p className="mt-4 text-sm text-slate-500">
+                    Vector store lookup unavailable right now. Use the manual notes below while the integration is offline.
+                  </p>
+                ) : (
+                  <p className="mt-4 text-sm text-slate-500">
+                    Select an answer to trigger the book lookup or drop keywords into the store.
+                  </p>
+                )}
+                {referenceSnippets.length > 0 ? (
+                  <div className="mt-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                      Study log highlights
+                    </p>
+                    <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                      {referenceSnippets.map((snippet, index) => (
+                        <li key={`${activeQuestion.id}-ref-${index}`} className="rounded-xl bg-slate-50 px-3 py-2">
+                          {snippet}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+                {referenceSnippets.length === 0 && remediationStatus === "ready" && !hasAnyBookSupport ? (
+                  <p className="mt-4 text-sm text-slate-500">
+                    Drop keywords (e.g., Pedretti chapter titles or ICD-10 terminology) into the vector store to backfill a citation for this question.
+                  </p>
+                ) : null}
+              </>
             ) : (
-              <p className="mt-4 text-sm text-slate-500">
-                Select an answer to trigger the book lookup or drop keywords into the store.
+              <p className="mt-4 text-sm text-slate-600">
+                Reveal the answer to see supporting citations, vector matches, and study log highlights.
               </p>
             )}
-            {referenceSnippets.length > 0 ? (
-              <div className="mt-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                  Study log highlights
-                </p>
-                <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                  {referenceSnippets.map((snippet, index) => (
-                    <li key={`${activeQuestion.id}-ref-${index}`} className="rounded-xl bg-slate-50 px-3 py-2">
-                      {snippet}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-            {referenceSnippets.length === 0 && remediationStatus === "ready" && !hasAnyBookSupport ? (
-              <p className="mt-4 text-sm text-slate-500">
-                Drop keywords (e.g., Pedretti chapter titles or ICD-10 terminology) into the vector store to backfill a citation for this question.
-              </p>
-            ) : null}
           </article>
 
           <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
-            <h2 className="font-heading text-xl text-slate-900">Why NBCOT loves this prompt</h2>
+            <h2 className="font-heading text-xl text-slate-900">Why NBCOT asks this question</h2>
             <p className="mt-4 text-sm text-slate-600">{CATEGORY_RATIONALE[activeQuestion.category]}</p>
             {activeQuestion.keywords.length > 0 ? (
               <div className="mt-4">

@@ -13,7 +13,10 @@
     "prisma:deploy": "prisma migrate deploy",
     "db:up": "docker compose up -d db",
     "db:down": "docker compose down",
-    "seed:dev": "tsx scripts/seed.ts --templates --flashcards --demo-user"
+    "seed:dev": "tsx scripts/seed.ts --templates --flashcards --demo-user",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:codegen": "playwright codegen"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
@@ -27,10 +30,13 @@
     "react-dom": "19.1.0",
     "react-markdown": "^10.1.0",
     "stripe": "^16.6.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@qdrant/js-client-rest": "^1.9.0",
+    "@xenova/transformers": "^2.3.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.56.0",
     "@tailwindcss/postcss": "^4",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
