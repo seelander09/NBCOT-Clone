@@ -1,17 +1,17 @@
 ﻿import practiceQuestionsRaw from "./practice-questions.json";
 
-type RawPracticeQuestionOption = {
+export type RawPracticeQuestionOption = {
   key: string;
   label: string;
 };
 
-type RawBookAnswer = {
+export type RawBookAnswer = {
   title: string;
   excerpt: string;
   source?: string;
 };
 
-type RawPracticeScenarioItem = {
+export type RawPracticeScenarioItem = {
   id: string;
   prompt: string;
   instructions?: string;
@@ -22,7 +22,7 @@ type RawPracticeScenarioItem = {
   requiredSelections?: number;
 };
 
-type RawPracticeQuestion = {
+export type RawPracticeQuestion = {
   order: number;
   headline: string;
   images: string[];
@@ -37,6 +37,11 @@ type RawPracticeQuestion = {
 };
 
 type QuestionCategory = "task" | "knowledge" | "mixed" | "other";
+
+export type BuildPracticeQuestionsOptions = {
+  idPrefix?: string;
+  getImagePath?: (imageId: string) => string;
+};
 
 export type PracticeQuestionDomainId = "domain1" | "domain2" | "domain3" | "domain4";
 
@@ -296,8 +301,23 @@ function normalizeOptions(options: RawPracticeQuestionOption[] | undefined): Pra
     .filter((option) => option.key.length > 0 && option.label.length > 0);
 }
 
+function defaultGetImagePath(imageId: string): string {
+  const trimmed = imageId.trim().replace(/^\//, "");
+  if (!trimmed) {
+    return "";
+  }
+
+  if (/\.(png|jpe?g|webp|gif)$/i.test(trimmed)) {
+    return `/${trimmed}`;
+  }
+
+  const path = trimmed.includes("/") ? trimmed : `practice-test/${trimmed}`;
+  return `/${path}.png`;
+}
+
 function normalizeScenarioItems(
   items: RawPracticeScenarioItem[] | undefined,
+  getImagePath: (imageId: string) => string,
 ): PracticeScenarioItem[] | undefined {
   if (!items?.length) {
     return undefined;
@@ -308,7 +328,9 @@ function normalizeScenarioItems(
       id: item.id.trim(),
       prompt: item.prompt.trim(),
       instructions: item.instructions?.trim() || undefined,
-      imagePaths: (item.images ?? []).map((imageId) => `/practice-test/${imageId}.png`),
+      imagePaths: (item.images ?? [])
+        .map((imageId) => getImagePath(imageId))
+        .filter((imagePath) => imagePath.length > 0),
       content: item.content?.trim() ?? "",
       options: normalizeOptions(item.options),
       answerKey: normalizeAnswerKey(item.answerKey),
@@ -403,50 +425,62 @@ function resolveDomain(
   return DOMAIN_METADATA[selected];
 }
 
-const practiceQuestions = (practiceQuestionsRaw as RawPracticeQuestion[])
-  .filter((item) => Boolean(item.headline) || item.images.length > 0)
-  .map<PracticeQuestion>((item) => {
-    const headline = item.headline.trim();
-    const { category, subheadline } = resolveCategory(headline);
-    const imagePaths = item.images.map((imageId) => `/practice-test/${imageId}.png`);
-    const content = item.content.trim();
-    const prompt = item.prompt?.trim() || undefined;
-    const answerKey = normalizeAnswerKey(item.answerKey);
-    const options = normalizeOptions(item.options);
-    const bookAnswer = item.bookAnswer
-      ? {
-          title: item.bookAnswer.title.trim(),
-          excerpt: item.bookAnswer.excerpt.trim(),
-          source: item.bookAnswer.source?.trim() || undefined,
-        }
-      : undefined;
-    const domain = resolveDomain(item, {
-      headline,
-      prompt,
-      content,
-      category,
-    });
+export function buildPracticeQuestions(
+  rawItems: RawPracticeQuestion[],
+  options: BuildPracticeQuestionsOptions = {},
+): PracticeQuestion[] {
+  const getImagePath = options.getImagePath ?? defaultGetImagePath;
+  const idPrefix = options.idPrefix ?? "q";
 
-    return {
-      id: `q${item.order}`,
-      order: item.order,
-      headline,
-      subheadline: subheadline && subheadline.length > 0 ? subheadline : undefined,
-      category,
-      domain,
-      imagePaths,
-      content,
-      remediationPrompt: buildRemediationPrompt(headline, content, subheadline),
-      keywords: extractKeywords(content),
-      bookAnswer,
-      answerKey,
-      prompt,
-      options,
-      requiredSelections: item.requiredSelections,
-      scenarioStem: item.scenarioStem?.trim() || undefined,
-      scenarioItems: normalizeScenarioItems(item.scenarioItems),
-    };
-  })
-  .sort((a, b) => a.order - b.order);
+  return rawItems
+    .filter((item) => Boolean(item.headline) || item.images.length > 0)
+    .map<PracticeQuestion>((item) => {
+      const headline = item.headline.trim();
+      const { category, subheadline } = resolveCategory(headline);
+      const imagePaths = item.images
+        .map((imageId) => getImagePath(imageId))
+        .filter((imagePath) => imagePath.length > 0);
+      const content = item.content.trim();
+      const prompt = item.prompt?.trim() || undefined;
+      const answerKey = normalizeAnswerKey(item.answerKey);
+      const optionsNormalized = normalizeOptions(item.options);
+      const bookAnswer = item.bookAnswer
+        ? {
+            title: item.bookAnswer.title.trim(),
+            excerpt: item.bookAnswer.excerpt.trim(),
+            source: item.bookAnswer.source?.trim() || undefined,
+          }
+        : undefined;
+      const domain = resolveDomain(item, {
+        headline,
+        prompt,
+        content,
+        category,
+      });
+
+      return {
+        id: `${idPrefix}${item.order}`,
+        order: item.order,
+        headline,
+        subheadline: subheadline && subheadline.length > 0 ? subheadline : undefined,
+        category,
+        domain,
+        imagePaths,
+        content,
+        remediationPrompt: buildRemediationPrompt(headline, content, subheadline),
+        keywords: extractKeywords(content),
+        bookAnswer,
+        answerKey,
+        prompt,
+        options: optionsNormalized,
+        requiredSelections: item.requiredSelections,
+        scenarioStem: item.scenarioStem?.trim() || undefined,
+        scenarioItems: normalizeScenarioItems(item.scenarioItems, getImagePath),
+      };
+    })
+    .sort((a, b) => a.order - b.order);
+}
+
+const practiceQuestions = buildPracticeQuestions(practiceQuestionsRaw as RawPracticeQuestion[]);
 
 export default practiceQuestions;

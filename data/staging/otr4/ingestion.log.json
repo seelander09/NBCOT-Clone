@@ -1,0 +1,693 @@
+{
+  "generatedAt": "2025-10-23T20:03:53.361Z",
+  "logs": [
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 1,
+        "image": "OTRPracticeTest-4-Q001.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 2,
+        "image": "OTRPracticeTest-4-Q002.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 4,
+        "image": "OTRPracticeTest-4-Q004.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 7,
+        "image": "OTRPracticeTest-4-Q007.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 8,
+        "image": "OTRPracticeTest-4-Q008.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 2 option(s); review for truncation.",
+      "context": {
+        "order": 11,
+        "image": "OTRPracticeTest-4-Q010-S02.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 13,
+        "image": "OTRPracticeTest-4-Q010-S04.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 21,
+        "image": "OTRPracticeTest-4-Q021.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 23,
+        "image": "OTRPracticeTest-4-Q023.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 25,
+        "image": "OTRPracticeTest-4-Q025.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 26,
+        "image": "OTRPracticeTest-4-Q026.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 30,
+        "image": "OTRPracticeTest-4-Q030.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 32,
+        "image": "OTRPracticeTest-4-Q032.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 36,
+        "image": "OTRPracticeTest-4-Q036.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 37,
+        "image": "OTRPracticeTest-4-Q037.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 38,
+        "image": "OTRPracticeTest-4-Q038-S01.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 39,
+        "image": "OTRPracticeTest-4-Q038-S02.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 42,
+        "image": "OTRPracticeTest-4-Q042.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 43,
+        "image": "OTRPracticeTest-4-Q043.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 45,
+        "image": "OTRPracticeTest-4-Q045.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 49,
+        "image": "OTRPracticeTest-4-Q049.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 50,
+        "image": "OTRPracticeTest-4-Q050.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 52,
+        "image": "OTRPracticeTest-4-Q052.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 53,
+        "image": "OTRPracticeTest-4-Q053.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 54,
+        "image": "OTRPracticeTest-4-Q054.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 57,
+        "image": "OTRPracticeTest-4-Q056-S02.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 58,
+        "image": "OTRPracticeTest-4-Q056-S03.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 62,
+        "image": "OTRPracticeTest-4-Q062.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 63,
+        "image": "OTRPracticeTest-4-Q063.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 65,
+        "image": "OTRPracticeTest-4-Q065.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 66,
+        "image": "OTRPracticeTest-4-Q066.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 69,
+        "image": "OTRPracticeTest-4-Q069.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 72,
+        "image": "OTRPracticeTest-4-Q072.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 73,
+        "image": "OTRPracticeTest-4-Q073.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 74,
+        "image": "OTRPracticeTest-4-Q074.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 76,
+        "image": "OTRPracticeTest-4-Q076.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 78,
+        "image": "OTRPracticeTest-4-Q078.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 79,
+        "image": "OTRPracticeTest-4-Q079.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 80,
+        "image": "OTRPracticeTest-4-Q080.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 81,
+        "image": "OTRPracticeTest-4-Q081.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 82,
+        "image": "OTRPracticeTest-4-Q082.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 87,
+        "image": "OTRPracticeTest-4-Q087.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 95,
+        "image": "OTRPracticeTest-4-Q095.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 97,
+        "image": "OTRPracticeTest-4-Q097.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 98,
+        "image": "OTRPracticeTest-4-Q098.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 103,
+        "image": "OTRPracticeTest-4-Q103.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 104,
+        "image": "OTRPracticeTest-4-Q104.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 105,
+        "image": "OTRPracticeTest-4-Q105.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 106,
+        "image": "OTRPracticeTest-4-Q106.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 109,
+        "image": "OTRPracticeTest-4-Q107-S03.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 111,
+        "image": "OTRPracticeTest-4-Q111.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 112,
+        "image": "OTRPracticeTest-4-Q112.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 117,
+        "image": "OTRPracticeTest-4-Q117.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 122,
+        "image": "OTRPracticeTest-4-Q122.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 123,
+        "image": "OTRPracticeTest-4-Q123.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 124,
+        "image": "OTRPracticeTest-4-Q124.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 126,
+        "image": "OTRPracticeTest-4-Q126.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 128,
+        "image": "OTRPracticeTest-4-Q128.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 129,
+        "image": "OTRPracticeTest-4-Q129.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 133,
+        "image": "OTRPracticeTest-4-Q132-S02.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 135,
+        "image": "OTRPracticeTest-4-Q132-S04.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 136,
+        "image": "OTRPracticeTest-4-Q136.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 138,
+        "image": "OTRPracticeTest-4-Q138.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 140,
+        "image": "OTRPracticeTest-4-Q140.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 141,
+        "image": "OTRPracticeTest-4-Q141.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 143,
+        "image": "OTRPracticeTest-4-Q143.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 144,
+        "image": "OTRPracticeTest-4-Q144.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 147,
+        "image": "OTRPracticeTest-4-Q147.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 150,
+        "image": "OTRPracticeTest-4-Q150.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 151,
+        "image": "OTRPracticeTest-4-Q151.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 152,
+        "image": "OTRPracticeTest-4-Q152.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 2 option(s); review for truncation.",
+      "context": {
+        "order": 154,
+        "image": "OTRPracticeTest-4-Q154.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 158,
+        "image": "OTRPracticeTest-4-Q158.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 159,
+        "image": "OTRPracticeTest-4-Q159.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 160,
+        "image": "OTRPracticeTest-4-Q160.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 162,
+        "image": "OTRPracticeTest-4-Q162.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 163,
+        "image": "OTRPracticeTest-4-Q163.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 165,
+        "image": "OTRPracticeTest-4-Q165.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 166,
+        "image": "OTRPracticeTest-4-Q166.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 167,
+        "image": "OTRPracticeTest-4-Q167.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 168,
+        "image": "OTRPracticeTest-4-Q168.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 174,
+        "image": "OTRPracticeTest-4-Q174.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 175,
+        "image": "OTRPracticeTest-4-Q175.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 176,
+        "image": "OTRPracticeTest-4-Q176.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 178,
+        "image": "OTRPracticeTest-4-Q178.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 180,
+        "image": "OTRPracticeTest-4-Q180.png"
+      }
+    }
+  ]
+}

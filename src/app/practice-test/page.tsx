@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { requireAuth } from "@/lib/auth";
 import practiceQuestions from "@/data/practiceQuestions";
@@ -24,6 +25,14 @@ export default async function PracticeTestPage() {
           <p className="mt-3 max-w-3xl text-sm text-slate-600">
             Work through the screenshots you uploaded, capture your answers, and tap into the structured rationales and textbook anchors imported from your study log. Use the navigator to jump between items and flag anything you want to revisit before you score the session.
           </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/practice-lab"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 transition hover:border-slate-300 hover:bg-slate-100"
+            >
+              Explore all practice sets
+            </Link>
+          </div>
         </header>
         <PracticeTestShell questions={practiceQuestions} />
       </div>

@@ -7,8 +7,8 @@ import ReactMarkdown, { type Components } from "react-markdown";
 import type { PracticeQuestion } from "@/data/practiceQuestions";
 
 const EXPORT_SUCCESS_RESET_MS = 2500;
-const SESSION_STORAGE_KEY = "nbcot-practice-session-v1";
-const SESSION_ANALYTICS_KEY = "nbcot-practice-analytics-v1";
+const DEFAULT_SESSION_STORAGE_KEY = "nbcot-practice-session-v1";
+const DEFAULT_SESSION_ANALYTICS_KEY = "nbcot-practice-analytics-v1";
 
 const domainBadgeClasses: Record<PracticeQuestion["domain"]["id"], string> = {
   domain1: "bg-emerald-100 text-emerald-700 border border-emerald-200",
@@ -20,6 +20,8 @@ const domainBadgeClasses: Record<PracticeQuestion["domain"]["id"], string> = {
 
 type PracticeTestShellProps = {
   questions: PracticeQuestion[];
+  sessionStorageKey?: string;
+  analyticsStorageKey?: string;
 };
 
 type AnswerState = Record<string, string[] | undefined>;
@@ -175,7 +177,13 @@ function selectionsMatch(selected: string[] | undefined, answerKey: string[] | u
   return normalizedSelected.every((value, index) => value === normalizedKey[index]);
 }
 
-export function PracticeTestShell({ questions }: PracticeTestShellProps) {
+export function PracticeTestShell({
+  questions,
+  sessionStorageKey,
+  analyticsStorageKey,
+}: PracticeTestShellProps) {
+  const sessionKey = sessionStorageKey ?? DEFAULT_SESSION_STORAGE_KEY;
+  const analyticsKey = analyticsStorageKey ?? DEFAULT_SESSION_ANALYTICS_KEY;
   const [activeIndex, setActiveIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerState>({});
   const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
@@ -207,7 +215,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     }
 
     try {
-      const raw = window.localStorage.getItem(SESSION_STORAGE_KEY);
+      const raw = window.localStorage.getItem(sessionKey);
       if (!raw) {
         setIsSessionHydrated(true);
         return;
@@ -255,8 +263,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     } finally {
       setIsSessionHydrated(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [questions.length, sessionKey]);
 
   useEffect(() => {
     if (!isSessionHydrated || typeof window === "undefined") {
@@ -275,7 +282,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
         isSubmitted,
         submissionSummary,
       };
-      window.localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(payload));
+      window.localStorage.setItem(sessionKey, JSON.stringify(payload));
     } catch (error) {
       console.warn("Failed to persist practice test session", error);
     }
@@ -290,6 +297,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     isSubmitted,
     submissionSummary,
     isSessionHydrated,
+    sessionKey,
   ]);
 
   useEffect(() => {
@@ -733,10 +741,10 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
 
     if (typeof window !== "undefined") {
       try {
-        const existingRaw = window.localStorage.getItem(SESSION_ANALYTICS_KEY);
+        const existingRaw = window.localStorage.getItem(analyticsKey);
         const existing = existingRaw ? JSON.parse(existingRaw) : [];
         const nextLog = Array.isArray(existing) ? [...existing, analyticsPayload] : [analyticsPayload];
-        window.localStorage.setItem(SESSION_ANALYTICS_KEY, JSON.stringify(nextLog));
+        window.localStorage.setItem(analyticsKey, JSON.stringify(nextLog));
       } catch (error) {
         console.warn("Failed to persist practice test analytics", error);
       }
@@ -770,7 +778,7 @@ export function PracticeTestShell({ questions }: PracticeTestShellProps) {
     setElapsedMs(0);
     setSessionStart(Date.now());
     if (typeof window !== "undefined") {
-      window.localStorage.removeItem(SESSION_STORAGE_KEY);
+      window.localStorage.removeItem(sessionKey);
     }
   }
 

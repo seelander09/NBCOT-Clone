@@ -1,0 +1,364 @@
+2025-10-15 18:24:25 INFO Starting OCR run
+2025-10-15 18:24:25 INFO Source: E:\Projects\NBCOT-Clone\public\raw-questions-01
+2025-10-15 18:24:25 INFO Destination: E:\Projects\NBCOT-Clone\public\raw-questions-01\ocr
+2025-10-15 18:24:25 INFO Processing: OTRPracticeTest-4-Q001.png
+2025-10-15 18:24:26 INFO Completed OTRPracticeTest-4-Q001.png in 0.84s
+2025-10-15 18:24:26 INFO Processing: OTRPracticeTest-4-Q002.png
+2025-10-15 18:24:27 INFO Completed OTRPracticeTest-4-Q002.png in 0.31s
+2025-10-15 18:24:27 INFO Processing: OTRPracticeTest-4-Q003.png
+2025-10-15 18:24:27 INFO Completed OTRPracticeTest-4-Q003.png in 0.39s
+2025-10-15 18:24:27 INFO Processing: OTRPracticeTest-4-Q004.png
+2025-10-15 18:24:27 INFO Completed OTRPracticeTest-4-Q004.png in 0.36s
+2025-10-15 18:24:27 INFO Processing: OTRPracticeTest-4-Q005.png
+2025-10-15 18:24:28 INFO Completed OTRPracticeTest-4-Q005.png in 0.39s
+2025-10-15 18:24:28 INFO Processing: OTRPracticeTest-4-Q006.png
+2025-10-15 18:24:28 INFO Completed OTRPracticeTest-4-Q006.png in 0.36s
+2025-10-15 18:24:28 INFO Processing: OTRPracticeTest-4-Q007.png
+2025-10-15 18:24:28 INFO Completed OTRPracticeTest-4-Q007.png in 0.30s
+2025-10-15 18:24:28 INFO Processing: OTRPracticeTest-4-Q008.png
+2025-10-15 18:24:29 INFO Completed OTRPracticeTest-4-Q008.png in 0.28s
+2025-10-15 18:24:29 INFO Processing: OTRPracticeTest-4-Q009.png
+2025-10-15 18:24:29 INFO Completed OTRPracticeTest-4-Q009.png in 0.37s
+2025-10-15 18:24:29 INFO Processing: OTRPracticeTest-4-Q010-S01.png
+2025-10-15 18:24:29 INFO Completed OTRPracticeTest-4-Q010-S01.png in 0.45s
+2025-10-15 18:24:29 INFO Processing: OTRPracticeTest-4-Q010-S02.png
+2025-10-15 18:24:30 INFO Completed OTRPracticeTest-4-Q010-S02.png in 0.45s
+2025-10-15 18:24:30 INFO Processing: OTRPracticeTest-4-Q010-S03.png
+2025-10-15 18:24:30 INFO Completed OTRPracticeTest-4-Q010-S03.png in 0.45s
+2025-10-15 18:24:30 INFO Processing: OTRPracticeTest-4-Q010-S04.png
+2025-10-15 18:24:31 INFO Completed OTRPracticeTest-4-Q010-S04.png in 0.46s
+2025-10-15 18:24:31 INFO Processing: OTRPracticeTest-4-Q014.png
+2025-10-15 18:24:31 INFO Completed OTRPracticeTest-4-Q014.png in 0.39s
+2025-10-15 18:24:31 INFO Processing: OTRPracticeTest-4-Q015.png
+2025-10-15 18:24:32 INFO Completed OTRPracticeTest-4-Q015.png in 0.37s
+2025-10-15 18:24:32 INFO Processing: OTRPracticeTest-4-Q016.png
+2025-10-15 18:24:32 INFO Completed OTRPracticeTest-4-Q016.png in 0.40s
+2025-10-15 18:24:32 INFO Processing: OTRPracticeTest-4-Q017.png
+2025-10-15 18:24:32 INFO Completed OTRPracticeTest-4-Q017.png in 0.36s
+2025-10-15 18:24:32 INFO Processing: OTRPracticeTest-4-Q018.png
+2025-10-15 18:24:33 INFO Completed OTRPracticeTest-4-Q018.png in 0.32s
+2025-10-15 18:24:33 INFO Processing: OTRPracticeTest-4-Q019.png
+2025-10-15 18:24:33 INFO Completed OTRPracticeTest-4-Q019.png in 0.36s
+2025-10-15 18:24:33 INFO Processing: OTRPracticeTest-4-Q020.png
+2025-10-15 18:24:33 INFO Completed OTRPracticeTest-4-Q020.png in 0.31s
+2025-10-15 18:24:33 INFO Processing: OTRPracticeTest-4-Q021.png
+2025-10-15 18:24:34 INFO Completed OTRPracticeTest-4-Q021.png in 0.24s
+2025-10-15 18:24:34 INFO Processing: OTRPracticeTest-4-Q022.png
+2025-10-15 18:24:34 INFO Completed OTRPracticeTest-4-Q022.png in 0.27s
+2025-10-15 18:24:34 INFO Processing: OTRPracticeTest-4-Q023.png
+2025-10-15 18:24:34 INFO Completed OTRPracticeTest-4-Q023.png in 0.26s
+2025-10-15 18:24:34 INFO Processing: OTRPracticeTest-4-Q024.png
+2025-10-15 18:24:35 INFO Completed OTRPracticeTest-4-Q024.png in 0.41s
+2025-10-15 18:24:35 INFO Processing: OTRPracticeTest-4-Q025.png
+2025-10-15 18:24:35 INFO Completed OTRPracticeTest-4-Q025.png in 0.36s
+2025-10-15 18:24:35 INFO Processing: OTRPracticeTest-4-Q026.png
+2025-10-15 18:24:35 INFO Completed OTRPracticeTest-4-Q026.png in 0.24s
+2025-10-15 18:24:35 INFO Processing: OTRPracticeTest-4-Q027.png
+2025-10-15 18:24:36 INFO Completed OTRPracticeTest-4-Q027.png in 0.38s
+2025-10-15 18:24:36 INFO Processing: OTRPracticeTest-4-Q028.png
+2025-10-15 18:24:36 INFO Completed OTRPracticeTest-4-Q028.png in 0.37s
+2025-10-15 18:24:36 INFO Processing: OTRPracticeTest-4-Q029.png
+2025-10-15 18:24:36 INFO Completed OTRPracticeTest-4-Q029.png in 0.35s
+2025-10-15 18:24:36 INFO Processing: OTRPracticeTest-4-Q030.png
+2025-10-15 18:24:37 INFO Completed OTRPracticeTest-4-Q030.png in 0.30s
+2025-10-15 18:24:37 INFO Processing: OTRPracticeTest-4-Q031.png
+2025-10-15 18:24:37 INFO Completed OTRPracticeTest-4-Q031.png in 0.37s
+2025-10-15 18:24:37 INFO Processing: OTRPracticeTest-4-Q032.png
+2025-10-15 18:24:37 INFO Completed OTRPracticeTest-4-Q032.png in 0.26s
+2025-10-15 18:24:37 INFO Processing: OTRPracticeTest-4-Q033.png
+2025-10-15 18:24:38 INFO Completed OTRPracticeTest-4-Q033.png in 0.38s
+2025-10-15 18:24:38 INFO Processing: OTRPracticeTest-4-Q034.png
+2025-10-15 18:24:38 INFO Completed OTRPracticeTest-4-Q034.png in 0.38s
+2025-10-15 18:24:38 INFO Processing: OTRPracticeTest-4-Q035.png
+2025-10-15 18:24:38 INFO Completed OTRPracticeTest-4-Q035.png in 0.38s
+2025-10-15 18:24:38 INFO Processing: OTRPracticeTest-4-Q036.png
+2025-10-15 18:24:39 INFO Completed OTRPracticeTest-4-Q036.png in 0.28s
+2025-10-15 18:24:39 INFO Processing: OTRPracticeTest-4-Q037.png
+2025-10-15 18:24:39 INFO Completed OTRPracticeTest-4-Q037.png in 0.26s
+2025-10-15 18:24:39 INFO Processing: OTRPracticeTest-4-Q038-S01.png
+2025-10-15 18:24:39 INFO Completed OTRPracticeTest-4-Q038-S01.png in 0.38s
+2025-10-15 18:24:39 INFO Processing: OTRPracticeTest-4-Q038-S02.png
+2025-10-15 18:24:40 INFO Completed OTRPracticeTest-4-Q038-S02.png in 0.50s
+2025-10-15 18:24:40 INFO Processing: OTRPracticeTest-4-Q038-S03.png
+2025-10-15 18:24:40 INFO Completed OTRPracticeTest-4-Q038-S03.png in 0.43s
+2025-10-15 18:24:40 INFO Processing: OTRPracticeTest-4-Q038-S04.png
+2025-10-15 18:24:41 INFO Completed OTRPracticeTest-4-Q038-S04.png in 0.42s
+2025-10-15 18:24:41 INFO Processing: OTRPracticeTest-4-Q042.png
+2025-10-15 18:24:41 INFO Completed OTRPracticeTest-4-Q042.png in 0.27s
+2025-10-15 18:24:41 INFO Processing: OTRPracticeTest-4-Q043.png
+2025-10-15 18:24:41 INFO Completed OTRPracticeTest-4-Q043.png in 0.31s
+2025-10-15 18:24:41 INFO Processing: OTRPracticeTest-4-Q044.png
+2025-10-15 18:24:42 INFO Completed OTRPracticeTest-4-Q044.png in 0.38s
+2025-10-15 18:24:42 INFO Processing: OTRPracticeTest-4-Q045.png
+2025-10-15 18:24:42 INFO Completed OTRPracticeTest-4-Q045.png in 0.63s
+2025-10-15 18:24:42 INFO Processing: OTRPracticeTest-4-Q046.png
+2025-10-15 18:24:42 INFO Completed OTRPracticeTest-4-Q046.png in 0.31s
+2025-10-15 18:24:42 INFO Processing: OTRPracticeTest-4-Q047.png
+2025-10-15 18:24:43 INFO Completed OTRPracticeTest-4-Q047.png in 0.41s
+2025-10-15 18:24:43 INFO Processing: OTRPracticeTest-4-Q048.png
+2025-10-15 18:24:43 INFO Completed OTRPracticeTest-4-Q048.png in 0.38s
+2025-10-15 18:24:43 INFO Processing: OTRPracticeTest-4-Q049.png
+2025-10-15 18:24:44 INFO Completed OTRPracticeTest-4-Q049.png in 0.31s
+2025-10-15 18:24:44 INFO Processing: OTRPracticeTest-4-Q050.png
+2025-10-15 18:24:44 INFO Completed OTRPracticeTest-4-Q050.png in 0.32s
+2025-10-15 18:24:44 INFO Processing: OTRPracticeTest-4-Q051.png
+2025-10-15 18:24:44 INFO Completed OTRPracticeTest-4-Q051.png in 0.36s
+2025-10-15 18:24:44 INFO Processing: OTRPracticeTest-4-Q052.png
+2025-10-15 18:24:45 INFO Completed OTRPracticeTest-4-Q052.png in 0.30s
+2025-10-15 18:24:45 INFO Processing: OTRPracticeTest-4-Q053.png
+2025-10-15 18:24:45 INFO Completed OTRPracticeTest-4-Q053.png in 0.29s
+2025-10-15 18:24:45 INFO Processing: OTRPracticeTest-4-Q054.png
+2025-10-15 18:24:45 INFO Completed OTRPracticeTest-4-Q054.png in 0.26s
+2025-10-15 18:24:45 INFO Processing: OTRPracticeTest-4-Q055.png
+2025-10-15 18:24:45 INFO Completed OTRPracticeTest-4-Q055.png in 0.36s
+2025-10-15 18:24:45 INFO Processing: OTRPracticeTest-4-Q056-S01.png
+2025-10-15 18:24:46 INFO Completed OTRPracticeTest-4-Q056-S01.png in 0.39s
+2025-10-15 18:24:46 INFO Processing: OTRPracticeTest-4-Q056-S02.png
+2025-10-15 18:24:46 INFO Completed OTRPracticeTest-4-Q056-S02.png in 0.49s
+2025-10-15 18:24:46 INFO Processing: OTRPracticeTest-4-Q056-S03.png
+2025-10-15 18:24:47 INFO Completed OTRPracticeTest-4-Q056-S03.png in 0.52s
+2025-10-15 18:24:47 INFO Processing: OTRPracticeTest-4-Q056-S04.png
+2025-10-15 18:24:47 INFO Completed OTRPracticeTest-4-Q056-S04.png in 0.52s
+2025-10-15 18:24:47 INFO Processing: OTRPracticeTest-4-Q060.png
+2025-10-15 18:24:48 INFO Completed OTRPracticeTest-4-Q060.png in 0.27s
+2025-10-15 18:24:48 INFO Processing: OTRPracticeTest-4-Q061.png
+2025-10-15 18:24:48 INFO Completed OTRPracticeTest-4-Q061.png in 0.37s
+2025-10-15 18:24:48 INFO Processing: OTRPracticeTest-4-Q062.png
+2025-10-15 18:24:48 INFO Completed OTRPracticeTest-4-Q062.png in 0.30s
+2025-10-15 18:24:48 INFO Processing: OTRPracticeTest-4-Q063.png
+2025-10-15 18:24:49 INFO Completed OTRPracticeTest-4-Q063.png in 0.30s
+2025-10-15 18:24:49 INFO Processing: OTRPracticeTest-4-Q064.png
+2025-10-15 18:24:49 INFO Completed OTRPracticeTest-4-Q064.png in 0.43s
+2025-10-15 18:24:49 INFO Processing: OTRPracticeTest-4-Q065.png
+2025-10-15 18:24:49 INFO Completed OTRPracticeTest-4-Q065.png in 0.30s
+2025-10-15 18:24:49 INFO Processing: OTRPracticeTest-4-Q066.png
+2025-10-15 18:24:50 INFO Completed OTRPracticeTest-4-Q066.png in 0.27s
+2025-10-15 18:24:50 INFO Processing: OTRPracticeTest-4-Q067.png
+2025-10-15 18:24:50 INFO Completed OTRPracticeTest-4-Q067.png in 0.36s
+2025-10-15 18:24:50 INFO Processing: OTRPracticeTest-4-Q068.png
+2025-10-15 18:24:50 INFO Completed OTRPracticeTest-4-Q068.png in 0.38s
+2025-10-15 18:24:50 INFO Processing: OTRPracticeTest-4-Q069.png
+2025-10-15 18:24:51 INFO Completed OTRPracticeTest-4-Q069.png in 0.31s
+2025-10-15 18:24:51 INFO Processing: OTRPracticeTest-4-Q070.png
+2025-10-15 18:24:51 INFO Completed OTRPracticeTest-4-Q070.png in 0.36s
+2025-10-15 18:24:51 INFO Processing: OTRPracticeTest-4-Q071.png
+2025-10-15 18:24:51 INFO Completed OTRPracticeTest-4-Q071.png in 0.37s
+2025-10-15 18:24:51 INFO Processing: OTRPracticeTest-4-Q072.png
+2025-10-15 18:24:52 INFO Completed OTRPracticeTest-4-Q072.png in 0.29s
+2025-10-15 18:24:52 INFO Processing: OTRPracticeTest-4-Q073.png
+2025-10-15 18:24:52 INFO Completed OTRPracticeTest-4-Q073.png in 0.37s
+2025-10-15 18:24:52 INFO Processing: OTRPracticeTest-4-Q074.png
+2025-10-15 18:24:52 INFO Completed OTRPracticeTest-4-Q074.png in 0.42s
+2025-10-15 18:24:52 INFO Processing: OTRPracticeTest-4-Q075.png
+2025-10-15 18:24:53 INFO Completed OTRPracticeTest-4-Q075.png in 0.37s
+2025-10-15 18:24:53 INFO Processing: OTRPracticeTest-4-Q076.png
+2025-10-15 18:24:53 INFO Completed OTRPracticeTest-4-Q076.png in 0.26s
+2025-10-15 18:24:53 INFO Processing: OTRPracticeTest-4-Q077.png
+2025-10-15 18:24:54 INFO Completed OTRPracticeTest-4-Q077.png in 0.42s
+2025-10-15 18:24:54 INFO Processing: OTRPracticeTest-4-Q078.png
+2025-10-15 18:24:54 INFO Completed OTRPracticeTest-4-Q078.png in 0.29s
+2025-10-15 18:24:54 INFO Processing: OTRPracticeTest-4-Q079.png
+2025-10-15 18:24:54 INFO Completed OTRPracticeTest-4-Q079.png in 0.30s
+2025-10-15 18:24:54 INFO Processing: OTRPracticeTest-4-Q080.png
+2025-10-15 18:24:55 INFO Completed OTRPracticeTest-4-Q080.png in 0.36s
+2025-10-15 18:24:55 INFO Processing: OTRPracticeTest-4-Q081.png
+2025-10-15 18:24:55 INFO Completed OTRPracticeTest-4-Q081.png in 0.28s
+2025-10-15 18:24:55 INFO Processing: OTRPracticeTest-4-Q082.png
+2025-10-15 18:24:55 INFO Completed OTRPracticeTest-4-Q082.png in 0.30s
+2025-10-15 18:24:55 INFO Processing: OTRPracticeTest-4-Q083.png
+2025-10-15 18:24:55 INFO Completed OTRPracticeTest-4-Q083.png in 0.36s
+2025-10-15 18:24:55 INFO Processing: OTRPracticeTest-4-Q084.png
+2025-10-15 18:24:56 INFO Completed OTRPracticeTest-4-Q084.png in 0.36s
+2025-10-15 18:24:56 INFO Processing: OTRPracticeTest-4-Q085.png
+2025-10-15 18:24:56 INFO Completed OTRPracticeTest-4-Q085.png in 0.42s
+2025-10-15 18:24:56 INFO Processing: OTRPracticeTest-4-Q086.png
+2025-10-15 18:24:57 INFO Completed OTRPracticeTest-4-Q086.png in 0.37s
+2025-10-15 18:24:57 INFO Processing: OTRPracticeTest-4-Q087.png
+2025-10-15 18:24:57 INFO Completed OTRPracticeTest-4-Q087.png in 0.29s
+2025-10-15 18:24:57 INFO Processing: OTRPracticeTest-4-Q088.png
+2025-10-15 18:24:57 INFO Completed OTRPracticeTest-4-Q088.png in 0.34s
+2025-10-15 18:24:57 INFO Processing: OTRPracticeTest-4-Q089.png
+2025-10-15 18:24:58 INFO Completed OTRPracticeTest-4-Q089.png in 0.41s
+2025-10-15 18:24:58 INFO Processing: OTRPracticeTest-4-Q090.png
+2025-10-15 18:24:58 INFO Completed OTRPracticeTest-4-Q090.png in 0.55s
+2025-10-15 18:24:58 INFO Processing: OTRPracticeTest-4-Q091.png
+2025-10-15 18:24:59 INFO Completed OTRPracticeTest-4-Q091.png in 0.39s
+2025-10-15 18:24:59 INFO Processing: OTRPracticeTest-4-Q092.png
+2025-10-15 18:24:59 INFO Completed OTRPracticeTest-4-Q092.png in 0.39s
+2025-10-15 18:24:59 INFO Processing: OTRPracticeTest-4-Q093.png
+2025-10-15 18:24:59 INFO Completed OTRPracticeTest-4-Q093.png in 0.42s
+2025-10-15 18:24:59 INFO Processing: OTRPracticeTest-4-Q094.png
+2025-10-15 18:25:00 INFO Completed OTRPracticeTest-4-Q094.png in 0.34s
+2025-10-15 18:25:00 INFO Processing: OTRPracticeTest-4-Q095.png
+2025-10-15 18:25:00 INFO Completed OTRPracticeTest-4-Q095.png in 0.27s
+2025-10-15 18:25:00 INFO Processing: OTRPracticeTest-4-Q096.png
+2025-10-15 18:25:00 INFO Completed OTRPracticeTest-4-Q096.png in 0.34s
+2025-10-15 18:25:00 INFO Processing: OTRPracticeTest-4-Q097.png
+2025-10-15 18:25:01 INFO Completed OTRPracticeTest-4-Q097.png in 0.29s
+2025-10-15 18:25:01 INFO Processing: OTRPracticeTest-4-Q098.png
+2025-10-15 18:25:01 INFO Completed OTRPracticeTest-4-Q098.png in 0.26s
+2025-10-15 18:25:01 INFO Processing: OTRPracticeTest-4-Q099.png
+2025-10-15 18:25:01 INFO Completed OTRPracticeTest-4-Q099.png in 0.45s
+2025-10-15 18:25:01 INFO Processing: OTRPracticeTest-4-Q100.png
+2025-10-15 18:25:02 INFO Completed OTRPracticeTest-4-Q100.png in 0.31s
+2025-10-15 18:25:02 INFO Processing: OTRPracticeTest-4-Q101.png
+2025-10-15 18:25:02 INFO Completed OTRPracticeTest-4-Q101.png in 0.30s
+2025-10-15 18:25:02 INFO Processing: OTRPracticeTest-4-Q102.png
+2025-10-15 18:25:02 INFO Completed OTRPracticeTest-4-Q102.png in 0.34s
+2025-10-15 18:25:02 INFO Processing: OTRPracticeTest-4-Q103.png
+2025-10-15 18:25:03 INFO Completed OTRPracticeTest-4-Q103.png in 0.28s
+2025-10-15 18:25:03 INFO Processing: OTRPracticeTest-4-Q104.png
+2025-10-15 18:25:03 INFO Completed OTRPracticeTest-4-Q104.png in 0.30s
+2025-10-15 18:25:03 INFO Processing: OTRPracticeTest-4-Q105.png
+2025-10-15 18:25:03 INFO Completed OTRPracticeTest-4-Q105.png in 0.29s
+2025-10-15 18:25:03 INFO Processing: OTRPracticeTest-4-Q106.png
+2025-10-15 18:25:03 INFO Completed OTRPracticeTest-4-Q106.png in 0.30s
+2025-10-15 18:25:03 INFO Processing: OTRPracticeTest-4-Q107-S01.png
+2025-10-15 18:25:04 INFO Completed OTRPracticeTest-4-Q107-S01.png in 0.41s
+2025-10-15 18:25:04 INFO Processing: OTRPracticeTest-4-Q107-S02.png
+2025-10-15 18:25:04 INFO Completed OTRPracticeTest-4-Q107-S02.png in 0.42s
+2025-10-15 18:25:04 INFO Processing: OTRPracticeTest-4-Q107-S03.png
+2025-10-15 18:25:05 INFO Completed OTRPracticeTest-4-Q107-S03.png in 0.57s
+2025-10-15 18:25:05 INFO Processing: OTRPracticeTest-4-Q107-S04.png
+2025-10-15 18:25:05 INFO Completed OTRPracticeTest-4-Q107-S04.png in 0.49s
+2025-10-15 18:25:05 INFO Processing: OTRPracticeTest-4-Q111.png
+2025-10-15 18:25:06 INFO Completed OTRPracticeTest-4-Q111.png in 0.26s
+2025-10-15 18:25:06 INFO Processing: OTRPracticeTest-4-Q112.png
+2025-10-15 18:25:06 INFO Completed OTRPracticeTest-4-Q112.png in 0.27s
+2025-10-15 18:25:06 INFO Processing: OTRPracticeTest-4-Q113.png
+2025-10-15 18:25:06 INFO Completed OTRPracticeTest-4-Q113.png in 0.32s
+2025-10-15 18:25:06 INFO Processing: OTRPracticeTest-4-Q114.png
+2025-10-15 18:25:07 INFO Completed OTRPracticeTest-4-Q114.png in 0.40s
+2025-10-15 18:25:07 INFO Processing: OTRPracticeTest-4-Q115.png
+2025-10-15 18:25:07 INFO Completed OTRPracticeTest-4-Q115.png in 0.37s
+2025-10-15 18:25:07 INFO Processing: OTRPracticeTest-4-Q116.png
+2025-10-15 18:25:07 INFO Completed OTRPracticeTest-4-Q116.png in 0.35s
+2025-10-15 18:25:07 INFO Processing: OTRPracticeTest-4-Q117.png
+2025-10-15 18:25:08 INFO Completed OTRPracticeTest-4-Q117.png in 0.27s
+2025-10-15 18:25:08 INFO Processing: OTRPracticeTest-4-Q118.png
+2025-10-15 18:25:08 INFO Completed OTRPracticeTest-4-Q118.png in 0.48s
+2025-10-15 18:25:08 INFO Processing: OTRPracticeTest-4-Q119.png
+2025-10-15 18:25:08 INFO Completed OTRPracticeTest-4-Q119.png in 0.40s
+2025-10-15 18:25:08 INFO Processing: OTRPracticeTest-4-Q120.png
+2025-10-15 18:25:09 INFO Completed OTRPracticeTest-4-Q120.png in 0.42s
+2025-10-15 18:25:09 INFO Processing: OTRPracticeTest-4-Q121.png
+2025-10-15 18:25:09 INFO Completed OTRPracticeTest-4-Q121.png in 0.31s
+2025-10-15 18:25:09 INFO Processing: OTRPracticeTest-4-Q122.png
+2025-10-15 18:25:09 INFO Completed OTRPracticeTest-4-Q122.png in 0.28s
+2025-10-15 18:25:09 INFO Processing: OTRPracticeTest-4-Q123.png
+2025-10-15 18:25:10 INFO Completed OTRPracticeTest-4-Q123.png in 0.34s
+2025-10-15 18:25:10 INFO Processing: OTRPracticeTest-4-Q124.png
+2025-10-15 18:25:10 INFO Completed OTRPracticeTest-4-Q124.png in 0.32s
+2025-10-15 18:25:10 INFO Processing: OTRPracticeTest-4-Q125.png
+2025-10-15 18:25:11 INFO Completed OTRPracticeTest-4-Q125.png in 0.36s
+2025-10-15 18:25:11 INFO Processing: OTRPracticeTest-4-Q126.png
+2025-10-15 18:25:11 INFO Completed OTRPracticeTest-4-Q126.png in 0.29s
+2025-10-15 18:25:11 INFO Processing: OTRPracticeTest-4-Q127.png
+2025-10-15 18:25:11 INFO Completed OTRPracticeTest-4-Q127.png in 0.35s
+2025-10-15 18:25:11 INFO Processing: OTRPracticeTest-4-Q128.png
+2025-10-15 18:25:11 INFO Completed OTRPracticeTest-4-Q128.png in 0.27s
+2025-10-15 18:25:11 INFO Processing: OTRPracticeTest-4-Q129.png
+2025-10-15 18:25:12 INFO Completed OTRPracticeTest-4-Q129.png in 0.30s
+2025-10-15 18:25:12 INFO Processing: OTRPracticeTest-4-Q130.png
+2025-10-15 18:25:12 INFO Completed OTRPracticeTest-4-Q130.png in 0.37s
+2025-10-15 18:25:12 INFO Processing: OTRPracticeTest-4-Q131.png
+2025-10-15 18:25:12 INFO Completed OTRPracticeTest-4-Q131.png in 0.31s
+2025-10-15 18:25:12 INFO Processing: OTRPracticeTest-4-Q132-S01.png
+2025-10-15 18:25:13 INFO Completed OTRPracticeTest-4-Q132-S01.png in 0.49s
+2025-10-15 18:25:13 INFO Processing: OTRPracticeTest-4-Q132-S02.png
+2025-10-15 18:25:13 INFO Completed OTRPracticeTest-4-Q132-S02.png in 0.49s
+2025-10-15 18:25:13 INFO Processing: OTRPracticeTest-4-Q132-S03.png
+2025-10-15 18:25:14 INFO Completed OTRPracticeTest-4-Q132-S03.png in 0.48s
+2025-10-15 18:25:14 INFO Processing: OTRPracticeTest-4-Q132-S04.png
+2025-10-15 18:25:15 INFO Completed OTRPracticeTest-4-Q132-S04.png in 0.68s
+2025-10-15 18:25:15 INFO Processing: OTRPracticeTest-4-Q136.png
+2025-10-15 18:25:15 INFO Completed OTRPracticeTest-4-Q136.png in 0.30s
+2025-10-15 18:25:15 INFO Processing: OTRPracticeTest-4-Q137.png
+2025-10-15 18:25:15 INFO Completed OTRPracticeTest-4-Q137.png in 0.35s
+2025-10-15 18:25:15 INFO Processing: OTRPracticeTest-4-Q138.png
+2025-10-15 18:25:15 INFO Completed OTRPracticeTest-4-Q138.png in 0.27s
+2025-10-15 18:25:15 INFO Processing: OTRPracticeTest-4-Q139.png
+2025-10-15 18:25:16 INFO Completed OTRPracticeTest-4-Q139.png in 0.36s
+2025-10-15 18:25:16 INFO Processing: OTRPracticeTest-4-Q140.png
+2025-10-15 18:25:16 INFO Completed OTRPracticeTest-4-Q140.png in 0.29s
+2025-10-15 18:25:16 INFO Processing: OTRPracticeTest-4-Q141.png
+2025-10-15 18:25:16 INFO Completed OTRPracticeTest-4-Q141.png in 0.29s
+2025-10-15 18:25:16 INFO Processing: OTRPracticeTest-4-Q142.png
+2025-10-15 18:25:17 INFO Completed OTRPracticeTest-4-Q142.png in 0.29s
+2025-10-15 18:25:17 INFO Processing: OTRPracticeTest-4-Q143.png
+2025-10-15 18:25:17 INFO Completed OTRPracticeTest-4-Q143.png in 0.30s
+2025-10-15 18:25:17 INFO Processing: OTRPracticeTest-4-Q144.png
+2025-10-15 18:25:17 INFO Completed OTRPracticeTest-4-Q144.png in 0.46s
+2025-10-15 18:25:17 INFO Processing: OTRPracticeTest-4-Q145.png
+2025-10-15 18:25:18 INFO Completed OTRPracticeTest-4-Q145.png in 0.35s
+2025-10-15 18:25:18 INFO Processing: OTRPracticeTest-4-Q146.png
+2025-10-15 18:25:18 INFO Completed OTRPracticeTest-4-Q146.png in 0.40s
+2025-10-15 18:25:18 INFO Processing: OTRPracticeTest-4-Q147.png
+2025-10-15 18:25:18 INFO Completed OTRPracticeTest-4-Q147.png in 0.26s
+2025-10-15 18:25:18 INFO Processing: OTRPracticeTest-4-Q148.png
+2025-10-15 18:25:19 INFO Completed OTRPracticeTest-4-Q148.png in 0.39s
+2025-10-15 18:25:19 INFO Processing: OTRPracticeTest-4-Q149.png
+2025-10-15 18:25:19 INFO Completed OTRPracticeTest-4-Q149.png in 0.40s
+2025-10-15 18:25:19 INFO Processing: OTRPracticeTest-4-Q150.png
+2025-10-15 18:25:20 INFO Completed OTRPracticeTest-4-Q150.png in 0.28s
+2025-10-15 18:25:20 INFO Processing: OTRPracticeTest-4-Q151.png
+2025-10-15 18:25:20 INFO Completed OTRPracticeTest-4-Q151.png in 0.30s
+2025-10-15 18:25:20 INFO Processing: OTRPracticeTest-4-Q152.png
+2025-10-15 18:25:20 INFO Completed OTRPracticeTest-4-Q152.png in 0.25s
+2025-10-15 18:25:20 INFO Processing: OTRPracticeTest-4-Q153.png
+2025-10-15 18:25:20 INFO Completed OTRPracticeTest-4-Q153.png in 0.35s
+2025-10-15 18:25:20 INFO Processing: OTRPracticeTest-4-Q154.png
+2025-10-15 18:25:21 INFO Completed OTRPracticeTest-4-Q154.png in 0.32s
+2025-10-15 18:25:21 INFO Processing: OTRPracticeTest-4-Q155.png
+2025-10-15 18:25:21 INFO Completed OTRPracticeTest-4-Q155.png in 0.33s
+2025-10-15 18:25:21 INFO Processing: OTRPracticeTest-4-Q156.png
+2025-10-15 18:25:21 INFO Completed OTRPracticeTest-4-Q156.png in 0.36s
+2025-10-15 18:25:21 INFO Processing: OTRPracticeTest-4-Q157.png
+2025-10-15 18:25:22 INFO Completed OTRPracticeTest-4-Q157.png in 0.35s
+2025-10-15 18:25:22 INFO Processing: OTRPracticeTest-4-Q158.png
+2025-10-15 18:25:22 INFO Completed OTRPracticeTest-4-Q158.png in 0.29s
+2025-10-15 18:25:22 INFO Processing: OTRPracticeTest-4-Q159.png
+2025-10-15 18:25:22 INFO Completed OTRPracticeTest-4-Q159.png in 0.38s
+2025-10-15 18:25:22 INFO Processing: OTRPracticeTest-4-Q160.png
+2025-10-15 18:25:23 INFO Completed OTRPracticeTest-4-Q160.png in 0.30s
+2025-10-15 18:25:23 INFO Processing: OTRPracticeTest-4-Q161.png
+2025-10-15 18:25:23 INFO Completed OTRPracticeTest-4-Q161.png in 0.30s
+2025-10-15 18:25:23 INFO Processing: OTRPracticeTest-4-Q162.png
+2025-10-15 18:25:23 INFO Completed OTRPracticeTest-4-Q162.png in 0.29s
+2025-10-15 18:25:23 INFO Processing: OTRPracticeTest-4-Q163.png
+2025-10-15 18:25:24 INFO Completed OTRPracticeTest-4-Q163.png in 0.29s
+2025-10-15 18:25:24 INFO Processing: OTRPracticeTest-4-Q164.png
+2025-10-15 18:25:24 INFO Completed OTRPracticeTest-4-Q164.png in 0.41s
+2025-10-15 18:25:24 INFO Processing: OTRPracticeTest-4-Q165.png
+2025-10-15 18:25:24 INFO Completed OTRPracticeTest-4-Q165.png in 0.26s
+2025-10-15 18:25:24 INFO Processing: OTRPracticeTest-4-Q166.png
+2025-10-15 18:25:25 INFO Completed OTRPracticeTest-4-Q166.png in 0.25s
+2025-10-15 18:25:25 INFO Processing: OTRPracticeTest-4-Q167.png
+2025-10-15 18:25:25 INFO Completed OTRPracticeTest-4-Q167.png in 0.23s
+2025-10-15 18:25:25 INFO Processing: OTRPracticeTest-4-Q168.png
+2025-10-15 18:25:25 INFO Completed OTRPracticeTest-4-Q168.png in 0.27s
+2025-10-15 18:25:25 INFO Processing: OTRPracticeTest-4-Q169.png
+2025-10-15 18:25:25 INFO Completed OTRPracticeTest-4-Q169.png in 0.29s
+2025-10-15 18:25:25 INFO Processing: OTRPracticeTest-4-Q170.png
+2025-10-15 18:25:26 INFO Completed OTRPracticeTest-4-Q170.png in 0.37s
+2025-10-15 18:25:26 INFO Processing: OTRPracticeTest-4-Q171.png
+2025-10-15 18:25:26 INFO Completed OTRPracticeTest-4-Q171.png in 0.38s
+2025-10-15 18:25:26 INFO Processing: OTRPracticeTest-4-Q172.png
+2025-10-15 18:25:27 INFO Completed OTRPracticeTest-4-Q172.png in 0.38s
+2025-10-15 18:25:27 INFO Processing: OTRPracticeTest-4-Q173.png
+2025-10-15 18:25:27 INFO Completed OTRPracticeTest-4-Q173.png in 0.41s
+2025-10-15 18:25:27 INFO Processing: OTRPracticeTest-4-Q174.png
+2025-10-15 18:25:27 INFO Completed OTRPracticeTest-4-Q174.png in 0.25s
+2025-10-15 18:25:27 INFO Processing: OTRPracticeTest-4-Q175.png
+2025-10-15 18:25:27 INFO Completed OTRPracticeTest-4-Q175.png in 0.27s
+2025-10-15 18:25:27 INFO Processing: OTRPracticeTest-4-Q176.png
+2025-10-15 18:25:28 INFO Completed OTRPracticeTest-4-Q176.png in 0.30s
+2025-10-15 18:25:28 INFO Processing: OTRPracticeTest-4-Q177.png
+2025-10-15 18:25:28 INFO Completed OTRPracticeTest-4-Q177.png in 0.38s
+2025-10-15 18:25:28 INFO Processing: OTRPracticeTest-4-Q178.png
+2025-10-15 18:25:29 INFO Completed OTRPracticeTest-4-Q178.png in 0.46s
+2025-10-15 18:25:29 INFO Processing: OTRPracticeTest-4-Q179.png
+2025-10-15 18:25:29 INFO Completed OTRPracticeTest-4-Q179.png in 0.43s
+2025-10-15 18:25:29 INFO Processing: OTRPracticeTest-4-Q180.png
+2025-10-15 18:25:29 INFO Completed OTRPracticeTest-4-Q180.png in 0.30s
+2025-10-15 18:25:29 INFO OCR run finished: 180 processed, 0 skipped, 0 failed

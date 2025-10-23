@@ -1,0 +1,212 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://nbcot-clone/practice-question.schema.json",
+  "title": "RawPracticeQuestion",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["order", "headline", "images"],
+  "properties": {
+    "order": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "headline": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subheadline": {
+      "type": "string",
+      "minLength": 1
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "default": [],
+      "uniqueItems": true
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content": {
+      "type": "string"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "label"],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "answerKey": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "requiredSelections": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "bookAnswer": {
+      "type": "object",
+      "required": ["title", "excerpt"],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "excerpt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "scenarioStem": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenarioItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "prompt"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "content": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["key", "label"],
+              "additionalProperties": false,
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "answerKey": {
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "uniqueItems": true
+              },
+              {
+                "type": "string",
+                "minLength": 1
+              }
+            ]
+          },
+          "requiredSelections": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceBatch", "author", "qaStatus"],
+      "properties": {
+        "sourceBatch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1
+        },
+        "qaStatus": {
+          "type": "string",
+          "enum": ["draft", "in_review", "needs_revision", "approved", "rejected"]
+        },
+        "ocrConfidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "qaNotes": {
+          "type": "string"
+        },
+        "approvedBy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approvedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reviewUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sourceReference": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "setId": "otr4",
+  "title": "OTR Practice Test 4",
+  "imageDir": "public/raw-questions-01",
+  "ocrDir": "public/raw-questions-01/ocr",
+  "author": "ocr-ingestion",
+  "sourceBatch": "otr4-raw-20251020",
+  "stagingDir": "data/staging",
+  "overwrite": true
+}
