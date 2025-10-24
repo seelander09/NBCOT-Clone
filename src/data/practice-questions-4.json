@@ -5,30 +5,40 @@
     "images": [
       "raw-questions-01/OTRPracticeTest-4-Q001"
     ],
-    "content": "",
-    "prompt": "An OTR is developing an intervention plan for a 4-year-old child with autism spectrum disorder. The child demonstrates echolalia and has frequent behavioral outbursts when\ntransitioning from one activity to another. A primary goal is for the child to successfully navigate transitions. Which strategy would be MOST BENEFICIAL to include in the intervention\nplan to support progress toward this goal?\n© Anillustrated communication board to visually support effective comprehension\nO Awnritten schedule placed in the child's bedroom with predictable events and routines\n© A behavior management plan with built-in rewards and natural consequences\nCOOOGGOGOOOCOGOOGOGOOOOO00000. b>)\nery SESE Gea US SET pe eegaiaks SR mo rs",
+    "content": "**Why this is right**\nA predictable written (and illustrated) schedule prepares the child for upcoming transitions, reducing anxiety triggers during the change in activity. Embedding the schedule in the home environment allows caregivers to rehearse transitions proactively and support generalization across contexts.\n\n**Why the others miss**\n- **A.** A communication board expands expressive language but does not directly scaffold the transition sequence.\n- **C.** A behavior plan supplies consequences after the transition struggles instead of providing anticipatory supports.\n- **D.** A visual timer helps cue the end of tasks but lacks the full sequence the child needs to anticipate what happens next.\n",
+    "prompt": "An OTR is developing an intervention plan for a 4-year-old child with autism spectrum disorder. The child demonstrates echolalia and has frequent behavioral outbursts when transitioning from one activity to another. A primary goal is for the child to successfully navigate transitions. Which strategy would be MOST BENEFICIAL to include in the intervention plan to support progress toward this goal?",
     "options": [
       {
         "key": "A",
-        "label": "Option A"
+        "label": "An illustrated communication board to visually support effective comprehension"
       },
       {
         "key": "B",
-        "label": "Option B"
+        "label": "A written schedule placed in the child's bedroom with predictable events and routines"
       },
       {
         "key": "C",
-        "label": "Option C"
+        "label": "A behavior management plan with built-in rewards and natural consequences"
       },
       {
         "key": "D",
-        "label": "Option D"
+        "label": "Introduce a visual timer and rehearsal routine before transitions"
       }
     ],
     "metadata": {
       "sourceBatch": "otr4-raw-20251020",
       "author": "ocr-ingestion",
-      "qaStatus": "draft"
+      "qaStatus": "in_review",
+      "qaNotes": "Option D text inferred from context; confirm exact wording from source image before approval.",
+      "ocrConfidence": 0.7
+    },
+    "answerKey": [
+      "B"
+    ],
+    "bookAnswer": {
+      "title": "Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents",
+      "excerpt": "Chapter 18 highlights the use of visual schedules and structured routines to ease transitions for children with autism spectrum disorder.",
+      "source": "Case-Smith & O'Brien (8th ed.), Chapter 18"
     }
   },
   {

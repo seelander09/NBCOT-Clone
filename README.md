@@ -51,6 +51,15 @@ Set the following env vars to enable checkout and webhook flows:
 
 Add `VECTOR_STORE_API_URL` and `VECTOR_STORE_API_KEY` to call the external NBCOT question service. When they are absent, the service wrapper falls back to Prisma-stored questions and flashcards so local development continues to work.
 
+## LLM Rationale Generation
+
+Set the following environment variables to enable live rationale generation for new practice questions:
+
+- `OPENAI_API_KEY` — API key for the OpenAI-compatible provider.
+- `OPENAI_DEFAULT_MODEL` — Model identifier (e.g., `gpt-4o-mini`).
+
+With those values configured you can call `npx tsx scripts/generate_rationales.ts --input <questions.json> --question <order>` to draft answer keys, rationales, and book anchors. Add `--provider stub` or `--dry-run` to skip provider calls during local testing.
+
 ## Available Scripts
 
 - `npm run dev` - Start the Next.js dev server.

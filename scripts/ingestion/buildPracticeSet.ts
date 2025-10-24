@@ -117,12 +117,19 @@ function normalizeOptionKey(rawKey: string): string {
   return key;
 }
 
-function parseOptionLine(line: string): { key: string; text: string } | null {
+type ParsedOptionLine = {
+  key: string;
+  text: string;
+  inferredSequence?: boolean;
+};
+
+function parseOptionLine(line: string): ParsedOptionLine | null {
   const bulletMatch = line.match(/^[©•\-\*]\s*(.+)$/i);
   if (bulletMatch) {
     return {
       key: "A",
       text: bulletMatch[1]!.trim(),
+      inferredSequence: true,
     };
   }
 
@@ -175,23 +182,97 @@ function parseOptionLine(line: string): { key: string; text: string } | null {
 }
 
 function cleanOptionText(text: string): string {
-  return text.replace(/\s+/g, " ").replace(/^[,.:;\-]+/, "").trim();
+  let output = text.replace(/\s+/g, " ").replace(/^[,.:;\-]+/, "").trim();
+
+  // Drop obvious OCR noise blobs (e.g., repeated O/0 sequences).
+  output = output.replace(/C[O0]{2,}[A-Z0-9 .)(><-]*$/i, "").trim();
+
+  // Restore missing spaces after leading article/sample letters.
+  output = output.replace(/^An([A-Z])/, "An $1");
+  output = output.replace(
+    /^A([b-df-hj-mp-tv-z])/,
+    (_, letter: string) => `A ${letter}`,
+  );
+  output = output.replace(/^B([a-z])/, (_, letter: string) => `B ${letter}`);
+  output = output.replace(/^C([a-z])/, (_, letter: string) => `C ${letter}`);
+  output = output.replace(/^D([a-z])/, (_, letter: string) => `D ${letter}`);
+
+  return output.trim();
 }
 
-function finaliseOptions(optionSeeds: DraftOptionRecord[]): DraftOptionRecord[] {
+function fillMissingOptionKeys(
+  options: DraftOptionRecord[],
+  warnings: string[],
+): DraftOptionRecord[] {
+  const existingKeys = new Set(options.map((option) => option.key));
+  const next = [...options];
+  const inserted: string[] = [];
+
+  for (const key of OPTION_KEYS.slice(0, 4)) {
+    if (!existingKeys.has(key)) {
+      next.push({
+        key,
+        label: `Placeholder option ${key}`,
+        source: "placeholder",
+      });
+      inserted.push(key);
+    }
+  }
+
+  if (inserted.length > 0) {
+    warnings.push(`Inserted placeholder option(s) for missing key(s): ${inserted.join(", ")}.`);
+  }
+
+  return next.slice(0, OPTION_KEYS.length);
+}
+
+function finaliseOptions(
+  optionSeeds: DraftOptionRecord[],
+  warnings: string[],
+): DraftOptionRecord[] {
   if (optionSeeds.length === 0) {
+    warnings.push("Unable to parse options; generated placeholders for all responses.");
     return OPTION_KEYS.slice(0, 4).map((key) => ({
       key,
       label: `Placeholder option ${key}`,
-      source: "placeholder" as const,
+      source: "placeholder",
     }));
   }
 
-  return optionSeeds.slice(0, OPTION_KEYS.length).map((option, index) => ({
-    key: OPTION_KEYS[index] ?? option.key,
-    label: cleanOptionText(option.label),
-    source: option.source,
-  }));
+  const deduped: DraftOptionRecord[] = [];
+  const seenKeys = new Set<string>();
+
+  for (const seed of optionSeeds) {
+    const key = normalizeOptionKey(seed.key);
+    if (seenKeys.has(key)) {
+      warnings.push(`Detected duplicate option key ${key}; keeping the first occurrence.`);
+      continue;
+    }
+
+    const label = cleanOptionText(seed.label);
+    if (!label) {
+      warnings.push(`Discarded empty option text for key ${key}.`);
+      continue;
+    }
+
+    deduped.push({
+      key,
+      label,
+      source: seed.source,
+    });
+    seenKeys.add(key);
+  }
+
+  if (deduped.length === 0) {
+    warnings.push("All parsed options were empty after cleanup; generated placeholders.");
+    return OPTION_KEYS.slice(0, 4).map((key) => ({
+      key,
+      label: `Placeholder option ${key}`,
+      source: "placeholder",
+    }));
+  }
+
+  return fillMissingOptionKeys(deduped, warnings);
 }
 
 type ParsedQuestion = {
@@ -231,17 +312,25 @@ function parseOcrContent(raw: string): ParsedQuestion {
   const optionSeeds: DraftOptionRecord[] = [];
   let currentOption: DraftOptionRecord | null = null;
 
+  let optionIndex = 0;
+
   for (const line of optionLines) {
     const parsed = parseOptionLine(line);
     if (parsed) {
       if (currentOption) {
         optionSeeds.push(currentOption);
       }
+
+      const assignedKey = parsed.inferredSequence
+        ? OPTION_KEYS[Math.min(optionIndex, OPTION_KEYS.length - 1)] ?? parsed.key
+        : normalizeOptionKey(parsed.key);
+
       currentOption = {
-        key: parsed.key,
+        key: assignedKey,
         label: parsed.text,
         source: "parsed",
       };
+      optionIndex += 1;
     } else if (currentOption) {
       currentOption.label = `${currentOption.label} ${line}`;
     }
@@ -251,7 +340,7 @@ function parseOcrContent(raw: string): ParsedQuestion {
     optionSeeds.push(currentOption);
   }
 
-  const options = finaliseOptions(optionSeeds);
+  const options = finaliseOptions(optionSeeds, warnings);
 
   if (optionSeeds.length === 0) {
     warnings.push("Unable to parse answer options; generated placeholders.");
