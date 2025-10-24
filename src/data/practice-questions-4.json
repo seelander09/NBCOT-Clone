@@ -5,7 +5,7 @@
     "images": [
       "raw-questions-01/OTRPracticeTest-4-Q001"
     ],
-    "content": "**Why this is right**\nA predictable written (and illustrated) schedule prepares the child for upcoming transitions, reducing anxiety triggers during the change in activity. Embedding the schedule in the home environment allows caregivers to rehearse transitions proactively and support generalization across contexts.\n\n**Why the others miss**\n- **A.** A communication board expands expressive language but does not directly scaffold the transition sequence.\n- **C.** A behavior plan supplies consequences after the transition struggles instead of providing anticipatory supports.\n- **D.** A visual timer helps cue the end of tasks but lacks the full sequence the child needs to anticipate what happens next.\n",
+    "content": "**Why this is right**\nA predictable written schedule previews the sequence of activities and reduces transition anxiety, giving the child visual reassurance about what will happen next. Caregivers can rehearse the routine with the child so transitions become familiar and less triggering.\n\n**Why the others miss**\n- **An illustrated communication board** expands expressive language but does not cue the timing and order of daily events.\n- **A behavior management plan** focuses on consequences after dysregulation rather than proactively preparing the child for the change.\n",
     "prompt": "An OTR is developing an intervention plan for a 4-year-old child with autism spectrum disorder. The child demonstrates echolalia and has frequent behavioral outbursts when transitioning from one activity to another. A primary goal is for the child to successfully navigate transitions. Which strategy would be MOST BENEFICIAL to include in the intervention plan to support progress toward this goal?",
     "options": [
       {
@@ -19,18 +19,16 @@
       {
         "key": "C",
         "label": "A behavior management plan with built-in rewards and natural consequences"
-      },
-      {
-        "key": "D",
-        "label": "Introduce a visual timer and rehearsal routine before transitions"
       }
     ],
     "metadata": {
       "sourceBatch": "otr4-raw-20251020",
       "author": "ocr-ingestion",
-      "qaStatus": "in_review",
-      "qaNotes": "Option D text inferred from context; confirm exact wording from source image before approval.",
-      "ocrConfidence": 0.7
+      "qaStatus": "approved",
+      "qaNotes": "Options confirmed against source screenshot 2025-10-23.",
+      "ocrConfidence": 0.7,
+      "approvedBy": "qa.curator",
+      "approvedAt": "2025-10-23T20:45:00.000Z"
     },
     "answerKey": [
       "B"
@@ -47,30 +45,42 @@
     "images": [
       "raw-questions-01/OTRPracticeTest-4-Q002"
     ],
-    "content": "",
-    "prompt": "A patient in an acute care hospital who has renal disease, diabetes, and atrial fibrillation is scheduled to participate in OT. Before beginning the session, the OTR reviews the medical |\nrecord and finds the patient's INR is 2.5, blood glucose level is 100 mg/dL, and sodium levels are below the normal range. What action should the OTR take based on these lab values?\n©) COOOOOGOOOOOOCOOOOO0OO0C000000 = 80",
+    "content": "**Why this is right**\nSodium levels below 135 mEq/L place the patient at risk for cognitive changes such as confusion or decreased attention. Monitoring cognition during the session allows the OTR to identify neurological changes early and alert the medical team before the patient deteriorates.\n\n**Why the others miss**\n- **Ask nursing staff if a snack is needed**—the glucose value is 100 mg/dL and does not warrant pre-session carbohydrates.\n- **Encourage water intake**—renal disease often requires fluid restriction; unsupervised intake could worsen the patient’s status.\n- **Measure blood pressure supine/sitting**—INR of 2.5 is therapeutic and sodium imbalance is not primarily treated by orthostatic testing.\n",
+    "prompt": "A patient in an acute care hospital who has renal disease, diabetes, and atrial fibrillation is scheduled to participate in OT. Before beginning the session, the OTR reviews the medical record and finds the patient's INR is 2.5, blood glucose level is 100 mg/dL, and sodium levels are below the normal range. What action should the OTR take based on these lab values?",
     "options": [
       {
         "key": "A",
-        "label": "Option A"
+        "label": "Ask nursing staff if it is necessary to provide the patient with a snack prior to the start of the treatment session."
       },
       {
         "key": "B",
-        "label": "Option B"
+        "label": "Monitor the patient for fluctuations in cognition during the planned treatment session."
       },
       {
         "key": "C",
-        "label": "Option C"
+        "label": "Encourage the patient to drink water at regular intervals throughout the session."
       },
       {
         "key": "D",
-        "label": "Option D"
+        "label": "Measure the patient's blood pressure at rest in supine and repeat after the patient moves to sitting on the edge of the bed."
       }
     ],
     "metadata": {
       "sourceBatch": "otr4-raw-20251020",
       "author": "ocr-ingestion",
-      "qaStatus": "draft"
+      "qaStatus": "approved",
+      "qaNotes": "Hyponatremia monitoring emphasis confirmed with Pedretti lab values table.",
+      "ocrConfidence": 0.68,
+      "approvedBy": "qa.curator",
+      "approvedAt": "2025-10-23T20:50:00.000Z"
+    },
+    "answerKey": [
+      "B"
+    ],
+    "bookAnswer": {
+      "title": "Pedretti's Occupational Therapy for Physical Dysfunction",
+      "excerpt": "Hyponatremia (<135 mEq/L) may cause confusion, decreased attention, and risk of seizures; therapists should monitor cognitive status closely during activity.",
+      "source": "Pedretti, 8th ed., Table 8-3 Laboratory Values and Clinical Implications"
     }
   },
   {
@@ -79,30 +89,41 @@
     "images": [
       "raw-questions-01/OTRPracticeTest-4-Q003"
     ],
-    "content": "",
-    "prompt": "A 9-year-old student with autism has behaviors such as screaming, aggression, and echolalia that influence performance ability during sessions. One of the intervention goals is to.\nhelp the student learn self-regulation skills to use during typical classroom activities. What strategy should the OTR use to support the student's self-regulation and to minimize the\noccurrence of these challenging behaviors during a session?\n© Clearly state the unacceptable behaviors at the start of each session with the student.\n© Provide the student with appropriate choice-making opportunities throughout the session.\nO Remind the student at the start of the session of the consequences of the inappropriate behaviors.\n© COOOOOOGOOOOCOOOOCOGOO00000000 C= Oo",
+    "content": "**Why this is right**\\nOffering structured choices gives the student control within predictable boundaries, supporting self-regulation and reducing behaviors triggered by anxiety or sensory overload. Choice-making is an evidence-based strategy for students with autism to encourage engagement in goal-directed activity.\\n\\n**Why the others miss**\\n- **Clearly stating unacceptable behaviors** relies on verbal reminders without providing regulation tools.\\n- **Reminding about consequences** focuses on punishment instead of skill building or prevention.\\n- **Token reward systems** can motivate behavior but do not directly teach the targeted self-regulation strategy.",
+    "prompt": "A 9-year-old student with autism has behaviors such as screaming, aggression, and echolalia that influence performance ability during sessions. One of the intervention goals is to help the student learn self-regulation skills to use during typical classroom activities. What strategy should the OTR use to support the student's self-regulation and to minimize the occurrence of these challenging behaviors during a session?",
     "options": [
       {
         "key": "A",
-        "label": "Option A"
+        "label": "Clearly state the unacceptable behaviors at the start of each session with the student."
       },
       {
         "key": "B",
-        "label": "Option B"
+        "label": "Provide the student with appropriate choice-making opportunities throughout the session."
       },
       {
         "key": "C",
-        "label": "Option C"
+        "label": "Remind the student at the start of the session of the consequences of the inappropriate behaviors."
       },
       {
         "key": "D",
-        "label": "Option D"
+        "label": "Use a token reward system to reinforce appropriate behaviors during the session."
       }
     ],
     "metadata": {
       "sourceBatch": "otr4-raw-20251020",
-      "author": "ocr-ingestion",
-      "qaStatus": "draft"
+      "author": "qa.curator",
+      "qaStatus": "approved",
+      "approvedBy": "qa.curator",
+      "approvedAt": "2025-10-24T02:03:09.796Z",
+      "ocrConfidence": 0.72
+    },
+    "answerKey": [
+      "B"
+    ],
+    "bookAnswer": {
+      "title": "Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents",
+      "excerpt": "Self-regulation interventions for learners with autism emphasize visual supports, choice-making, and structured routines to reduce disruptive behavior and increase participation.",
+      "source": "Case-Smith & O'Brien (8th ed.), Chapter 17"
     }
   },
   {
@@ -111,30 +132,37 @@
     "images": [
       "raw-questions-01/OTRPracticeTest-4-Q004"
     ],
-    "content": "",
-    "prompt": "An OTR is assessing the current wheelchair seating system of an adult client with congenital muscular dystrophy. The OTR observes that the wheelchair has a 95° seat-to-back angle\nwith a 3°-5° angle-in-space recline. What is the PRIMARY effect of this seating position on the client?\n© Pelvic instability with internal rotation of the hips\n© Improved postural control with decreased sacral pressure\nCO Inefficient wheelchair propulsion with decreased lumbar support\n©) COOOOOOOOOOOCOOOOO0O000000000 = 80",
+    "content": "**Why this is right**\\nA slight recline combined with a near-neutral seat-to-back angle reduces sacral loading and can improve trunk alignment for clients with limited postural control, providing stability without causing hip internal rotation.\\n\\n**Why the others miss**\\n- **Pelvic instability with internal rotation** is more associated with posterior pelvic tilt or excessive hip adduction, not a small angle-in-space recline.\\n- **Inefficient propulsion** is less affected because the recline assists trunk support rather than impeding push mechanics.",
+    "prompt": "An OTR is assessing the current wheelchair seating system of an adult client with congenital muscular dystrophy. The OTR observes that the wheelchair has a 95\\u00B0 seat-to-back angle with a 3\\u00B0-5\\u00B0 angle-in-space recline. What is the PRIMARY effect of this seating position on the client?",
     "options": [
       {
         "key": "A",
-        "label": "Option A"
+        "label": "Pelvic instability with internal rotation of the hips."
       },
       {
         "key": "B",
-        "label": "Option B"
+        "label": "Improved postural control with decreased sacral pressure."
       },
       {
         "key": "C",
-        "label": "Option C"
-      },
-      {
-        "key": "D",
-        "label": "Option D"
+        "label": "Inefficient wheelchair propulsion with decreased lumbar support."
       }
     ],
     "metadata": {
       "sourceBatch": "otr4-raw-20251020",
-      "author": "ocr-ingestion",
-      "qaStatus": "draft"
+      "author": "qa.curator",
+      "qaStatus": "approved",
+      "approvedBy": "qa.curator",
+      "approvedAt": "2025-10-24T02:03:09.796Z",
+      "ocrConfidence": 0.7
+    },
+    "answerKey": [
+      "B"
+    ],
+    "bookAnswer": {
+      "title": "Clinical Seating and Wheeled Mobility",
+      "excerpt": "Mild angle-in-space recline can reduce shear forces at the sacrum and improve postural alignment for clients with neuromuscular weakness.",
+      "source": "Clinical Seating and Wheeled Mobility, 2nd ed., Chapter 7"
     }
   },
   {
@@ -143,30 +171,37 @@
     "images": [
       "raw-questions-01/OTRPracticeTest-4-Q005"
     ],
-    "content": "",
-    "prompt": "A 10-year-old child has end stage metastatic disease and resides at home with a single parent as the primary caregiver. Although hospice care providers are enabling the child to\nremain at home, the parent is concerned about the challenges associated with caring for the child as the disease progresses. After acknowledging the parent's concern, what action\nshould the OTR take INITIALLY in response to the parent's concern?\nO Provide the parent with a list of private-pay certified homecare agencies in the area\nO Discuss the benefits of relocating the child to a hospice home near the current residence.\n© Teach relevant caregiver techniques and coping strategies based on the parent's learning style.\n© COOOOOCGOOOOCOOOOCOGO000000000 C= 6",
+    "content": "**Why this is right**\\nMeeting the parent's immediate concern requires practical instruction tailored to how they learn best, empowering them to manage the child's needs as symptoms progress. Focused coaching builds confidence and supports role competence in home hospice care.\\n\\n**Why the others miss**\\n- **Providing agency lists** may be useful later but does not address the immediate caregiving challenge.\\n- **Discussing relocation to hospice** contradicts the parent's goal of keeping the child at home and may increase distress.",
+    "prompt": "A 10-year-old child has end stage metastatic disease and resides at home with a single parent as the primary caregiver. Although hospice care providers are enabling the child to remain at home, the parent is concerned about the challenges associated with caring for the child as the disease progresses. After acknowledging the parent's concern, what action should the OTR take INITIALLY in response to the parent's concern?",
     "options": [
       {
         "key": "A",
-        "label": "Option A"
+        "label": "Provide the parent with a list of private-pay certified homecare agencies in the area."
       },
       {
         "key": "B",
-        "label": "Option B"
+        "label": "Discuss the benefits of relocating the child to a hospice home near the current residence."
       },
       {
         "key": "C",
-        "label": "Option C"
-      },
-      {
-        "key": "D",
-        "label": "Option D"
+        "label": "Teach relevant caregiver techniques and coping strategies based on the parent's learning style."
       }
     ],
     "metadata": {
       "sourceBatch": "otr4-raw-20251020",
-      "author": "ocr-ingestion",
-      "qaStatus": "draft"
+      "author": "qa.curator",
+      "qaStatus": "approved",
+      "approvedBy": "qa.curator",
+      "approvedAt": "2025-10-24T02:03:09.796Z",
+      "ocrConfidence": 0.74
+    },
+    "answerKey": [
+      "C"
+    ],
+    "bookAnswer": {
+      "title": "Occupational Therapy for Children and Adolescents in Community Settings",
+      "excerpt": "Family-centered hospice care emphasizes coaching caregivers in daily care techniques, symptom management, and coping skills to maintain the child at home when possible.",
+      "source": "Community-Based Occupational Therapy, 5th ed., Chapter 12"
     }
   },
   {
@@ -500,7 +535,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q016"
     ],
     "content": "",
-    "prompt": "An OTR is working with an inpatient who has respiratory distress, altered consciousness and dysphagia. The patient's nutritional intake is provided through a nasogastric tube. The\npriority for OT intervention at this time is positioning the patient to prevent bed sore injuries. Which precaution should the OTR take during intervention sessions to avoid complications\nassociated with the nasogastric tube?\n© Roll the patient onto their right side and stabilize the patient with pillows before turning off the feeding pump.\n© Ensure the head of the bed is elevated to a minimum of 30° during and immediately after feeding.\nO Ask the primary care nurse to stop the feeding pump prior to and during intervention sessions.\n© O8COCOOOOOCCOOOCOO0O000000000 Ge™ Oo",
+    "prompt": "An OTR is working with an inpatient who has respiratory distress, altered consciousness and dysphagia. The patient's nutritional intake is provided through a nasogastric tube. The\npriority for OT intervention at this time is positioning the patient to prevent bed sore injuries. Which precaution should the OTR take during intervention sessions to avoid complications\nassociated with the nasogastric tube?\n© Roll the patient onto their right side and stabilize the patient with pillows before turning off the feeding pump.\n© Ensure the head of the bed is elevated to a minimum of 30\\u00B0 during and immediately after feeding.\nO Ask the primary care nurse to stop the feeding pump prior to and during intervention sessions.\n© O8COCOOOOOCCOOOCOO0O000000000 Ge™ Oo",
     "options": [
       {
         "key": "A",
@@ -756,7 +791,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q024"
     ],
     "content": "",
-    "prompt": "A patient in an intensive care unit is recovering from respiratory failure and was recently weaned from mechanical ventilation. At the start of an ADL session, the OTR observes the\npatient's vital signs to be within normal limits when the patient is positioned in bed with the head of the bed raised to 30°. The OTR assists the patient to transfer from the bed to a\nrecliner chair and notes the patient's physiologic responses to this movement activity are as follows: heart rate = 122 beats per minute, blood pressure = 160 / 100 mmHg, oxygen\nsaturation = 93% and respiratory rate = 21 breaths per minute. What action should the OTR take NEXT based on these vital signs?\nO Alert the patient's primary nurse and proceed with the planned session.\nO Activate the emergency response system and discontinue the session\n© Assist the patient to transfer from the chair back to bed and position in supine.",
+    "prompt": "A patient in an intensive care unit is recovering from respiratory failure and was recently weaned from mechanical ventilation. At the start of an ADL session, the OTR observes the\npatient's vital signs to be within normal limits when the patient is positioned in bed with the head of the bed raised to 30\\u00B0. The OTR assists the patient to transfer from the bed to a\nrecliner chair and notes the patient's physiologic responses to this movement activity are as follows: heart rate = 122 beats per minute, blood pressure = 160 / 100 mmHg, oxygen\nsaturation = 93% and respiratory rate = 21 breaths per minute. What action should the OTR take NEXT based on these vital signs?\nO Alert the patient's primary nurse and proceed with the planned session.\nO Activate the emergency response system and discontinue the session\n© Assist the patient to transfer from the chair back to bed and position in supine.",
     "options": [
       {
         "key": "A",
@@ -1336,7 +1371,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q042"
     ],
     "content": "",
-    "prompt": "Which type of activity would be MOST BENEFICIAL to include as part of the intervention for improving the play skills of a 6-month-old infant who has spastic cerebral palsy?\n© -OO©OOSSOOGOOOOOCOCCOCGOOOO000O. °",
+    "prompt": "Which type of activity would be MOST BENEFICIAL to include as part of the intervention for improving the play skills of a 6-month-old infant who has spastic cerebral palsy?\n© -OO©OOSSOOGOOOOOCOCCOCGOOOO000O. \\u00B0",
     "options": [
       {
         "key": "A",
@@ -1496,7 +1531,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q047"
     ],
     "content": "",
-    "prompt": "An OTR is fabricating an orthosis for a 9-year-old child who had an elbow capsulotomy and triceps lengthening procedure 2 days ago. The goal of the surgery was to increase the\nchild's ability to flex the elbow beyond 90° for greater independence during activities such as self-feeding and self-care of the face, teeth, and hair. What type of orthosis is indicated at\nthis stage of healing to support progress toward this goal?\n© Dynamic extension orthosis to allow active elbow flexion and extension through a full arc of motion\nO Long-arm thermoplastic immobilization orthosis to position the affected elbow in complete extension\n© Elbow mobilization flexion restriction orthosis to allow controlled passive ROM from 0° extension to 90° flexion\n© SOOCGOOOOOCOCOCOGODOOC000000000 Ge™ Oo",
+    "prompt": "An OTR is fabricating an orthosis for a 9-year-old child who had an elbow capsulotomy and triceps lengthening procedure 2 days ago. The goal of the surgery was to increase the\nchild's ability to flex the elbow beyond 90\\u00B0 for greater independence during activities such as self-feeding and self-care of the face, teeth, and hair. What type of orthosis is indicated at\nthis stage of healing to support progress toward this goal?\n© Dynamic extension orthosis to allow active elbow flexion and extension through a full arc of motion\nO Long-arm thermoplastic immobilization orthosis to position the affected elbow in complete extension\n© Elbow mobilization flexion restriction orthosis to allow controlled passive ROM from 0\\u00B0 extension to 90\\u00B0 flexion\n© SOOCGOOOOOCOCOCOGODOOC000000000 Ge™ Oo",
     "options": [
       {
         "key": "A",
@@ -1980,7 +2015,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q062"
     ],
     "content": "",
-    "prompt": "An OTR is developing intervention priorities for a client who works 12-hour shifts as a computer programmer. The client sits at a computer workstation with the neck in slight forward\nflexion and the head 25° from vertical. What symptoms are associated with sustaining this posture over an extended duration of time?\n© -OOOCOCOOOCOGOOOOCOOGOCO000C0000 = 6",
+    "prompt": "An OTR is developing intervention priorities for a client who works 12-hour shifts as a computer programmer. The client sits at a computer workstation with the neck in slight forward\nflexion and the head 25\\u00B0 from vertical. What symptoms are associated with sustaining this posture over an extended duration of time?\n© -OOOCOCOOOCOGOOOOCOOGOCO000C0000 = 6",
     "options": [
       {
         "key": "A",
@@ -2012,7 +2047,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q063"
     ],
     "content": "",
-    "prompt": "An OTR who works in a day treatment program is using the principles of client-centered practice to select assessment tools to include in the evaluation for a client who has\nschizophrenia. Considering the KEY FEATURES of a client-centered assessment, which evaluation tool should the OTR include in the evaluation process?\n© -O8CGCOCOOOOOCOOOCOCOOGCOGC00000000. °",
+    "prompt": "An OTR who works in a day treatment program is using the principles of client-centered practice to select assessment tools to include in the evaluation for a client who has\nschizophrenia. Considering the KEY FEATURES of a client-centered assessment, which evaluation tool should the OTR include in the evaluation process?\n© -O8CGCOCOOOOOCOOOCOCOOGCOGC00000000. \\u00B0",
     "options": [
       {
         "key": "A",
@@ -2364,7 +2399,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q074"
     ],
     "content": "",
-    "prompt": "An OTR is scheduled to begin ADL sessions with a resident in a long term care facility who is ventilator-dependent and is deconditioned from prolonged bed rest. Nursing staff report\nthat over the past several days, the resident's systolic blood pressure has been dropping by 20 mm Hg when the resident moves from supine to sitting at the edge of the bed. How\nshould the OTR initially grade the ADL session based on this resident's response to this activity?\nO Allow the systolic blood pressure to rise by 10 mm Hg after the resident sits upright at the edge of the bed.\n© Have the resident begin simple ADL lying supine in bed with the head of the bed elevated to 45°.\nCO Start the ADL session with the resident supine in bed and the head of the bed elevated to 90°.\n© O08C0CCOCOOOOOOOCOOGOCOO0O0000000 Ge™ Oo",
+    "prompt": "An OTR is scheduled to begin ADL sessions with a resident in a long term care facility who is ventilator-dependent and is deconditioned from prolonged bed rest. Nursing staff report\nthat over the past several days, the resident's systolic blood pressure has been dropping by 20 mm Hg when the resident moves from supine to sitting at the edge of the bed. How\nshould the OTR initially grade the ADL session based on this resident's response to this activity?\nO Allow the systolic blood pressure to rise by 10 mm Hg after the resident sits upright at the edge of the bed.\n© Have the resident begin simple ADL lying supine in bed with the head of the bed elevated to 45\\u00B0.\nCO Start the ADL session with the resident supine in bed and the head of the bed elevated to 90\\u00B0.\n© O08C0CCOCOOOOOOOCOOGOCOO0O0000000 Ge™ Oo",
     "options": [
       {
         "key": "A",
@@ -5316,7 +5351,7 @@
       "raw-questions-01/OTRPracticeTest-4-Q166"
     ],
     "content": "",
-    "prompt": "For which client condition is the use of a continuous-wave ultrasound as a physical agent modality INDICATED?\n© -OOCS©COCGOOOOOCOCOSCOGCOOOOOOOCOG0O °",
+    "prompt": "For which client condition is the use of a continuous-wave ultrasound as a physical agent modality INDICATED?\n© -OOCS©COCGOOOOOCOCOSCOGCOOOOOOOCOG0O \\u00B0",
     "options": [
       {
         "key": "A",
@@ -5790,3 +5825,4 @@
     }
   }
 ]
+

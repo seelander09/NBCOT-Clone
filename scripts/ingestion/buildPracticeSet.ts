@@ -200,36 +200,7 @@ function cleanOptionText(text: string): string {
   return output.trim();
 }
 
-function fillMissingOptionKeys(
-  options: DraftOptionRecord[],
-  warnings: string[],
-): DraftOptionRecord[] {
-  const existingKeys = new Set(options.map((option) => option.key));
-  const next = [...options];
-  const inserted: string[] = [];
-
-  for (const key of OPTION_KEYS.slice(0, 4)) {
-    if (!existingKeys.has(key)) {
-      next.push({
-        key,
-        label: `Placeholder option ${key}`,
-        source: "placeholder",
-      });
-      inserted.push(key);
-    }
-  }
-
-  if (inserted.length > 0) {
-    warnings.push(`Inserted placeholder option(s) for missing key(s): ${inserted.join(", ")}.`);
-  }
-
-  return next.slice(0, OPTION_KEYS.length);
-}
-
-function finaliseOptions(
-  optionSeeds: DraftOptionRecord[],
-  warnings: string[],
-): DraftOptionRecord[] {
+function finaliseOptions(optionSeeds: DraftOptionRecord[], warnings: string[]): DraftOptionRecord[] {
   if (optionSeeds.length === 0) {
     warnings.push("Unable to parse options; generated placeholders for all responses.");
     return OPTION_KEYS.slice(0, 4).map((key) => ({
@@ -272,7 +243,11 @@ function finaliseOptions(
     }));
   }
 
-  return fillMissingOptionKeys(deduped, warnings);
+  if (deduped.length < 4) {
+    warnings.push(`Parsed only ${deduped.length} option(s); review for truncation.`);
+  }
+
+  return deduped.slice(0, OPTION_KEYS.length);
 }
 
 type ParsedQuestion = {
@@ -344,8 +319,6 @@ function parseOcrContent(raw: string): ParsedQuestion {
 
   if (optionSeeds.length === 0) {
     warnings.push("Unable to parse answer options; generated placeholders.");
-  } else if (optionSeeds.length < 4) {
-    warnings.push(`Parsed only ${optionSeeds.length} option(s); review for truncation.`);
   }
 
   const hasPrompt = sanitizedPrompt.length > 0;

@@ -1,28 +1,12 @@
 {
-  "generatedAt": "2025-10-23T20:22:01.396Z",
+  "generatedAt": "2025-10-24T00:04:59.233Z",
   "logs": [
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): D.",
-      "context": {
-        "order": 1,
-        "image": "OTRPracticeTest-4-Q001.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 1,
         "image": "OTRPracticeTest-4-Q001.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 2,
-        "image": "OTRPracticeTest-4-Q002.png"
       }
     },
     {
@@ -43,18 +27,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 3,
         "image": "OTRPracticeTest-4-Q003.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): D.",
-      "context": {
-        "order": 4,
-        "image": "OTRPracticeTest-4-Q004.png"
       }
     },
     {
@@ -75,7 +51,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 5,
         "image": "OTRPracticeTest-4-Q005.png"
@@ -99,7 +75,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 6,
         "image": "OTRPracticeTest-4-Q006.png"
@@ -107,26 +83,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 7,
-        "image": "OTRPracticeTest-4-Q007.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 7,
         "image": "OTRPracticeTest-4-Q007.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 8,
-        "image": "OTRPracticeTest-4-Q008.png"
       }
     },
     {
@@ -147,7 +107,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 9,
         "image": "OTRPracticeTest-4-Q009.png"
@@ -171,18 +131,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 10,
         "image": "OTRPracticeTest-4-Q010-S01.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C, D.",
-      "context": {
-        "order": 11,
-        "image": "OTRPracticeTest-4-Q010-S02.png"
       }
     },
     {
@@ -211,7 +163,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 12,
         "image": "OTRPracticeTest-4-Q010-S03.png"
@@ -227,15 +179,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
-      "context": {
-        "order": 13,
-        "image": "OTRPracticeTest-4-Q010-S04.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 3 option(s); review for truncation.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 13,
         "image": "OTRPracticeTest-4-Q010-S04.png"
@@ -251,7 +195,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 14,
         "image": "OTRPracticeTest-4-Q014.png"
@@ -267,7 +211,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 15,
         "image": "OTRPracticeTest-4-Q015.png"
@@ -283,7 +227,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 16,
         "image": "OTRPracticeTest-4-Q016.png"
@@ -299,7 +243,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 17,
         "image": "OTRPracticeTest-4-Q017.png"
@@ -315,7 +259,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 19,
         "image": "OTRPracticeTest-4-Q019.png"
@@ -339,7 +283,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C, D.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 20,
         "image": "OTRPracticeTest-4-Q020.png"
@@ -347,14 +291,6 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 21,
-        "image": "OTRPracticeTest-4-Q021.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 21,
@@ -367,78 +303,54 @@
       "context": {
         "order": 22,
         "image": "OTRPracticeTest-4-Q022.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
-      "context": {
-        "order": 22,
-        "image": "OTRPracticeTest-4-Q022.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 23,
-        "image": "OTRPracticeTest-4-Q023.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 23,
-        "image": "OTRPracticeTest-4-Q023.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Detected duplicate option key B; keeping the first occurrence.",
-      "context": {
-        "order": 24,
-        "image": "OTRPracticeTest-4-Q024.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
-      "context": {
-        "order": 24,
-        "image": "OTRPracticeTest-4-Q024.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Detected duplicate option key B; keeping the first occurrence.",
-      "context": {
-        "order": 25,
-        "image": "OTRPracticeTest-4-Q025.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
-      "context": {
-        "order": 25,
-        "image": "OTRPracticeTest-4-Q025.png"
       }
     },
     {
       "level": "warn",
       "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
+        "order": 22,
+        "image": "OTRPracticeTest-4-Q022.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 23,
+        "image": "OTRPracticeTest-4-Q023.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Detected duplicate option key B; keeping the first occurrence.",
+      "context": {
+        "order": 24,
+        "image": "OTRPracticeTest-4-Q024.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 3 option(s); review for truncation.",
+      "context": {
+        "order": 24,
+        "image": "OTRPracticeTest-4-Q024.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Detected duplicate option key B; keeping the first occurrence.",
+      "context": {
         "order": 25,
         "image": "OTRPracticeTest-4-Q025.png"
       }
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
-        "order": 26,
-        "image": "OTRPracticeTest-4-Q026.png"
+        "order": 25,
+        "image": "OTRPracticeTest-4-Q025.png"
       }
     },
     {
@@ -459,7 +371,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 27,
         "image": "OTRPracticeTest-4-Q027.png"
@@ -475,7 +387,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 29,
         "image": "OTRPracticeTest-4-Q029.png"
@@ -483,26 +395,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 30,
-        "image": "OTRPracticeTest-4-Q030.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 30,
         "image": "OTRPracticeTest-4-Q030.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 32,
-        "image": "OTRPracticeTest-4-Q032.png"
       }
     },
     {
@@ -523,7 +419,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 33,
         "image": "OTRPracticeTest-4-Q033.png"
@@ -539,7 +435,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 34,
         "image": "OTRPracticeTest-4-Q034.png"
@@ -547,26 +443,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 36,
-        "image": "OTRPracticeTest-4-Q036.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 36,
         "image": "OTRPracticeTest-4-Q036.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 37,
-        "image": "OTRPracticeTest-4-Q037.png"
       }
     },
     {
@@ -587,15 +467,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
-      "context": {
-        "order": 38,
-        "image": "OTRPracticeTest-4-Q038-S01.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 3 option(s); review for truncation.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 38,
         "image": "OTRPracticeTest-4-Q038-S01.png"
@@ -611,15 +483,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
-      "context": {
-        "order": 39,
-        "image": "OTRPracticeTest-4-Q038-S02.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 3 option(s); review for truncation.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 39,
         "image": "OTRPracticeTest-4-Q038-S02.png"
@@ -643,7 +507,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 40,
         "image": "OTRPracticeTest-4-Q038-S03.png"
@@ -667,18 +531,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 41,
         "image": "OTRPracticeTest-4-Q038-S04.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 42,
-        "image": "OTRPracticeTest-4-Q042.png"
       }
     },
     {
@@ -687,14 +543,6 @@
       "context": {
         "order": 42,
         "image": "OTRPracticeTest-4-Q042.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 43,
-        "image": "OTRPracticeTest-4-Q043.png"
       }
     },
     {
@@ -715,18 +563,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 44,
         "image": "OTRPracticeTest-4-Q044.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): D.",
-      "context": {
-        "order": 45,
-        "image": "OTRPracticeTest-4-Q045.png"
       }
     },
     {
@@ -747,18 +587,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 46,
         "image": "OTRPracticeTest-4-Q046.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 49,
-        "image": "OTRPracticeTest-4-Q049.png"
       }
     },
     {
@@ -767,14 +599,6 @@
       "context": {
         "order": 49,
         "image": "OTRPracticeTest-4-Q049.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): D.",
-      "context": {
-        "order": 50,
-        "image": "OTRPracticeTest-4-Q050.png"
       }
     },
     {
@@ -787,7 +611,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
+      "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 52,
         "image": "OTRPracticeTest-4-Q052.png"
@@ -797,32 +621,8 @@
       "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
-        "order": 52,
-        "image": "OTRPracticeTest-4-Q052.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
         "order": 53,
         "image": "OTRPracticeTest-4-Q053.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 53,
-        "image": "OTRPracticeTest-4-Q053.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 54,
-        "image": "OTRPracticeTest-4-Q054.png"
       }
     },
     {
@@ -843,7 +643,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 55,
         "image": "OTRPracticeTest-4-Q055.png"
@@ -867,7 +667,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 56,
         "image": "OTRPracticeTest-4-Q056-S01.png"
@@ -883,26 +683,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 57,
         "image": "OTRPracticeTest-4-Q056-S02.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 3 option(s); review for truncation.",
-      "context": {
-        "order": 57,
-        "image": "OTRPracticeTest-4-Q056-S02.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): D.",
-      "context": {
-        "order": 58,
-        "image": "OTRPracticeTest-4-Q056-S03.png"
       }
     },
     {
@@ -931,7 +715,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 60,
         "image": "OTRPracticeTest-4-Q060.png"
@@ -947,7 +731,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 61,
         "image": "OTRPracticeTest-4-Q061.png"
@@ -955,26 +739,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 62,
-        "image": "OTRPracticeTest-4-Q062.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 62,
         "image": "OTRPracticeTest-4-Q062.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 63,
-        "image": "OTRPracticeTest-4-Q063.png"
       }
     },
     {
@@ -987,26 +755,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 65,
-        "image": "OTRPracticeTest-4-Q065.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 65,
         "image": "OTRPracticeTest-4-Q065.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 66,
-        "image": "OTRPracticeTest-4-Q066.png"
       }
     },
     {
@@ -1027,7 +779,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 67,
         "image": "OTRPracticeTest-4-Q067.png"
@@ -1043,7 +795,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 68,
         "image": "OTRPracticeTest-4-Q068.png"
@@ -1051,14 +803,6 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 69,
-        "image": "OTRPracticeTest-4-Q069.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 69,
@@ -1075,7 +819,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 70,
         "image": "OTRPracticeTest-4-Q070.png"
@@ -1091,18 +835,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 71,
         "image": "OTRPracticeTest-4-Q071.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 72,
-        "image": "OTRPracticeTest-4-Q072.png"
       }
     },
     {
@@ -1123,15 +859,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
-      "context": {
-        "order": 73,
-        "image": "OTRPracticeTest-4-Q073.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 3 option(s); review for truncation.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 73,
         "image": "OTRPracticeTest-4-Q073.png"
@@ -1147,15 +875,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
-      "context": {
-        "order": 74,
-        "image": "OTRPracticeTest-4-Q074.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 3 option(s); review for truncation.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 74,
         "image": "OTRPracticeTest-4-Q074.png"
@@ -1179,7 +899,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 75,
         "image": "OTRPracticeTest-4-Q075.png"
@@ -1187,26 +907,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 76,
-        "image": "OTRPracticeTest-4-Q076.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 76,
         "image": "OTRPracticeTest-4-Q076.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 78,
-        "image": "OTRPracticeTest-4-Q078.png"
       }
     },
     {
@@ -1219,26 +923,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 79,
-        "image": "OTRPracticeTest-4-Q079.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 79,
         "image": "OTRPracticeTest-4-Q079.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): D.",
-      "context": {
-        "order": 80,
-        "image": "OTRPracticeTest-4-Q080.png"
       }
     },
     {
@@ -1251,26 +939,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 81,
-        "image": "OTRPracticeTest-4-Q081.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 81,
         "image": "OTRPracticeTest-4-Q081.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 82,
-        "image": "OTRPracticeTest-4-Q082.png"
       }
     },
     {
@@ -1291,7 +963,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 83,
         "image": "OTRPracticeTest-4-Q083.png"
@@ -1315,7 +987,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 84,
         "image": "OTRPracticeTest-4-Q084.png"
@@ -1323,14 +995,6 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 87,
-        "image": "OTRPracticeTest-4-Q087.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 87,
@@ -1347,7 +1011,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 89,
         "image": "OTRPracticeTest-4-Q089.png"
@@ -1363,7 +1027,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 92,
         "image": "OTRPracticeTest-4-Q092.png"
@@ -1379,7 +1043,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 93,
         "image": "OTRPracticeTest-4-Q093.png"
@@ -1403,7 +1067,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 94,
         "image": "OTRPracticeTest-4-Q094.png"
@@ -1411,7 +1075,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
+      "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 95,
         "image": "OTRPracticeTest-4-Q095.png"
@@ -1421,32 +1085,8 @@
       "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
-        "order": 95,
-        "image": "OTRPracticeTest-4-Q095.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
         "order": 97,
         "image": "OTRPracticeTest-4-Q097.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 97,
-        "image": "OTRPracticeTest-4-Q097.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 98,
-        "image": "OTRPracticeTest-4-Q098.png"
       }
     },
     {
@@ -1467,7 +1107,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 99,
         "image": "OTRPracticeTest-4-Q099.png"
@@ -1483,7 +1123,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 101,
         "image": "OTRPracticeTest-4-Q101.png"
@@ -1499,7 +1139,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 102,
         "image": "OTRPracticeTest-4-Q102.png"
@@ -1507,26 +1147,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 103,
-        "image": "OTRPracticeTest-4-Q103.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 103,
         "image": "OTRPracticeTest-4-Q103.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 104,
-        "image": "OTRPracticeTest-4-Q104.png"
       }
     },
     {
@@ -1539,26 +1163,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 105,
-        "image": "OTRPracticeTest-4-Q105.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 105,
         "image": "OTRPracticeTest-4-Q105.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 106,
-        "image": "OTRPracticeTest-4-Q106.png"
       }
     },
     {
@@ -1587,7 +1195,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 107,
         "image": "OTRPracticeTest-4-Q107-S01.png"
@@ -1611,7 +1219,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 108,
         "image": "OTRPracticeTest-4-Q107-S02.png"
@@ -1627,88 +1235,64 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 109,
         "image": "OTRPracticeTest-4-Q107-S03.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Detected duplicate option key B; keeping the first occurrence.",
+      "context": {
+        "order": 110,
+        "image": "OTRPracticeTest-4-Q107-S04.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Detected duplicate option key B; keeping the first occurrence.",
+      "context": {
+        "order": 110,
+        "image": "OTRPracticeTest-4-Q107-S04.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 2 option(s); review for truncation.",
+      "context": {
+        "order": 110,
+        "image": "OTRPracticeTest-4-Q107-S04.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 111,
+        "image": "OTRPracticeTest-4-Q111.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 112,
+        "image": "OTRPracticeTest-4-Q112.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Detected duplicate option key B; keeping the first occurrence.",
+      "context": {
+        "order": 113,
+        "image": "OTRPracticeTest-4-Q113.png"
       }
     },
     {
       "level": "warn",
       "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
-        "order": 109,
-        "image": "OTRPracticeTest-4-Q107-S03.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Detected duplicate option key B; keeping the first occurrence.",
-      "context": {
-        "order": 110,
-        "image": "OTRPracticeTest-4-Q107-S04.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Detected duplicate option key B; keeping the first occurrence.",
-      "context": {
-        "order": 110,
-        "image": "OTRPracticeTest-4-Q107-S04.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
-      "context": {
-        "order": 110,
-        "image": "OTRPracticeTest-4-Q107-S04.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 111,
-        "image": "OTRPracticeTest-4-Q111.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 111,
-        "image": "OTRPracticeTest-4-Q111.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 112,
-        "image": "OTRPracticeTest-4-Q112.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 112,
-        "image": "OTRPracticeTest-4-Q112.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Detected duplicate option key B; keeping the first occurrence.",
-      "context": {
-        "order": 113,
-        "image": "OTRPracticeTest-4-Q113.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
-      "context": {
         "order": 113,
         "image": "OTRPracticeTest-4-Q113.png"
       }
@@ -1723,7 +1307,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 115,
         "image": "OTRPracticeTest-4-Q115.png"
@@ -1747,18 +1331,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 116,
         "image": "OTRPracticeTest-4-Q116.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 117,
-        "image": "OTRPracticeTest-4-Q117.png"
       }
     },
     {
@@ -1787,7 +1363,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 118,
         "image": "OTRPracticeTest-4-Q118.png"
@@ -1803,7 +1379,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 119,
         "image": "OTRPracticeTest-4-Q119.png"
@@ -1827,7 +1403,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 120,
         "image": "OTRPracticeTest-4-Q120.png"
@@ -1851,7 +1427,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 121,
         "image": "OTRPracticeTest-4-Q121.png"
@@ -1859,7 +1435,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
+      "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 122,
         "image": "OTRPracticeTest-4-Q122.png"
@@ -1869,32 +1445,8 @@
       "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
-        "order": 122,
-        "image": "OTRPracticeTest-4-Q122.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
         "order": 123,
         "image": "OTRPracticeTest-4-Q123.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 123,
-        "image": "OTRPracticeTest-4-Q123.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 124,
-        "image": "OTRPracticeTest-4-Q124.png"
       }
     },
     {
@@ -1915,18 +1467,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 125,
         "image": "OTRPracticeTest-4-Q125.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 126,
-        "image": "OTRPracticeTest-4-Q126.png"
       }
     },
     {
@@ -1947,18 +1491,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 127,
         "image": "OTRPracticeTest-4-Q127.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 128,
-        "image": "OTRPracticeTest-4-Q128.png"
       }
     },
     {
@@ -1967,14 +1503,6 @@
       "context": {
         "order": 128,
         "image": "OTRPracticeTest-4-Q128.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 129,
-        "image": "OTRPracticeTest-4-Q129.png"
       }
     },
     {
@@ -1995,7 +1523,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 130,
         "image": "OTRPracticeTest-4-Q130.png"
@@ -2011,7 +1539,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 131,
         "image": "OTRPracticeTest-4-Q131.png"
@@ -2035,18 +1563,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 132,
         "image": "OTRPracticeTest-4-Q132-S01.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 133,
-        "image": "OTRPracticeTest-4-Q132-S02.png"
       }
     },
     {
@@ -2075,7 +1595,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 134,
         "image": "OTRPracticeTest-4-Q132-S03.png"
@@ -2083,14 +1603,6 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): D.",
-      "context": {
-        "order": 135,
-        "image": "OTRPracticeTest-4-Q132-S04.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 135,
@@ -2099,26 +1611,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 136,
-        "image": "OTRPracticeTest-4-Q136.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 136,
         "image": "OTRPracticeTest-4-Q136.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 138,
-        "image": "OTRPracticeTest-4-Q138.png"
       }
     },
     {
@@ -2131,26 +1627,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 140,
-        "image": "OTRPracticeTest-4-Q140.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 140,
         "image": "OTRPracticeTest-4-Q140.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 141,
-        "image": "OTRPracticeTest-4-Q141.png"
       }
     },
     {
@@ -2171,18 +1651,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 142,
         "image": "OTRPracticeTest-4-Q142.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 143,
-        "image": "OTRPracticeTest-4-Q143.png"
       }
     },
     {
@@ -2203,15 +1675,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
-      "context": {
-        "order": 144,
-        "image": "OTRPracticeTest-4-Q144.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 3 option(s); review for truncation.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 144,
         "image": "OTRPracticeTest-4-Q144.png"
@@ -2227,18 +1691,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 146,
         "image": "OTRPracticeTest-4-Q146.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 147,
-        "image": "OTRPracticeTest-4-Q147.png"
       }
     },
     {
@@ -2267,7 +1723,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 148,
         "image": "OTRPracticeTest-4-Q148.png"
@@ -2283,7 +1739,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 149,
         "image": "OTRPracticeTest-4-Q149.png"
@@ -2291,26 +1747,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 150,
-        "image": "OTRPracticeTest-4-Q150.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 150,
         "image": "OTRPracticeTest-4-Q150.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 151,
-        "image": "OTRPracticeTest-4-Q151.png"
       }
     },
     {
@@ -2323,26 +1763,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 152,
-        "image": "OTRPracticeTest-4-Q152.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 152,
         "image": "OTRPracticeTest-4-Q152.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C, D.",
-      "context": {
-        "order": 154,
-        "image": "OTRPracticeTest-4-Q154.png"
       }
     },
     {
@@ -2371,7 +1795,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 155,
         "image": "OTRPracticeTest-4-Q155.png"
@@ -2387,7 +1811,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 157,
         "image": "OTRPracticeTest-4-Q157.png"
@@ -2395,14 +1819,6 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 158,
-        "image": "OTRPracticeTest-4-Q158.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 158,
@@ -2419,58 +1835,34 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, D.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 159,
         "image": "OTRPracticeTest-4-Q159.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Parsed only 1 option(s); review for truncation.",
+      "context": {
+        "order": 160,
+        "image": "OTRPracticeTest-4-Q160.png"
+      }
+    },
+    {
+      "level": "warn",
+      "message": "Detected duplicate option key B; keeping the first occurrence.",
+      "context": {
+        "order": 161,
+        "image": "OTRPracticeTest-4-Q161.png"
       }
     },
     {
       "level": "warn",
       "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
-        "order": 159,
-        "image": "OTRPracticeTest-4-Q159.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 160,
-        "image": "OTRPracticeTest-4-Q160.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 160,
-        "image": "OTRPracticeTest-4-Q160.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Detected duplicate option key B; keeping the first occurrence.",
-      "context": {
         "order": 161,
         "image": "OTRPracticeTest-4-Q161.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
-      "context": {
-        "order": 161,
-        "image": "OTRPracticeTest-4-Q161.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 162,
-        "image": "OTRPracticeTest-4-Q162.png"
       }
     },
     {
@@ -2483,26 +1875,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 163,
-        "image": "OTRPracticeTest-4-Q163.png"
-      }
-    },
-    {
-      "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 163,
         "image": "OTRPracticeTest-4-Q163.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 165,
-        "image": "OTRPracticeTest-4-Q165.png"
       }
     },
     {
@@ -2515,7 +1891,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
+      "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 166,
         "image": "OTRPracticeTest-4-Q166.png"
@@ -2525,32 +1901,8 @@
       "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
-        "order": 166,
-        "image": "OTRPracticeTest-4-Q166.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
         "order": 167,
         "image": "OTRPracticeTest-4-Q167.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 167,
-        "image": "OTRPracticeTest-4-Q167.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 168,
-        "image": "OTRPracticeTest-4-Q168.png"
       }
     },
     {
@@ -2571,7 +1923,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 169,
         "image": "OTRPracticeTest-4-Q169.png"
@@ -2587,7 +1939,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 170,
         "image": "OTRPracticeTest-4-Q170.png"
@@ -2603,7 +1955,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): C.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 171,
         "image": "OTRPracticeTest-4-Q171.png"
@@ -2627,7 +1979,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 172,
         "image": "OTRPracticeTest-4-Q172.png"
@@ -2643,7 +1995,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 173,
         "image": "OTRPracticeTest-4-Q173.png"
@@ -2651,7 +2003,7 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
+      "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
         "order": 174,
         "image": "OTRPracticeTest-4-Q174.png"
@@ -2661,32 +2013,8 @@
       "level": "warn",
       "message": "Parsed only 1 option(s); review for truncation.",
       "context": {
-        "order": 174,
-        "image": "OTRPracticeTest-4-Q174.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
         "order": 175,
         "image": "OTRPracticeTest-4-Q175.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Parsed only 1 option(s); review for truncation.",
-      "context": {
-        "order": 175,
-        "image": "OTRPracticeTest-4-Q175.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 176,
-        "image": "OTRPracticeTest-4-Q176.png"
       }
     },
     {
@@ -2715,18 +2043,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A, C.",
+      "message": "Parsed only 2 option(s); review for truncation.",
       "context": {
         "order": 177,
         "image": "OTRPracticeTest-4-Q177.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 178,
-        "image": "OTRPracticeTest-4-Q178.png"
       }
     },
     {
@@ -2747,18 +2067,10 @@
     },
     {
       "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): A.",
+      "message": "Parsed only 3 option(s); review for truncation.",
       "context": {
         "order": 179,
         "image": "OTRPracticeTest-4-Q179.png"
-      }
-    },
-    {
-      "level": "warn",
-      "message": "Inserted placeholder option(s) for missing key(s): B, C, D.",
-      "context": {
-        "order": 180,
-        "image": "OTRPracticeTest-4-Q180.png"
       }
     },
     {

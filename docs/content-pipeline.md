@@ -20,6 +20,7 @@ This document tracks the end-to-end workflow for getting a new practice test set
    - Use `ts-node scripts/generate_rationales.ts --input data/staging/<setId>/questions.draft.json --question <order>` (loop or wrap in a script) to create placeholder rationale payloads.
    - Pending LLM integration, outputs live in `data/staging/<setId>/rationales/` for curator review.
    - Set `OPENAI_API_KEY` (and optionally `OPENAI_DEFAULT_MODEL`) in your environment to switch from stubbed responses to live LLM proposals.
+   - Batch mode: `npx tsx scripts/rationale/batch-generate.ts --input data/staging/<setId>/questions.draft.json --orders 1-25 --output-dir data/staging/<setId>/rationales --provider openai`.
 
 4. **Curator Review**
    - Curator opens draft JSON in the review CLI (TBD) or text diff tool.

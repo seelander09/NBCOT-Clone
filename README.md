@@ -58,7 +58,7 @@ Set the following environment variables to enable live rationale generation for 
 - `OPENAI_API_KEY` — API key for the OpenAI-compatible provider.
 - `OPENAI_DEFAULT_MODEL` — Model identifier (e.g., `gpt-4o-mini`).
 
-With those values configured you can call `npx tsx scripts/generate_rationales.ts --input <questions.json> --question <order>` to draft answer keys, rationales, and book anchors. Add `--provider stub` or `--dry-run` to skip provider calls during local testing.
+With those values configured you can call `npx tsx scripts/generate_rationales.ts --input <questions.json> --question <order>` to draft answer keys, rationales, and book anchors. Add `--provider stub` or `--dry-run` to skip provider calls during local testing. For multiple questions at once, use `npx tsx scripts/rationale/batch-generate.ts --input <questions.json> --orders 10-20 --output-dir data/staging/<setId>/rationales`.
 
 ## Available Scripts
 

@@ -17,7 +17,7 @@ type GeneratorInput = {
   referenceSummary?: string;
 };
 
-type GeneratorOutput = {
+export type GeneratorOutput = {
   answerKey: string[];
   rationale: string;
   bookAnchor: {
@@ -351,8 +351,37 @@ function emitReviewOutput(question: RawPracticeQuestion, result: GeneratorOutput
   console.log(`Saved to ${path.relative(process.cwd(), outputPath)}`);
 }
 
-async function main(): Promise<void> {
-  const config = parseCliArgs();
+export type GenerateRationaleOptions = {
+  inputPath: string;
+  questionOrder: number;
+  outputPath?: string;
+  provider?: "openai" | "stub";
+  model?: string;
+  dryRun?: boolean;
+  bookChunks?: BookChunk[];
+  referenceSummary?: string;
+  writeFile?: boolean;
+};
+
+export async function generateRationaleForQuestion(options: GenerateRationaleOptions): Promise<{
+  result: GeneratorOutput & { mode: "provider" | "fallback" };
+  outputPath: string;
+  question: RawPracticeQuestion;
+}> {
+  const config: CliConfig = {
+    inputPath: options.inputPath,
+    questionOrder: options.questionOrder,
+    outputPath:
+      options.outputPath ??
+      path.join(
+        path.dirname(options.inputPath),
+        "rationales",
+        `q-${options.questionOrder.toString().padStart(3, "0")}.json`,
+      ),
+    provider: options.provider ?? (options.dryRun ? "stub" : "openai"),
+    model: options.model ?? process.env.OPENAI_DEFAULT_MODEL ?? "gpt-4o-mini",
+    dryRun: options.dryRun ?? false,
+  };
 
   const questions = await loadQuestionBundle(config.inputPath);
   const target = questions.find((question) => question.order === config.questionOrder);
@@ -363,15 +392,36 @@ async function main(): Promise<void> {
   const result = await generateRationale(
     {
       question: target,
+      bookChunks: options.bookChunks,
+      referenceSummary: options.referenceSummary,
     },
     config,
   );
 
-  await writeOutput(config.outputPath, result);
-  emitReviewOutput(target, result, config.outputPath);
+  if (options.writeFile ?? true) {
+    await writeOutput(config.outputPath, result);
+  }
+
+  return { result, outputPath: config.outputPath, question: target };
 }
 
-main().catch((error) => {
-  console.error((error as Error).message);
-  process.exit(1);
-});
+async function main(): Promise<void> {
+  const config = parseCliArgs();
+  const { result, outputPath, question } = await generateRationaleForQuestion({
+    inputPath: config.inputPath,
+    questionOrder: config.questionOrder,
+    outputPath: config.outputPath,
+    provider: config.provider,
+    model: config.model,
+    dryRun: config.dryRun,
+  });
+
+  emitReviewOutput(question, result, outputPath);
+}
+
+if (process.argv[1]?.includes("generate_rationales.ts")) {
+  main().catch((error) => {
+    console.error((error as Error).message);
+    process.exit(1);
+  });
+}
