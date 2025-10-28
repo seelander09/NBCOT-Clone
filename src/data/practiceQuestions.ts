@@ -104,6 +104,66 @@ const CATEGORY_HINTS: Record<QuestionCategory, string[]> = {
 
 const PROCESS_TAG = "process question";
 
+const TAG_PATTERNS: Array<{ tag: string; patterns: RegExp[] }> = [
+  {
+    tag: "upper extremity",
+    patterns: [
+      /\bupper extrem/i,
+      /\bUE\b/,
+      /\bshoulder\b/,
+      /\belbow\b/,
+      /\bwrist\b/,
+      /\bhand\b/,
+      /\bgrasp\b/,
+      /\bfine motor\b/,
+    ],
+  },
+  {
+    tag: "lower extremity & mobility",
+    patterns: [/\blower extrem/i, /\ble\b/, /\bgait\b/, /\bambulat/i, /\btransfer\b/, /\bwheelchair\b/],
+  },
+  {
+    tag: "developmental milestones",
+    patterns: [/\bmilestone/i, /\bmonth[-\s]?old\b/, /\byear[-\s]?old\b/, /\bdevelopmental\b/, /\btoddler\b/],
+  },
+  {
+    tag: "sensory processing",
+    patterns: [/\bsensory\b/, /\bhypersensitive\b/, /\bhyposensitive\b/, /\bsensory integration\b/, /\bpropriocept/i],
+  },
+  {
+    tag: "visual & perception",
+    patterns: [/\bvisual\b/, /\bvision\b/, /\bfield\b/, /\bscotoma\b/, /\blower vision\b/, /\bperceptual\b/],
+  },
+  {
+    tag: "cognition & executive function",
+    patterns: [/\bcognit/i, /\bexecutive\b/, /\battention\b/, /\bmemory\b/, /\bproblem[-\s]?solv/i],
+  },
+  {
+    tag: "mental health",
+    patterns: [/\bdepress/i, /\banxiety\b/, /\bpsychosocial\b/, /\bsubstance\b/, /\bgroup therapy\b/],
+  },
+  {
+    tag: "feeding & swallowing",
+    patterns: [/\bfeeding\b/, /\bdysphagia\b/, /\bmeal\b/, /\bnutrition\b/, /\bSWALLOW/i],
+  },
+  {
+    tag: "splinting & orthotics",
+    patterns: [/\bsplint/i, /\northot/i, /\bimmobilization\b/, /\bdynamic\b/, /\bstatic\b/],
+  },
+  {
+    tag: "documentation & reimbursement",
+    patterns: [/\bdocument/i, /\bSOAP\b/, /\bprogress note\b/, /\breimbursement\b/, /\baudit\b/],
+  },
+  {
+    tag: "assistive technology",
+    patterns: [/\bassistive\b/, /\bdevice\b/, /\bath\b/, /\badaptive equipment\b/],
+  },
+  {
+    tag: "education & group process",
+    patterns: [/\beducation\b/, /\bteach\b/, /\bgroup\b/, /\bprocess\b/, /\bfacilitat/i],
+  },
+];
+
 const DOMAIN_METADATA: Record<PracticeQuestionDomainId, PracticeQuestionDomain> = {
   domain1: {
     id: "domain1",
@@ -269,7 +329,10 @@ function extractKeywords(content: string): string[] {
   return KEYWORD_CUES.filter((cue) => prepared.includes(cue));
 }
 
-function detectQuestionTags(item: RawPracticeQuestion): string[] {
+function detectQuestionTags(
+  item: RawPracticeQuestion,
+  context: { domain: PracticeQuestionDomain; category: QuestionCategory },
+): string[] {
   const textSources: Array<string | undefined> = [
     item.bookAnswer?.title,
     item.bookAnswer?.excerpt,
@@ -285,13 +348,25 @@ function detectQuestionTags(item: RawPracticeQuestion): string[] {
     .join(" ")
     .toLowerCase();
 
-  const tags: string[] = [];
+  const tags = new Set<string>();
 
   if (/\botpf[-\s]?4\b/.test(combinedText) || combinedText.includes("occupational therapy practice framework")) {
-    tags.push(PROCESS_TAG);
+    tags.add(PROCESS_TAG);
   }
 
-  return tags;
+  for (const rule of TAG_PATTERNS) {
+    if (rule.patterns.some((pattern) => pattern.test(combinedText))) {
+      tags.add(rule.tag);
+    }
+  }
+
+  if (tags.size === 0) {
+    tags.add(`${context.domain.shortTitle.toLowerCase()}`);
+  }
+
+  tags.add(`category:${context.category}`);
+
+  return Array.from(tags);
 }
 
 function normalizeAnswerKey(value: unknown): string[] | undefined {
@@ -496,7 +571,9 @@ export function buildPracticeQuestions(
         imagePaths,
         content,
         remediationPrompt: buildRemediationPrompt(headline, content, subheadline),
-        keywords: extractKeywords(content),\n        tags: detectQuestionTags(item),\n
+        keywords: extractKeywords(content),
+        tags: detectQuestionTags(item, { domain, category }),
+
         bookAnswer,
         answerKey,
         prompt,
