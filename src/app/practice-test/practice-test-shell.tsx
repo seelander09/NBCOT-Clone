@@ -360,6 +360,10 @@ export function PracticeTestShell({
   const activeQuestion = questions[activeIndex];
   const remediationState = remediationById[activeQuestion.id];
   const keywords = useMemo(() => activeQuestion.keywords, [activeQuestion.keywords]);
+  const isProcessQuestionTag = useMemo(
+    () => activeQuestion.tags.includes("process question"),
+    [activeQuestion.tags],
+  );
   const isAnswerRevealed = Boolean(revealedAnswers[activeQuestion.id]);
 
   useEffect(() => {
@@ -1463,6 +1467,11 @@ export function PracticeTestShell({
         <section className="space-y-6">
           <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
             <h2 className="font-heading text-xl text-slate-900">AI deep dive & rationale</h2>
+            {(isAnswerRevealed && isProcessQuestionTag) ? (
+              <span className="mt-3 inline-flex items-center rounded-full bg-sky-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-sky-700">
+                Process question
+              </span>
+            ) : null}
             {isAnswerRevealed ? (
               activeQuestion.content ? (
                 <div className="mt-3">

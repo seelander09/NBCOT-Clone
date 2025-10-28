@@ -73,6 +73,7 @@ export type PracticeQuestion = {
   content: string;
   remediationPrompt: string;
   keywords: string[];
+  tags: string[];
   domain: PracticeQuestionDomain;
   bookAnswer?: BookAnswer;
   answerKey?: string[];
@@ -100,6 +101,8 @@ const CATEGORY_HINTS: Record<QuestionCategory, string[]> = {
   mixed: ["mixed"],
   other: [],
 };
+
+const PROCESS_TAG = "process question";
 
 const DOMAIN_METADATA: Record<PracticeQuestionDomainId, PracticeQuestionDomain> = {
   domain1: {
@@ -264,6 +267,31 @@ function extractKeywords(content: string): string[] {
 
   const prepared = content.toLowerCase();
   return KEYWORD_CUES.filter((cue) => prepared.includes(cue));
+}
+
+function detectQuestionTags(item: RawPracticeQuestion): string[] {
+  const textSources: Array<string | undefined> = [
+    item.bookAnswer?.title,
+    item.bookAnswer?.excerpt,
+    item.bookAnswer?.source,
+    item.prompt,
+    item.content,
+    item.headline,
+    item.metadata?.sourceReference as string | undefined,
+  ];
+
+  const combinedText = textSources
+    .filter((value): value is string => typeof value === "string" && value.length > 0)
+    .join(" ")
+    .toLowerCase();
+
+  const tags: string[] = [];
+
+  if (/\botpf[-\s]?4\b/.test(combinedText) || combinedText.includes("occupational therapy practice framework")) {
+    tags.push(PROCESS_TAG);
+  }
+
+  return tags;
 }
 
 function normalizeAnswerKey(value: unknown): string[] | undefined {
@@ -468,7 +496,7 @@ export function buildPracticeQuestions(
         imagePaths,
         content,
         remediationPrompt: buildRemediationPrompt(headline, content, subheadline),
-        keywords: extractKeywords(content),
+        keywords: extractKeywords(content),\n        tags: detectQuestionTags(item),\n
         bookAnswer,
         answerKey,
         prompt,
