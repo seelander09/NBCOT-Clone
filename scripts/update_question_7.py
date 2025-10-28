@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-path = Path(r"e:/Projects/NBCOT-Clone/src/data/practice-questions.json")
+path = Path(r"e:/Projects/NBCOT-Clone/src/data/practice-tests/otr-baseline/questions.json")
 data = json.loads(path.read_text())
 for item in data:
     if item["order"] == 7:
