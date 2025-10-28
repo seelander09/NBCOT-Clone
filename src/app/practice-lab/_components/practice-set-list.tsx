@@ -171,6 +171,10 @@ export function PracticeSetList({ entries }: PracticeSetListProps) {
 
               <dl className="mt-4 flex flex-wrap gap-4 text-xs uppercase tracking-[0.18em] text-slate-500">
                 <div>
+                  <dt className="font-semibold text-slate-700">Set ID</dt>
+                  <dd className="mt-1 text-slate-900">{entry.id}</dd>
+                </div>
+                <div>
                   <dt className="font-semibold text-slate-700">Questions</dt>
                   <dd className="mt-1 text-slate-900">{entry.questionCount}</dd>
                 </div>

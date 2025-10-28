@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import type { DraftQuestionRecord } from "./ingestion/types";
+import { createToolingLogger } from "./utils/toolingLogger";
 import type { RawPracticeQuestion } from "./utils/validateQuestionSchema";
 
 type BookChunk = {
@@ -38,6 +39,8 @@ type CliConfig = {
   model: string;
   dryRun: boolean;
 };
+
+const toolingLogger = createToolingLogger("rationales:generate");
 
 async function loadJson<T>(filePath: string): Promise<T> {
   const payload = await fs.readFile(filePath, "utf8");
@@ -389,6 +392,15 @@ export async function generateRationaleForQuestion(options: GenerateRationaleOpt
     throw new Error(`Question order ${config.questionOrder} not found in ${config.inputPath}`);
   }
 
+  toolingLogger("info", "generate:start", {
+    inputPath: config.inputPath,
+    questionOrder: config.questionOrder,
+    provider: config.provider,
+    model: config.model,
+    dryRun: config.dryRun,
+    outputPath: config.outputPath,
+  });
+
   const result = await generateRationale(
     {
       question: target,
@@ -401,6 +413,14 @@ export async function generateRationaleForQuestion(options: GenerateRationaleOpt
   if (options.writeFile ?? true) {
     await writeOutput(config.outputPath, result);
   }
+
+  toolingLogger("info", "generate:completed", {
+    inputPath: config.inputPath,
+    questionOrder: config.questionOrder,
+    provider: result.provider ?? config.provider,
+    mode: result.mode,
+    outputPath: config.outputPath,
+  });
 
   return { result, outputPath: config.outputPath, question: target };
 }

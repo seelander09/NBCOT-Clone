@@ -5,6 +5,49 @@ import path from "node:path";
 import type { DraftQuestionRecord } from "../ingestion/types";
 import type { RawPracticeQuestion } from "../utils/validateQuestionSchema";
 
+function renderDiff(existing: string, proposed: string): void {
+  const existingNormalized = existing.replace(/\r?\n/g, "\n").trim();
+  const proposedNormalized = proposed.replace(/\r?\n/g, "\n").trim();
+
+  if (!existingNormalized && !proposedNormalized) {
+    return;
+  }
+
+  if (existingNormalized === proposedNormalized) {
+    console.log("");
+    console.log("Diff vs existing rationale:");
+    console.log("---------------------------");
+    console.log("No changes detected.");
+    console.log("");
+    return;
+  }
+
+  const existingLines = existingNormalized.split("\n");
+  const proposedLines = proposedNormalized.split("\n");
+  const maxLines = Math.max(existingLines.length, proposedLines.length);
+
+  console.log("");
+  console.log("Diff vs existing rationale:");
+  console.log("---------------------------");
+  for (let index = 0; index < maxLines; index += 1) {
+    const oldLine = existingLines[index];
+    const newLine = proposedLines[index];
+
+    if (oldLine === newLine) {
+      continue;
+    }
+
+    if (typeof oldLine === "string") {
+      console.log(`- ${oldLine}`);
+    }
+
+    if (typeof newLine === "string") {
+      console.log(`+ ${newLine}`);
+    }
+  }
+  console.log("");
+}
+
 type RationalePayload = {
   answerKey?: string[] | string;
   rationale?: string;
@@ -163,7 +206,7 @@ function renderReview(question: RawPracticeQuestion, rationale: RationalePayload
   console.log("Rationale draft:");
   console.log("----------------");
   console.log(rationale.rationale ?? "(none)");
-  console.log("");
+  renderDiff(question.content ?? "", rationale.rationale ?? "");
   console.log(`Source: ${path.relative(process.cwd(), sourcePath)}`);
 }
 

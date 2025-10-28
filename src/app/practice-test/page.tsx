@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { requireAuth } from "@/lib/auth";
-import practiceQuestions from "@/data/practiceQuestions";
+import { getPracticeTestSetById } from "@/data/practiceTestSets";
 
 import { PracticeTestShell } from "./practice-test-shell";
 
@@ -13,6 +13,11 @@ export const metadata: Metadata = {
 
 export default async function PracticeTestPage() {
   await requireAuth();
+  const practiceSet = getPracticeTestSetById("otr-baseline");
+
+  if (!practiceSet) {
+    throw new Error("Baseline practice set is unavailable.");
+  }
 
   return (
     <main className="bg-slate-950/5">
@@ -20,10 +25,10 @@ export default async function PracticeTestPage() {
         <header className="mb-8 rounded-3xl border border-slate-200 bg-white p-8 shadow-card">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Practice lab</p>
           <h1 className="mt-3 font-heading text-4xl tracking-tight text-slate-900">
-            NBCOT practice test experience
+            {practiceSet.title}
           </h1>
           <p className="mt-3 max-w-3xl text-sm text-slate-600">
-            Work through the screenshots you uploaded, capture your answers, and tap into the structured rationales and textbook anchors imported from your study log. Use the navigator to jump between items and flag anything you want to revisit before you score the session.
+            {practiceSet.description}
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
@@ -34,7 +39,14 @@ export default async function PracticeTestPage() {
             </Link>
           </div>
         </header>
-        <PracticeTestShell questions={practiceQuestions} />
+        <PracticeTestShell
+          questions={practiceSet.questions}
+          testId={practiceSet.id}
+          testLabel={practiceSet.title}
+          testSlug={practiceSet.slug}
+          sessionStorageKey={practiceSet.sessionStorageKey}
+          analyticsStorageKey={practiceSet.analyticsStorageKey}
+        />
       </div>
     </main>
   );

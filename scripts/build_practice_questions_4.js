@@ -80,7 +80,14 @@ function main() {
     return record;
   });
 
-  const outputPath = path.join(rootDir, "src", "data", "practice-questions-4.json");
+  const outputPath = path.join(
+    rootDir,
+    "src",
+    "data",
+    "practice-tests",
+    "otr-set-4",
+    "questions.json",
+  );
   fs.writeFileSync(outputPath, JSON.stringify(questions, null, 2));
   console.log(`Wrote ${questions.length} questions to ${outputPath}`);
 }

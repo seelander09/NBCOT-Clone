@@ -2,7 +2,7 @@
 
 ## 1. Background
 - The current practice test experience (`src/app/practice-test/practice-test-shell.tsx:180`) delivers a rich single-test flow: local state sync, timers, reveal gating, remediation calls, CSV/JSON export, and printable summaries.
-- Raw items live in JSON bundles (`src/data/practice-questions.json`, `src/data/practice-questions-4.json`) and are normalized at build time via `buildPracticeQuestions` (`src/data/practiceQuestions.ts:428`). The helper injects IDs, domains, markdown-friendly rationales, and image URLs.
+- Raw items live in versioned bundles (`src/data/practice-tests/otr-baseline/questions.json`, `src/data/practice-tests/otr-set-4/questions.json`) and are normalized at build time via `buildPracticeQuestions` (`src/data/practiceQuestions.ts:428`). The helper injects IDs, domains, markdown-friendly rationales, and image URLs.
 - Authoring is semi-manual. Scripts in `scripts/` handle OCR (`scripts/ocr_practice_test.py`), question stubs (`scripts/build_practice_questions_4.js:1`), and per-question rationale patches. Vector remediation calls back into `/api/remediation` (`src/app/api/remediation/route.ts:1`) with fallbacks to the local question bank and Qdrant sources.
 - Today only two sets exist (baseline and an in-progress Set 4). Set 4 lacks answer keys, rationales, and clean options, blocking user value.
 
@@ -115,7 +115,7 @@ The first milestone (Content Infrastructure) completes when the following toolin
   - CI-friendly output (non-zero exit code on failure, machine-readable summary in `test-results/questions-check.json`).
 - **Question Bundle Layout**
   - Repository structure migrated to `src/data/practice-tests/<set>/questions.json` with an index registry file that enumerates active sets for imports.
-  - Migration script to rewrite legacy `practice-questions.json` into the new layout while preserving IDs.
+  - Migration script to rewrite legacy `practice-questions*.json` bundles into the versioned layout (`src/data/practice-tests/<set>/questions.json`) while preserving IDs.
 - **Ingestion Utilities**
   - `scripts/ocr_practice_test.py` updated with retry/backoff flags (`--max-retries`, `--sleep`) plus a manifest file listing processed images.
   - Replacement for `build_practice_questions_4.js` that emits schema-compliant JSON, trims OCR noise, infers `requiredSelections`, and populates a `metadata` block with `sourceBatch`, `ocrConfidence`, and `author`.

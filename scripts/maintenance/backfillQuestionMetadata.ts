@@ -19,7 +19,7 @@ type BackfillConfig = {
 
 const BACKFILL_FILES: BackfillConfig[] = [
   {
-    filePath: path.join("src", "data", "practice-questions.json"),
+    filePath: path.join("src", "data", "practice-tests", "otr-baseline", "questions.json"),
     defaults: {
       sourceBatch: "legacy-baseline-v1",
       author: "system-import",
@@ -30,7 +30,7 @@ const BACKFILL_FILES: BackfillConfig[] = [
     ensureBookAnchor: true,
   },
   {
-    filePath: path.join("src", "data", "practice-questions-4.json"),
+    filePath: path.join("src", "data", "practice-tests", "otr-set-4", "questions.json"),
     defaults: {
       sourceBatch: "otr4-raw-20251020",
       author: "ocr-ingestion",

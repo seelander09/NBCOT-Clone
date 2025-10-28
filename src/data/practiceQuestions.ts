@@ -1,4 +1,4 @@
-﻿import practiceQuestionsRaw from "./practice-questions.json";
+import baselinePracticeQuestionsRaw from "./practice-tests/otr-baseline/questions.json";
 
 export type RawPracticeQuestionOption = {
   key: string;
@@ -481,6 +481,11 @@ export function buildPracticeQuestions(
     .sort((a, b) => a.order - b.order);
 }
 
-const practiceQuestions = buildPracticeQuestions(practiceQuestionsRaw as RawPracticeQuestion[]);
+const practiceQuestions = buildPracticeQuestions(
+  baselinePracticeQuestionsRaw as RawPracticeQuestion[],
+  {
+    idPrefix: "q",
+  },
+);
 
 export default practiceQuestions;

@@ -71,6 +71,6 @@ if current is not None:
     entries.append(current)
 
 entries.sort(key=lambda item: item['order'])
-output_path = root / 'src' / 'data' / 'practice-questions.json'
+output_path = root / 'src' / 'data' / 'practice-tests' / 'otr-baseline' / 'questions.json'
 output_path.write_text(json.dumps(entries, indent=2), encoding='utf-8')
 print(f"Parsed {len(entries)} questions to {output_path}")

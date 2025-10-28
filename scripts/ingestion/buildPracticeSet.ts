@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
+import { createToolingLogger } from "../utils/toolingLogger";
 import type {
   DiffChange,
   DiffEntry,
@@ -14,6 +15,7 @@ import type {
 const REPO_ROOT = path.resolve(__dirname, "..", "..");
 const DEFAULT_STAGING_ROOT = path.join(REPO_ROOT, "data", "staging");
 const OPTION_KEYS = ["A", "B", "C", "D", "E"];
+const toolingLogger = createToolingLogger("ingestion:buildPracticeSet");
 
 function toPipelineLog(
   level: PipelineLogEntry["level"],
@@ -485,6 +487,7 @@ async function writeDiffArtifact(diff: DiffEntry[], targetDir: string): Promise<
 }
 
 export async function buildPracticeSetFromManifest(manifestPath: string): Promise<IngestionResult> {
+  toolingLogger("info", "build:start", { manifestPath });
   const manifest = await loadManifest(manifestPath);
 
   const [imageDir, ocrDir] = await Promise.all([
@@ -567,6 +570,12 @@ export async function buildPracticeSetFromManifest(manifestPath: string): Promis
   await writeResultArtifact(result, stagingDir);
   await writeLogArtifact(logs, stagingDir);
   await writeDiffArtifact(diff, stagingDir);
+
+  toolingLogger("info", "build:completed", {
+    setId: manifest.setId,
+    questionCount: questions.length,
+    stagingDir,
+  });
 
   return result;
 }

@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ReactMarkdown, { type Components } from "react-markdown";
 
 import type { PracticeQuestion } from "@/data/practiceQuestions";
 
 const EXPORT_SUCCESS_RESET_MS = 2500;
-const DEFAULT_SESSION_STORAGE_KEY = "nbcot-practice-session-v1";
-const DEFAULT_SESSION_ANALYTICS_KEY = "nbcot-practice-analytics-v1";
+const SESSION_STORAGE_PREFIX = "nbcot-practice-session";
+const ANALYTICS_STORAGE_PREFIX = "nbcot-practice-analytics";
 
 const domainBadgeClasses: Record<PracticeQuestion["domain"]["id"], string> = {
   domain1: "bg-emerald-100 text-emerald-700 border border-emerald-200",
@@ -20,6 +21,9 @@ const domainBadgeClasses: Record<PracticeQuestion["domain"]["id"], string> = {
 
 type PracticeTestShellProps = {
   questions: PracticeQuestion[];
+  testId: string;
+  testLabel: string;
+  testSlug?: string;
   sessionStorageKey?: string;
   analyticsStorageKey?: string;
 };
@@ -179,11 +183,14 @@ function selectionsMatch(selected: string[] | undefined, answerKey: string[] | u
 
 export function PracticeTestShell({
   questions,
+  testId,
+  testLabel,
+  testSlug,
   sessionStorageKey,
   analyticsStorageKey,
 }: PracticeTestShellProps) {
-  const sessionKey = sessionStorageKey ?? DEFAULT_SESSION_STORAGE_KEY;
-  const analyticsKey = analyticsStorageKey ?? DEFAULT_SESSION_ANALYTICS_KEY;
+  const sessionKey = sessionStorageKey ?? `${SESSION_STORAGE_PREFIX}-${testId}`;
+  const analyticsKey = analyticsStorageKey ?? `${ANALYTICS_STORAGE_PREFIX}-${testId}`;
   const [activeIndex, setActiveIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerState>({});
   const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
@@ -194,6 +201,9 @@ export function PracticeTestShell({
   const [questionTimerEnabled, setQuestionTimerEnabled] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submissionSummary, setSubmissionSummary] = useState<{
+    testId: string;
+    testLabel: string;
+    submittedAt: string;
     correct: number;
     total: number;
     details: Array<{
@@ -231,7 +241,15 @@ export function PracticeTestShell({
         elapsedMs: number;
         isSubmitted: boolean;
         submissionSummary: PracticeTestShell["submissionSummary"];
+        testId: string;
+        testLabel: string;
       }>;
+
+      if (parsed.testId && parsed.testId !== testId) {
+        window.localStorage.removeItem(sessionKey);
+        setIsSessionHydrated(true);
+        return;
+      }
 
       setAnswers(parsed.answers ?? {});
       setRevealedAnswers(parsed.revealedAnswers ?? {});
@@ -256,14 +274,21 @@ export function PracticeTestShell({
         setIsSubmitted(true);
       }
       if (parsed.submissionSummary) {
-        setSubmissionSummary(parsed.submissionSummary);
+        setSubmissionSummary({
+          testId: parsed.submissionSummary.testId ?? testId,
+          testLabel: parsed.submissionSummary.testLabel ?? testLabel,
+          submittedAt: parsed.submissionSummary.submittedAt ?? new Date().toISOString(),
+          correct: parsed.submissionSummary.correct,
+          total: parsed.submissionSummary.total,
+          details: parsed.submissionSummary.details,
+        });
       }
     } catch (error) {
       console.warn("Failed to hydrate practice test session", error);
     } finally {
       setIsSessionHydrated(true);
     }
-  }, [questions.length, sessionKey]);
+  }, [questions.length, sessionKey, testId, testLabel]);
 
   useEffect(() => {
     if (!isSessionHydrated || typeof window === "undefined") {
@@ -272,6 +297,8 @@ export function PracticeTestShell({
 
     try {
       const payload = {
+        testId,
+        testLabel,
         answers,
         revealedAnswers,
         reviewFlags,
@@ -298,6 +325,8 @@ export function PracticeTestShell({
     submissionSummary,
     isSessionHydrated,
     sessionKey,
+    testId,
+    testLabel,
   ]);
 
   useEffect(() => {
@@ -363,8 +392,10 @@ export function PracticeTestShell({
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         questionId: activeQuestion.id,
+        testId,
         keywords,
         prompt: activeQuestion.remediationPrompt,
+        domain: activeQuestion.domain.id,
         limit: 3,
       }),
       signal: controller.signal,
@@ -413,7 +444,7 @@ export function PracticeTestShell({
       cancelled = true;
       controller.abort();
     };
-  }, [activeQuestion.id, activeQuestion.remediationPrompt, isAnswerRevealed, keywords, remediationState?.status]);
+  }, [activeQuestion.id, activeQuestion.remediationPrompt, activeQuestion.domain.id, isAnswerRevealed, keywords, remediationState?.status, testId]);
 
   const referenceSnippets = useMemo(
     () => extractReferenceSnippets(activeQuestion.content),
@@ -580,34 +611,72 @@ export function PracticeTestShell({
       .filter((row): row is NonNullable<typeof row> => row !== null);
   }, [questionTimers, questions, submissionSummary]);
 
+  const submittedAtLabel = useMemo(() => {
+    if (!submissionSummary) {
+      return null;
+    }
+
+    const timestamp = new Date(submissionSummary.submittedAt);
+    if (Number.isNaN(timestamp.getTime())) {
+      return submissionSummary.submittedAt;
+    }
+
+    return new Intl.DateTimeFormat(undefined, {
+      dateStyle: "medium",
+      timeStyle: "short",
+    }).format(timestamp);
+  }, [submissionSummary]);
+
   function handleExport(format: "json" | "csv") {
     if (!canExport) {
       return;
     }
 
+    const generatedAt = new Date().toISOString();
     const summary = {
-      generatedAt: new Date().toISOString(),
+      testId,
+      testLabel,
+      testSlug: testSlug ?? null,
+      sessionStorageKey: sessionKey,
+      analyticsStorageKey: analyticsKey,
+      generatedAt,
       durationMs: elapsedMs,
       answeredCount,
       scorableCount,
       correctCount,
       accuracy,
-      responses: exportRows,
+      responses: exportRows.map((row) => ({
+        ...row,
+        testId,
+      })),
     };
 
     let blob: Blob;
     let filename: string;
 
+    const safeTestId = testId.replace(/[^a-z0-9-]+/gi, "-").toLowerCase() || "practice-test";
+
     if (format === "json") {
       blob = new Blob([JSON.stringify(summary, null, 2)], { type: "application/json" });
-      filename = `practice-test-${summary.generatedAt}.json`;
+      filename = `${safeTestId}-${generatedAt}.json`;
     } else {
-      const header = ["order", "questionId", "response", "isCorrect", "answerKey", "flagged"];
+      const header = [
+        "testId",
+        "testLabel",
+        "order",
+        "questionId",
+        "response",
+        "isCorrect",
+        "answerKey",
+        "flagged",
+      ];
       const lines = [header.join(",")];
       exportRows.forEach((row) => {
         const answerKeyValue = row.answerKey.join("|");
         const responseValue = Array.isArray(row.response) ? row.response.join("|") : String(row.response ?? "");
         const csvValues = [
+          testId,
+          testLabel,
           row.order,
           row.questionId,
           responseValue,
@@ -618,7 +687,7 @@ export function PracticeTestShell({
         lines.push(csvValues.join(","));
       });
       blob = new Blob([lines.join("\n")], { type: "text/csv" });
-      filename = `practice-test-${summary.generatedAt}.csv`;
+      filename = `${safeTestId}-${generatedAt}.csv`;
     }
 
     const url = URL.createObjectURL(blob);
@@ -727,8 +796,12 @@ export function PracticeTestShell({
     const overallAccuracyRatio = scorableCount > 0 ? correctCount / scorableCount : null;
     const overallAccuracyPercent = overallAccuracyRatio !== null ? Math.round(overallAccuracyRatio * 100) : null;
 
+    const submittedAt = new Date().toISOString();
+
     const analyticsPayload = {
-      submittedAt: new Date().toISOString(),
+      testId,
+      testLabel,
+      submittedAt,
       totalDurationMs: elapsedMs,
       totalQuestions: questions.length,
       answered: answeredCount,
@@ -751,6 +824,9 @@ export function PracticeTestShell({
     }
 
     setSubmissionSummary({
+      testId,
+      testLabel,
+      submittedAt,
       correct,
       total: details.length,
       details,
@@ -866,7 +942,24 @@ export function PracticeTestShell({
     <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 pb-16 pt-8 lg:grid-cols-[280px_1fr] lg:px-8">
       <aside className="space-y-6 lg:sticky lg:top-8 lg:self-start">
         <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Session summary</div>
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
+                Practice set
+              </p>
+              <p className="mt-1 text-sm font-semibold text-slate-900">{testLabel}</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-slate-400">{testId}</p>
+            </div>
+            <Link
+              href="/practice-lab"
+              className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500 transition hover:border-slate-300 hover:bg-slate-50"
+            >
+              Switch set
+            </Link>
+          </div>
+          <div className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Session summary
+          </div>
           <dl className="mt-4 space-y-2 text-sm text-slate-600">
             <div className="flex items-center justify-between">
               <dt>Time elapsed</dt>
@@ -955,6 +1048,12 @@ export function PracticeTestShell({
           <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-card">
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
               Results summary
+            </div>
+            <div className="mt-2 text-xs text-slate-500">
+              <span className="font-semibold text-slate-700">{submissionSummary.testLabel}</span>
+              {submittedAtLabel ? (
+                <span className="ml-2 text-slate-400">Submitted {submittedAtLabel}</span>
+              ) : null}
             </div>
             <div className="mt-4 space-y-2 text-sm text-slate-600">
               <p>

@@ -183,20 +183,27 @@ function runChecksForFile(filePath: string): FileReport {
 
     if (answerKey.length > 0) {
       if (!question.content || question.content.trim().length === 0) {
-        warnings.push(
-          `[${question.order}] Missing rationale content while answer key exists (expected "**Why this is right**" section).`,
-        );
+        issues.push({
+          instancePath: "/content",
+          message:
+            'Missing rationale content while answer key exists (expected "**Why this is right**" section).',
+          order: question.order,
+        });
       } else {
         const normalized = question.content.toLowerCase();
         if (!normalized.includes("why this is right")) {
-          warnings.push(
-            `[${question.order}] Rationale missing "Why this is right" heading.`,
-          );
+          issues.push({
+            instancePath: "/content",
+            message: 'Rationale missing "Why this is right" heading.',
+            order: question.order,
+          });
         }
-        if (!normalized.includes("why the other")) {
-          warnings.push(
-            `[${question.order}] Rationale missing "Why the others" explanation.`,
-          );
+        if (!normalized.includes("why the others")) {
+          issues.push({
+            instancePath: "/content",
+            message: 'Rationale missing "Why the others" explanation.',
+            order: question.order,
+          });
         }
       }
     }

@@ -21,7 +21,7 @@
     "answerKey": [
       "A"
     ],
-    "content": "**Why this is right:** Strengthening proximal control is foundational for toddlers with hypotonia. Co-contraction at the shoulders and trunk lets the forearm and hand dissociate for grasp, release, and in-hand manipulation during play. Proximal stability also supports postural reactions that keep the toddler upright while exploring toys.\n\n**Why the others miss:**\n- **B. Provide activities on a horizontal plane.** This compensates for weak shoulders but never builds the proximal strength required for refined manipulation.\n- **C. Place toys in midline.** Presenting toys close to the body reduces reach demands yet does nothing to remediate the motor impairment limiting fine-motor development.\n\n**Book anchor:** Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents, 8th ed., Chapter 18 (Neuromotor and Sensorimotor Interventions) highlights targeting proximal stability before expecting distal control in toddlers with hypotonia.",
+    "content": "**Why this is right:** Strengthening proximal control is foundational for toddlers with hypotonia. Co-contraction at the shoulders and trunk lets the forearm and hand dissociate for grasp, release, and in-hand manipulation during play. Proximal stability also supports postural reactions that keep the toddler upright while exploring toys.\n\n**Why the others miss**\n\n- **B. Provide activities on a horizontal plane.** This compensates for weak shoulders but never builds the proximal strength required for refined manipulation.\n- **C. Place toys in midline.** Presenting toys close to the body reduces reach demands yet does nothing to remediate the motor impairment limiting fine-motor development.\n\n**Book anchor:** Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents, 8th ed., Chapter 18 (Neuromotor and Sensorimotor Interventions) highlights targeting proximal stability before expecting distal control in toddlers with hypotonia.",
     "bookAnswer": {
       "title": "Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents",
       "excerpt": "Chapter 18 outlines neuromotor and sensorimotor strategies that build proximal stability and postural control before expecting refined fine-motor play.",
@@ -57,7 +57,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** A localized Staphylococcus aureus infection is managed with standard precautions. Perform hand hygiene, don gloves when contacting drainage, and keep equipment clean while maintaining a covered wound so therapy remains accessible and safe.\n\n**Why the others miss:**\n- **A. Isolation room.** Contact isolation is reserved for uncontrolled drainage or aerosol-generating procedures, not routine hand therapy with a covered wound.\n- **C. Glove over the wound.** A glove traps moisture, raises infection risk, and is not recommended for wound coverage.\n\n**Book anchor:** Centers for Disease Control and Prevention. Standard Precautions for All Patient Care (2023) clarifies that gloves and hand hygiene are sufficient for localized skin infections without automatic isolation.",
+    "content": "**Why this is right:** A localized Staphylococcus aureus infection is managed with standard precautions. Perform hand hygiene, don gloves when contacting drainage, and keep equipment clean while maintaining a covered wound so therapy remains accessible and safe.\n\n**Why the others miss**\n\n- **A. Isolation room.** Contact isolation is reserved for uncontrolled drainage or aerosol-generating procedures, not routine hand therapy with a covered wound.\n- **C. Glove over the wound.** A glove traps moisture, raises infection risk, and is not recommended for wound coverage.\n\n**Book anchor:** Centers for Disease Control and Prevention. Standard Precautions for All Patient Care (2023) clarifies that gloves and hand hygiene are sufficient for localized skin infections without automatic isolation.",
     "bookAnswer": {
       "title": "CDC Standard Precautions Guidance",
       "excerpt": "The CDC Standard Precautions guideline directs clinicians to pair meticulous hand hygiene with gloves and covered wounds when treating localized infections.",
@@ -75,7 +75,7 @@
     "order": 3,
     "headline": "Task based",
     "images": [],
-    "content": "**Why this is right:** A home assessment lets the OTR observe real bathroom transfers, identify hazards, recommend adaptive equipment, and rehearse strategies that directly reduce the patient's fear of falling before discharge.\n\n**Why the others miss:**\n- **A. Provide handouts.** Generic printouts cannot verify equipment fit or ensure carryover in the family's actual bathroom.\n- **B. Recommend a fall-prevention class.** Delays addressing the immediate safety concerns during transition home.\n\n**Book anchor:** Pedretti & Early, Occupational Therapy for Physical Dysfunction, 8th ed., Chapter 19 stresses using home visits to tailor bathroom modifications and caregiver training prior to discharge.",
+    "content": "**Why this is right:** A home assessment lets the OTR observe real bathroom transfers, identify hazards, recommend adaptive equipment, and rehearse strategies that directly reduce the patient's fear of falling before discharge.\n\n**Why the others miss**\n\n- **A. Provide handouts.** Generic printouts cannot verify equipment fit or ensure carryover in the family's actual bathroom.\n- **B. Recommend a fall-prevention class.** Delays addressing the immediate safety concerns during transition home.\n\n**Book anchor:** Pedretti & Early, Occupational Therapy for Physical Dysfunction, 8th ed., Chapter 19 stresses using home visits to tailor bathroom modifications and caregiver training prior to discharge.",
     "prompt": "A patient has Friedreich's ataxia and will be discharged in 2 days from an inpatient rehabilitation facility to live at home with family. The patient is afraid of falling, especially during ADL in the bathroom. What action is MOST IMPORTANT for the OTR to take to reduce the patient's fear and promote a safe transition to home?",
     "options": [
       {
@@ -111,7 +111,7 @@
     "order": 4,
     "headline": "Task based",
     "images": [],
-    "content": "**Why this is right:** Standardized screening tools must be administered exactly as written. Providing the scripted repeat directions preserves validity so scores remain comparable across examiners and settings.\n\n**Why the others miss:**\n- **A. Model the task.** Physical cueing adds examiner assistance that invalidates the standardized norms.\n- **C. Simplify instructions.** Altering wording changes task demands and compromises reliability.\n\n**Book anchor:** O'Brien & Hussey, Introduction to Occupational Therapy, 5th ed., Chapter 10 reinforces that standardized assessments require adherence to the manual's directions to maintain reliability and validity.",
+    "content": "**Why this is right:** Standardized screening tools must be administered exactly as written. Providing the scripted repeat directions preserves validity so scores remain comparable across examiners and settings.\n\n**Why the others miss**\n\n- **A. Model the task.** Physical cueing adds examiner assistance that invalidates the standardized norms.\n- **C. Simplify instructions.** Altering wording changes task demands and compromises reliability.\n\n**Book anchor:** O'Brien & Hussey, Introduction to Occupational Therapy, 5th ed., Chapter 10 reinforces that standardized assessments require adherence to the manual's directions to maintain reliability and validity.",
     "prompt": "During the administration of a standardized screening instrument, a child demonstrates difficulty initiating a motor task. What action should the OTR take in this situation?",
     "options": [
       {
@@ -147,7 +147,7 @@
     "order": 5,
     "headline": "Task based",
     "images": [],
-    "content": "**Why this is right:** A front-wheel drive power wheelchair conserves energy, offers tight turning for school hallways, and provides stable powered mobility as proximal weakness progresses in Duchenne muscular dystrophy.\n\n**Why the others miss:**\n- **A. Lightweight manual wheelchair.** Requires upper-extremity strength and endurance the child is rapidly losing.\n- **C. Tilt-in-space wheelchair.** Offers positioning and pressure relief but not the independent powered mobility needed for community distances.\n\n**Book anchor:** Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents, 8th ed., Chapter 28 (Assistive Technology) recommends early power mobility for progressive muscular dystrophy to support school and community roles.",
+    "content": "**Why this is right:** A front-wheel drive power wheelchair conserves energy, offers tight turning for school hallways, and provides stable powered mobility as proximal weakness progresses in Duchenne muscular dystrophy.\n\n**Why the others miss**\n\n- **A. Lightweight manual wheelchair.** Requires upper-extremity strength and endurance the child is rapidly losing.\n- **C. Tilt-in-space wheelchair.** Offers positioning and pressure relief but not the independent powered mobility needed for community distances.\n\n**Book anchor:** Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents, 8th ed., Chapter 28 (Assistive Technology) recommends early power mobility for progressive muscular dystrophy to support school and community roles.",
     "prompt": "An 11-year-old child who has Duchenne muscular dystrophy reports a recent decline in muscle strength and endurance. The child walks independently with a waddling gait but recently has had an increased number of falls and more difficulty in transferring from a seated position to standing. The interprofessional team, family, and child agree that it is time to purchase a wheelchair for use in the community and at school. What type of wheelchair is BEST for the OTR to recommend?",
     "options": [
       {
@@ -184,7 +184,7 @@
     "headline": "Task based --- Scenario: Post-COVID inpatient rehab (1 of 4)",
     "images": [],
     "prompt": "An OTR working in an inpatient rehabilitation unit is treating a patient diagnosed with coronavirus disease 6 weeks ago. The patient can sit at the edge of the bed with minimal assistance, has Poor (2/5) upper-extremity strength, and requires maximum assistance for ADL and functional transfers. The patient has a supportive spouse and family. Which tasks within the intervention plan would be appropriate for the OTR to delegate to the COTA? (Select 3.)",
-    "content": "**Why these choices fit:** Teaching dyspnea relief postures, guiding modified self-care, and coaching energy conservation are interventions the COTA can deliver once the OTR establishes goals for this post-COVID patient. These reinforce the plan of care while freeing the OTR to focus on evaluation and progression.\n\n**Why the others miss:**\n- **D. Administer the AMPS.** Standardized assessments and interpretation remain the OTR's responsibility.\n- **E. Modify treatment frequency.** Adjusting the plan of care requires the OTR's judgment.\n- **F. Administer and interpret a leisure inventory.** Interpretation of assessment results is outside the COTA scope.\n\n**Book anchor:** AOTA Guidelines for Supervision, Roles, and Responsibilities (2021) clarify that COTAs implement established interventions such as education and graded ADL practice, while OTRs manage evaluation and plan modifications.",
+    "content": "**Why this is right**\nTeaching dyspnea relief postures, guiding modified self-care, and coaching energy conservation are interventions the COTA can deliver once the OTR establishes goals for this post-COVID patient. These reinforce the plan of care while freeing the OTR to focus on evaluation and progression.\n\n**Why the others miss**\n\n- **D. Administer the AMPS.** Standardized assessments and interpretation remain the OTR's responsibility.\n- **E. Modify treatment frequency.** Adjusting the plan of care requires the OTR's judgment.\n- **F. Administer and interpret a leisure inventory.** Interpretation of assessment results is outside the COTA scope.\n\n**Book anchor:** AOTA Guidelines for Supervision, Roles, and Responsibilities (2021) clarify that COTAs implement established interventions such as education and graded ADL practice, while OTRs manage evaluation and plan modifications.",
     "options": [
       {
         "key": "A",
@@ -235,7 +235,7 @@
     "headline": "Task based --- Scenario: Post-COVID inpatient rehab (2 of 4)",
     "images": [],
     "prompt": "The same patient receives frequent visits from family and friends who request updates about rehabilitation progress. Which actions are appropriate for the OTR to take in this situation? (Select 3.)",
-    "content": "**Why these choices fit:** Verifying who is authorized to receive updates, reminding visitors of privacy policy, and explaining HIPAA requirements protect confidentiality while supporting family engagement.\n\n**Why the others miss:**\n- **C. Refer visitors to the information desk.** Public desks do not release clinical information and could violate privacy if they did.\n- **D. Provide updates only to close family.** Limiting information without the patient's authorization ignores HIPAA designations.\n- **E. Offer generic comments.** Even vague statements confirm the patient's status and breach privacy without consent.\n\n**Book anchor:** U.S. Department of Health and Human Services, HIPAA Privacy Rule Summary (2024) outlines verifying patient authorization and educating families about confidentiality before sharing health information.",
+    "content": "**Why this is right**\nVerifying who is authorized to receive updates, reminding visitors of privacy policy, and explaining HIPAA requirements protect confidentiality while supporting family engagement.\n\n**Why the others miss**\n\n- **C. Refer visitors to the information desk.** Public desks do not release clinical information and could violate privacy if they did.\n- **D. Provide updates only to close family.** Limiting information without the patient's authorization ignores HIPAA designations.\n- **E. Offer generic comments.** Even vague statements confirm the patient's status and breach privacy without consent.\n\n**Book anchor:** U.S. Department of Health and Human Services, HIPAA Privacy Rule Summary (2024) outlines verifying patient authorization and educating families about confidentiality before sharing health information.",
     "options": [
       {
         "key": "A",
@@ -286,7 +286,7 @@
     "headline": "Task based --- Scenario: Post-COVID inpatient rehab (3 of 4)",
     "images": [],
     "prompt": "Later in the stay the patient appears disengaged, requests to end sessions early, and participation has declined. Which actions should the OTR take to address the change in participation while remaining empathetic? (Select 3.)",
-    "content": "**Why these choices fit:** Checking in with family, talking directly with the patient about concerns, and screening for fatigue uncover medical and psychosocial barriers driving disengagement. These steps allow empathetic adjustments without abandoning progress.\n\n**Why the others miss:**\n- **B. Increase frequency and duration.** Adds burden without addressing the patient's concerns.\n- **C. Shift BADL care to nursing.** Removes therapeutic opportunity instead of solving the participation issue.\n- **F. Provide generic psychosocial education.** Does not explore individual barriers or honor the patient's voice.\n\n**Book anchor:** AOTA Occupational Therapy in Acute Care, 2nd ed., Chapter 7 recommends collaborative conversations and screening for fatigue when participation declines in medically complex clients recovering from COVID-19.",
+    "content": "**Why this is right**\nChecking in with family, talking directly with the patient about concerns, and screening for fatigue uncover medical and psychosocial barriers driving disengagement. These steps allow empathetic adjustments without abandoning progress.\n\n**Why the others miss**\n\n- **B. Increase frequency and duration.** Adds burden without addressing the patient's concerns.\n- **C. Shift BADL care to nursing.** Removes therapeutic opportunity instead of solving the participation issue.\n- **F. Provide generic psychosocial education.** Does not explore individual barriers or honor the patient's voice.\n\n**Book anchor:** AOTA Occupational Therapy in Acute Care, 2nd ed., Chapter 7 recommends collaborative conversations and screening for fatigue when participation declines in medically complex clients recovering from COVID-19.",
     "options": [
       {
         "key": "A",
@@ -337,7 +337,7 @@
     "headline": "Task based --- Scenario: Post-COVID inpatient rehab (4 of 4)",
     "images": [],
     "prompt": "Despite multiple intervention approaches, the patient has refused to participate in scheduled rehabilitation sessions for the past two days. Which actions should the OTR take in response to this information? (Select 3.)",
-    "content": "**Why these choices fit:** Updating the case manager, reviewing discharge plans with the patient and family, and confirming equipment needs keep services coordinated even when active therapy pauses. These actions respect patient autonomy and sustain safe discharge planning.\n\n**Why the others miss:**\n- **B. Have the spouse direct home health with unmet goals.** Transfers responsibility without professional oversight.\n- **C. Create an unsupervised exercise program.** Lacks engagement and may be unsafe for a disengaged patient.\n- **F. Transfer to another OTR.** Disrupts continuity instead of addressing barriers and planning for discharge.\n\n**Book anchor:** AOTA Occupational Therapy in Acute Care, 2nd ed., Chapter 9 highlights coordinating with case management, confirming equipment, and revisiting discharge education when participation falters.",
+    "content": "**Why this is right**\nUpdating the case manager, reviewing discharge plans with the patient and family, and confirming equipment needs keep services coordinated even when active therapy pauses. These actions respect patient autonomy and sustain safe discharge planning.\n\n**Why the others miss**\n\n- **B. Have the spouse direct home health with unmet goals.** Transfers responsibility without professional oversight.\n- **C. Create an unsupervised exercise program.** Lacks engagement and may be unsafe for a disengaged patient.\n- **F. Transfer to another OTR.** Disrupts continuity instead of addressing barriers and planning for discharge.\n\n**Book anchor:** AOTA Occupational Therapy in Acute Care, 2nd ed., Chapter 9 highlights coordinating with case management, confirming equipment, and revisiting discharge education when participation falters.",
     "options": [
       {
         "key": "A",
@@ -408,7 +408,7 @@
     ],
     "headline": "Task based",
     "order": 10,
-    "content": "**Why this is right:** At Allen Cognitive Level 5, clients learn best through visual cues and exploratory actions. Step-by-step illustrations provide an external sequence the client can follow repeatedly until the new washing machine routine is internalized.\n\n**Why the others miss:**\n- **A. Trial-and-error approach.** Leads to inconsistent performance and potential safety issues when problem solving is impaired.\n- **B. Watch a web video.** Lacks the hands-on, in-context cueing needed for ACL 5 learners.\n- **D. Use meta-cognitive strategies.** Exceeds the client's cognitive capacity without concrete visual supports.\n\n**Book anchor:** Allen Cognitive Level Manual, 5th ed., Chapter on Exploratory Actions recommends providing visual sequencing guides for new routines at ACL 5 to compensate for working memory limits.",
+    "content": "**Why this is right:** At Allen Cognitive Level 5, clients learn best through visual cues and exploratory actions. Step-by-step illustrations provide an external sequence the client can follow repeatedly until the new washing machine routine is internalized.\n\n**Why the others miss**\n\n- **A. Trial-and-error approach.** Leads to inconsistent performance and potential safety issues when problem solving is impaired.\n- **B. Watch a web video.** Lacks the hands-on, in-context cueing needed for ACL 5 learners.\n- **D. Use meta-cognitive strategies.** Exceeds the client's cognitive capacity without concrete visual supports.\n\n**Book anchor:** Allen Cognitive Level Manual, 5th ed., Chapter on Exploratory Actions recommends providing visual sequencing guides for new routines at ACL 5 to compensate for working memory limits.",
     "images": [],
     "bookAnswer": {
       "title": "Allen Cognitive Level Manual",
@@ -445,7 +445,7 @@
     "answerKey": [
       "A"
     ],
-    "content": "**Why this is right:** A needs assessment establishes the specific barriers and supports for youth exiting foster care so the program goals reflect actual priorities. Once the data are defined, the team can align staffing, budgets, and partnerships. **Why the alternatives miss:** Jumping to resources or inventorying other programs without baseline needs risks duplicating services or missing critical gaps in mentorship support.",
+    "content": "**Why this is right:** A needs assessment establishes the specific barriers and supports for youth exiting foster care so the program goals reflect actual priorities. Once the data are defined, the team can align staffing, budgets, and partnerships. **Why the alternatives miss:** Jumping to resources or inventorying other programs without baseline needs risks duplicating services or missing critical gaps in mentorship support.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 21 reviews progressive neurologic conditions, emphasizing energy conservation, caregiver partnership, and adaptive equipment.",
@@ -481,7 +481,7 @@
     "answerKey": [
       "A"
     ],
-    "content": "**Why this is right:** Teach-back ensures the patient can restate instructions in their own words, immediately surfacing misunderstandings. It is a proven universal precaution for health literacy that works across diagnoses. **Why the alternatives miss:** Group sessions and screening can support education, but they do not guarantee comprehension in the moment; the patient still needs tailored verification before discharge.",
+    "content": "**Why this is right:** Teach-back ensures the patient can restate instructions in their own words, immediately surfacing misunderstandings. It is a proven universal precaution for health literacy that works across diagnoses. **Why the alternatives miss:** Group sessions and screening can support education, but they do not guarantee comprehension in the moment; the patient still needs tailored verification before discharge.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "AOTA Health Literacy Toolkit",
       "excerpt": "The toolkit promotes plain-language materials, teach-back, and culturally responsive communication to improve patient understanding.",
@@ -517,7 +517,7 @@
     "answerKey": [
       "A"
     ],
-    "content": "**Why this is right:** Post-transplant children are immunocompromised; any low-grade fever and irritability may signal infection. Immediate coordination with the physician protects the child from rapid deterioration. **Why the others miss:** Continuing the session or simply rescheduling delays medical evaluation and could endanger the child.",
+    "content": "**Why this is right:** Post-transplant children are immunocompromised; any low-grade fever and irritability may signal infection. Immediate coordination with the physician protects the child from rapid deterioration. **Why the others miss**\n\nContinuing the session or simply rescheduling delays medical evaluation and could endanger the child.",
     "bookAnswer": {
       "title": "Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents",
       "excerpt": "Chapter 31 addresses pediatric oncology precautions, stressing infection control, caregiver education, and adapted routines during immunosuppression.",
@@ -553,7 +553,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** A four-point tie-down with a lap belt keeps the wheelchair and student secure during transit, meeting WC19 transport safety standards. **Why the alternatives miss:** Transfers may be unsafe, and a restraint without a proper tie-down does not stabilize the chair during sudden stops.",
+    "content": "**Why this is right:** A four-point tie-down with a lap belt keeps the wheelchair and student secure during transit, meeting WC19 transport safety standards. **Why the alternatives miss:** Transfers may be unsafe, and a restraint without a proper tie-down does not stabilize the chair during sudden stops.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "RESNA Position Paper on Wheelchair Service Provision",
       "excerpt": "RESNA highlights individualized seating assessment, transportation safety, and caregiver training when prescribing wheelchairs for school or community use.",
@@ -593,7 +593,7 @@
     "answerKey": [
       "D"
     ],
-    "content": "**Why this is right:** Clarifying discipline-specific responsibilities reduces duplication, preserves reimbursement, and ensures each provider delivers interventions aligned with their expertise. **Why the others miss:** Comparing notes after treatment or adding daily meetings raises workload without addressing redundancy, and a trans-disciplinary model would increase role overlap.",
+    "content": "**Why this is right:** Clarifying discipline-specific responsibilities reduces duplication, preserves reimbursement, and ensures each provider delivers interventions aligned with their expertise. **Why the others miss**\n\nComparing notes after treatment or adding daily meetings raises workload without addressing redundancy, and a trans-disciplinary model would increase role overlap.",
     "bookAnswer": {
       "title": "AOTA Occupational Therapy Documentation Guidelines",
       "excerpt": "AOTA's documentation guideline recommends discipline-specific notes, coordinated goal writing, and audit processes to reduce duplication.",
@@ -629,7 +629,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** OT frames academics through the lens of daily roles and routines—sleep hygiene, morning prep, transportation, and classroom participation. Establishing this perspective early helps the team see how occupational performance impacts graduation outcomes. **Why the others miss:** Sharing evidence or debating advancement comes later; the first meeting needs clarity on OT's unique contribution to the committee.",
+    "content": "**Why this is right:** OT frames academics through the lens of daily roles and routines—sleep hygiene, morning prep, transportation, and classroom participation. Establishing this perspective early helps the team see how occupational performance impacts graduation outcomes. **Why the others miss**\n\nSharing evidence or debating advancement comes later; the first meeting needs clarity on OT's unique contribution to the committee.",
     "bookAnswer": {
       "title": "AOTA Community Mobility Practice Guidelines",
       "excerpt": "AOTA's community mobility guideline covers transportation assessments, safety training, and caregiver collaboration for travel independence.",
@@ -665,7 +665,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** At four weeks the protective dorsal blocking orthosis can be discontinued; a hand-based C-bar promotes palmar abduction needed for functional opposition training. A volar cock-up would stress the repair, while continued blocking orthosis is no longer required.",
+    "content": "**Why this is right:** At four weeks the protective dorsal blocking orthosis can be discontinued; a hand-based C-bar promotes palmar abduction needed for functional opposition training. A volar cock-up would stress the repair, while continued blocking orthosis is no longer required.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "Coppard & Lohman, Introduction to Splinting",
       "excerpt": "Chapter 4 details orthotic design and wear schedules for tendon, nerve, and ligament repairs across the hand and wrist.",
@@ -701,7 +701,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** At C5 the client lacks sufficient shoulder strength to lift the arm against gravity, so a mobile arm support counterbalances the limb. A T-handled cup allows tenodesis grasp without strong wrist extension. **Why the others miss:** Built-up handles or wrist orthoses do not overcome gravity or fatigue from proximal weakness, limiting independent feeding.",
+    "content": "**Why this is right:** At C5 the client lacks sufficient shoulder strength to lift the arm against gravity, so a mobile arm support counterbalances the limb. A T-handled cup allows tenodesis grasp without strong wrist extension. **Why the others miss**\n\nBuilt-up handles or wrist orthoses do not overcome gravity or fatigue from proximal weakness, limiting independent feeding.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 25 covers adaptive feeding, equipment selection, and caregiver instruction for cervical spinal cord injuries.",
@@ -737,7 +737,7 @@
     "answerKey": [
       "A"
     ],
-    "content": "**Why this is right:** Selective attention deficits improve when distractions are removed. Retesting in a controlled environment confirms whether external stimuli are the barrier. **Why the others miss:** Reading instructions or speaking louder changes the task demands but does not isolate attention from environmental noise.",
+    "content": "**Why this is right:** Selective attention deficits improve when distractions are removed. Retesting in a controlled environment confirms whether external stimuli are the barrier. **Why the others miss**\n\nReading instructions or speaking louder changes the task demands but does not isolate attention from environmental noise.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 24 emphasizes task-specific retraining, scanning, and caregiver education to support function after stroke.",
@@ -773,7 +773,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** Visual sequencing cards capitalize on the client's strengths and provide concrete models for varied bag types, reducing anxiety in novel situations. **Why the others miss:** A single verbal rule does not address the variability of reusable bags, and prompting every customer increases social demand and slows productivity.",
+    "content": "**Why this is right:** Visual sequencing cards capitalize on the client's strengths and provide concrete models for varied bag types, reducing anxiety in novel situations. **Why the others miss**\n\nA single verbal rule does not address the variability of reusable bags, and prompting every customer increases social demand and slows productivity.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 21 reviews progressive neurologic conditions, emphasizing energy conservation, caregiver partnership, and adaptive equipment.",
@@ -809,7 +809,7 @@
     "answerKey": [
       "C"
     ],
-    "content": "**Why this is right:** Determining which students continue to require OT after transition sets a clear outcome measure. Tracking this metric over time shows whether the program reduces ongoing service needs. **Why the others miss:** Baseline skill testing or interviews provide useful data but do not directly reflect the objective of successful transition.",
+    "content": "**Why this is right:** Determining which students continue to require OT after transition sets a clear outcome measure. Tracking this metric over time shows whether the program reduces ongoing service needs. **Why the others miss**\n\nBaseline skill testing or interviews provide useful data but do not directly reflect the objective of successful transition.",
     "bookAnswer": {
       "title": "Case-Smith & O'Brien, Occupational Therapy for Children and Adolescents",
       "excerpt": "Chapter 14 details school-based OT, highlighting visual schedules, environmental adaptation, and progress monitoring for transitions and IEP goals.",
@@ -845,7 +845,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** Some standardized tools require certification or workshops prior to use. Confirming training requirements ensures ethical, valid administration before investing time in practice or scoring review. **Why the others miss:** Studying scoring or practicing administration comes after verifying eligibility to administer the test.",
+    "content": "**Why this is right:** Some standardized tools require certification or workshops prior to use. Confirming training requirements ensures ethical, valid administration before investing time in practice or scoring review. **Why the others miss**\n\nStudying scoring or practicing administration comes after verifying eligibility to administer the test.",
     "bookAnswer": {
       "title": "AOTA Occupational Therapy Code of Ethics",
       "excerpt": "The 2020 Code of Ethics outlines accountability for attendance, documentation accuracy, confidentiality, and respectful communication with stakeholders.",
@@ -881,7 +881,7 @@
     "answerKey": [
       "C"
     ],
-    "content": "**Why this is right:** Replacing compulsions with purposeful occupations addresses both ritualistic behavior and isolation, supporting functional routines. **Why the others miss:** Cognitive strategies alone may not shift behavior patterns, and adding routine without substitution risks reinforcing compulsions.",
+    "content": "**Why this is right:** Replacing compulsions with purposeful occupations addresses both ritualistic behavior and isolation, supporting functional routines. **Why the others miss**\n\nCognitive strategies alone may not shift behavior patterns, and adding routine without substitution risks reinforcing compulsions.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 21 reviews progressive neurologic conditions, emphasizing energy conservation, caregiver partnership, and adaptive equipment.",
@@ -917,7 +917,7 @@
     "answerKey": [
       "A"
     ],
-    "content": "**Why this is right:** Medication side effects must be coordinated with the prescribing team. Reporting performance changes ensures medical review before altering routines or dosage suggestions. Adjusting medication timing independently or changing goals may be unsafe.",
+    "content": "**Why this is right:** Medication side effects must be coordinated with the prescribing team. Reporting performance changes ensures medical review before altering routines or dosage suggestions. Adjusting medication timing independently or changing goals may be unsafe.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 21 reviews progressive neurologic conditions, emphasizing energy conservation, caregiver partnership, and adaptive equipment.",
@@ -953,7 +953,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** Obtaining consent and following HIPAA/FERPA procedures is required before disclosing information to a third party. Observation and training follow after the release is in place.",
+    "content": "**Why this is right:** Obtaining consent and following HIPAA/FERPA procedures is required before disclosing information to a third party. Observation and training follow after the release is in place.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 21 reviews progressive neurologic conditions, emphasizing energy conservation, caregiver partnership, and adaptive equipment.",
@@ -989,7 +989,7 @@
     "answerKey": [
       "C"
     ],
-    "content": "**Why this is right:** Highlighting recovery behaviors maintains therapeutic focus and integrates new members without derailing the session. Simply reviewing goals or handing control to the group may reduce structure or safety.",
+    "content": "**Why this is right:** Highlighting recovery behaviors maintains therapeutic focus and integrates new members without derailing the session. Simply reviewing goals or handing control to the group may reduce structure or safety.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 21 reviews progressive neurologic conditions, emphasizing energy conservation, caregiver partnership, and adaptive equipment.",
@@ -1025,7 +1025,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** A peer mentor offers natural cues to initiate task performance, reducing reliance on staff prompts. Simply waiting or providing praise does not target initiation deficits.",
+    "content": "**Why this is right:** A peer mentor offers natural cues to initiate task performance, reducing reliance on staff prompts. Simply waiting or providing praise does not target initiation deficits.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "AOTA Mental Health Practice Guidelines",
       "excerpt": "The mental health guideline highlights habit training, cognitive-behavioral strategies, and collaborative goal setting for behavioral health recovery.",
@@ -1061,7 +1061,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** Addressing the emotional trauma and teaching relaxation strategies directly targets anxiety. Familiar routines or equipment changes may be helpful later but do not resolve the immediate psychological response.",
+    "content": "**Why this is right:** Addressing the emotional trauma and teaching relaxation strategies directly targets anxiety. Familiar routines or equipment changes may be helpful later but do not resolve the immediate psychological response.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 24 emphasizes task-specific retraining, scanning, and caregiver education to support function after stroke.",
@@ -1101,7 +1101,7 @@
     "answerKey": [
       "D"
     ],
-    "content": "**Why this is right:** A bedside commode allows safe toileting when the bathroom cannot be accessed. Other devices do not overcome the environmental barrier or may be unnecessary given current mobility.",
+    "content": "**Why this is right:** A bedside commode allows safe toileting when the bathroom cannot be accessed. Other devices do not overcome the environmental barrier or may be unnecessary given current mobility.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "RESNA Position Paper on Wheelchair Service Provision",
       "excerpt": "RESNA highlights individualized seating assessment, transportation safety, and caregiver training when prescribing wheelchairs for school or community use.",
@@ -1120,7 +1120,7 @@
     "headline": "Task based --- Scenario: COPD inpatient evaluation (1 of 4)",
     "images": [],
     "prompt": "An OTR in an inpatient rehabilitation hospital is evaluating an older adult with chronic obstructive pulmonary disease, hypertension, and obesity. The patient uses 2 L of oxygen at night, experiences dyspnea and a productive cough during functional mobility, and needs moderate assistance for ADL. Which questions should the OTR include as part of the initial semi-structured interview? (Select 3.)",
-    "content": "**Why these questions fit:** Exploring the patient's daily routine, symptom triggers, and task difficulties builds an occupational profile aligned with cardiopulmonary function. **Why the others wait:** Financial or emotional supports matter later but do not establish immediate occupational performance priorities for the evaluation.",
+    "content": "**Why this is right**\n**Why these questions fit:** Exploring the patient's daily routine, symptom triggers, and task difficulties builds an occupational profile aligned with cardiopulmonary function. **Why the others wait:** Financial or emotional supports matter later but do not establish immediate occupational performance priorities for the evaluation.",
     "options": [
       {
         "key": "A",
@@ -1171,7 +1171,7 @@
     "headline": "Task based --- Scenario: COPD inpatient evaluation (2 of 4)",
     "images": [],
     "prompt": "After the interview, the OTR wants additional information about the patient's current status. Which actions should be completed as part of the initial evaluation to obtain this information? (Select 3.)",
-    "content": "**Why these actions fit:** Collaborating with family, monitoring vitals during activity, and documenting perceived exertion provide functional cardiopulmonary data for goal setting. **Why the others wait:** Spasticity, balance, or isolated strength tests are not immediate priorities for this diagnosis without functional demand concerns.",
+    "content": "**Why this is right**\n**Why these actions fit:** Collaborating with family, monitoring vitals during activity, and documenting perceived exertion provide functional cardiopulmonary data for goal setting. **Why the others wait:** Spasticity, balance, or isolated strength tests are not immediate priorities for this diagnosis without functional demand concerns.",
     "options": [
       {
         "key": "A",
@@ -1222,7 +1222,7 @@
     "headline": "Task based --- Scenario: COPD inpatient evaluation (3 of 4)",
     "images": [],
     "prompt": "Which short-term goals should the OTR include in the patient's intervention plan for the next 2–3 days in the rehabilitation setting? (Select 3.)",
-    "content": "**Why these goals fit:** Focusing on achievable self-care performance and recall of stress and energy-management strategies supports cardiopulmonary endurance without exceeding the patient’s tolerance. **Why the others wait:** Ordering oxygen or expecting zero exertion during bathing is unrealistic in the short term.",
+    "content": "**Why this is right**\n**Why these goals fit:** Focusing on achievable self-care performance and recall of stress and energy-management strategies supports cardiopulmonary endurance without exceeding the patient’s tolerance. **Why the others wait:** Ordering oxygen or expecting zero exertion during bathing is unrealistic in the short term.",
     "options": [
       {
         "key": "A",
@@ -1273,7 +1273,7 @@
     "headline": "Task based --- Scenario: COPD inpatient evaluation (4 of 4)",
     "images": [],
     "prompt": "What interventions would be beneficial to include as part of utilizing energy conservation techniques to support the patient's independence with bathing? (Select 3.)",
-    "content": "**Why these strategies fit:** Sitting for bathing, using long-handled equipment, and swapping to an absorbent robe conserve energy and reduce cardiopulmonary demand. **Why the others wait:** Standing showers, hot water, or sponge baths at the bedside either increase fatigue or do not match the patient's stated goal.",
+    "content": "**Why this is right**\n**Why these strategies fit:** Sitting for bathing, using long-handled equipment, and swapping to an absorbent robe conserve energy and reduce cardiopulmonary demand. **Why the others wait:** Standing showers, hot water, or sponge baths at the bedside either increase fatigue or do not match the patient's stated goal.",
     "options": [
       {
         "key": "A",
@@ -1323,7 +1323,7 @@
     "order": 35,
     "headline": "Task based",
     "images": [],
-    "content": "Immobilizing the thumb MCP in neutral with a hand-based thumb spica protects the repaired ulnar collateral ligament while allowing wrist motion for function. Forearm-based or dynamic devices provide unnecessary immobilization or stress, and a general wrist splint fails to stabilize the MCP.",
+    "content": "**Why this is right**\nImmobilizing the thumb MCP in neutral with a hand-based thumb spica protects the repaired ulnar collateral ligament while allowing wrist motion for function. Forearm-based or dynamic devices provide unnecessary immobilization or stress, and a general wrist splint fails to stabilize the MCP.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "prompt": "A client who had a recent ulnar collateral ligament repair of the thumb MCP joint is referred to OT for fabrication of an orthosis. What is the MOST EFFECTIVE type of orthosis for the OTR to fabricate for this client?",
     "options": [
       {
@@ -1363,7 +1363,7 @@
     "order": 36,
     "headline": "Task based",
     "images": [],
-    "content": "A visual picture schedule reduces language demands and provides step-by-step motor guidance, which supports clients with aphasia and ideational apraxia when relearning dressing tasks. Tactile or mirror feedback relies on comprehension of corrective input, and video self-modeling is advanced for someone still grasping the motor plan.",
+    "content": "**Why this is right**\nA visual picture schedule reduces language demands and provides step-by-step motor guidance, which supports clients with aphasia and ideational apraxia when relearning dressing tasks. Tactile or mirror feedback relies on comprehension of corrective input, and video self-modeling is advanced for someone still grasping the motor plan.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "prompt": "When learning one-handed dressing techniques, an inpatient with right hemiplegia, global aphasia, and ideational apraxia would benefit MOST from which of the following intervention methods?",
     "options": [
       {
@@ -1403,7 +1403,7 @@
     "order": 37,
     "headline": "Task based",
     "images": [],
-    "content": "Direct observation of the child eating a familiar snack yields authentic information about motor planning, utensil grasp, and endurance. Checklists alone or watching the parent feed the child provide indirect data and miss opportunities to analyze self-feeding performance.",
+    "content": "**Why this is right**\nDirect observation of the child eating a familiar snack yields authentic information about motor planning, utensil grasp, and endurance. Checklists alone or watching the parent feed the child provide indirect data and miss opportunities to analyze self-feeding performance.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "prompt": "An OTR is scheduled to assess a 2-year-old child who has a developmental delay. The child is healthy, and the parents are concerned about self-feeding. Which method should the OTR use during the assessment to obtain the BEST information about the child's early feeding skills?",
     "options": [
       {
@@ -1439,7 +1439,7 @@
     "order": 38,
     "headline": "Task based",
     "images": [],
-    "content": "Grading the lesson-planning task by simplifying steps and offering repeated practice builds sustained attention incrementally. Group work or backward chaining does not directly address endurance for independent task focus.",
+    "content": "**Why this is right**\nGrading the lesson-planning task by simplifying steps and offering repeated practice builds sustained attention incrementally. Group work or backward chaining does not directly address endurance for independent task focus.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "prompt": "An OTR in a vocational rehabilitation program works with a client who sustained a TBI several months ago. The client, a high school math teacher, wants to develop a series of lesson plans and the goal is to attend to the task for 45 minutes. After several sessions the client can focus for 15 minutes. What should the OTR do to support progress toward the goal?",
     "options": [
       {
@@ -1475,7 +1475,7 @@
     "order": 39,
     "headline": "Task based",
     "images": [],
-    "content": "Adapting the pathway to include tailored education for both patient and spouse reinforces hip precautions in real contexts, improving safety at home. Simply repeating protocol steps or handing out materials does not ensure learning or caregiver involvement.",
+    "content": "**Why this is right**\nAdapting the pathway to include tailored education for both patient and spouse reinforces hip precautions in real contexts, improving safety at home. Simply repeating protocol steps or handing out materials does not ensure learning or caregiver involvement.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "answerKey": [
       "C"
     ],
@@ -1511,7 +1511,7 @@
     "order": 40,
     "headline": "Task based",
     "images": [],
-    "content": "Organizing the shopping list to follow the store layout reduces extraneous walking and repeated aisle visits, conserving energy for clients with COPD. Cart loading strategies or bag placement do not significantly reduce exertion during shopping.",
+    "content": "**Why this is right**\nOrganizing the shopping list to follow the store layout reduces extraneous walking and repeated aisle visits, conserving energy for clients with COPD. Cart loading strategies or bag placement do not significantly reduce exertion during shopping.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "prompt": "A client with chronic obstructive pulmonary disease is integrating energy conservation into weekly routines and wants to grocery shop independently. Which technique should the OTR teach to conserve energy?",
     "options": [
       {
@@ -1547,7 +1547,7 @@
     "order": 41,
     "headline": "Task based",
     "images": [],
-    "content": "Temperament, self-regulation, and how the child currently interacts provide context for planning play-based interventions that support social engagement despite visual impairment. Milestone checklists or sibling comparisons may heighten anxiety without guiding treatment.",
+    "content": "**Why this is right**\nTemperament, self-regulation, and how the child currently interacts provide context for planning play-based interventions that support social engagement despite visual impairment. Milestone checklists or sibling comparisons may heighten anxiety without guiding treatment.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "answerKey": [
       "C"
     ],
@@ -1583,7 +1583,7 @@
     "order": 42,
     "headline": "Knowledge",
     "images": [],
-    "content": "Failing to appear for scheduled treatment demonstrates negligence—substandard care that disregards professional responsibility. Breach of duty and harm may result, but the primary violation is negligent conduct.",
+    "content": "**Why this is right**\nFailing to appear for scheduled treatment demonstrates negligence—substandard care that disregards professional responsibility. Breach of duty and harm may result, but the primary violation is negligent conduct.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "prompt": "A nursing home administrator validates a resident complaint that an OTR routinely failed to attend scheduled appointments. Which ethical principle did the OTR violate?",
     "options": [
       {
@@ -1619,7 +1619,7 @@
     "order": 43,
     "headline": "Knowledge",
     "images": [],
-    "content": "**Correct Answer: Holding a crayon.**\\n\\n**Why this is right:** Classic thumb-in-palm deformity (type III) limits thumb abduction and opposition. Precision grasp for tools like crayons depends on thumb positioning, so handwriting tasks pose the greatest challenge.\\n\\n**Why other options miss:**\\n- *Playing in warm bath water* relies on gross movement and sensory play, not sustained tripod grasp.\\n- *Building a sandcastle* can be performed with palms, scoops, or both hands without refined thumb opposition.\\n\\n**Book anchor:** Case-Smith & O'Brien explain that thumb-in-palm patterns most severely impact pencil/crayon grasp in Down syndrome.",
+    "content": "**Correct Answer: Holding a crayon.**\\n\\n**Why this is right:** Classic thumb-in-palm deformity (type III) limits thumb abduction and opposition. Precision grasp for tools like crayons depends on thumb positioning, so handwriting tasks pose the greatest challenge.\\n\\n**Why other options miss:**\\n- *Playing in warm bath water* relies on gross movement and sensory play, not sustained tripod grasp.\\n- *Building a sandcastle* can be performed with palms, scoops, or both hands without refined thumb opposition.\\n\\n**Book anchor:** Case-Smith & O'Brien explain that thumb-in-palm patterns most severely impact pencil/crayon grasp in Down syndrome.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "answerKey": [
       "C"
     ],
@@ -1655,7 +1655,7 @@
     "order": 44,
     "headline": "Knowledge cardiac rehab acute phase",
     "images": [],
-    "content": "**Correct Answer: Measuring the patient's upper extremity strength.**\\n\\n**Why this is right:** Phase I cardiac rehab (within 3-5 days post-MI) focuses on light ADL monitoring and vital sign surveillance. Resistive strength testing is contraindicated because it spikes myocardial demand before the heart has stabilized.\\n\\n**Why other options miss:**\\n- *Monitoring vital signs* is mandatory in Phase I to ensure safe response to activity.\\n- *Determining daily energy expenditure* informs later goal setting and can be estimated without stressing the myocardium.\\n\\n**Book anchor:** AACVPR Guidelines and AOTA cardiac rehab resources state that resistive strength testing is deferred until Phase II after physician clearance.",
+    "content": "**Correct Answer: Measuring the patient's upper extremity strength.**\\n\\n**Why this is right:** Phase I cardiac rehab (within 3-5 days post-MI) focuses on light ADL monitoring and vital sign surveillance. Resistive strength testing is contraindicated because it spikes myocardial demand before the heart has stabilized.\\n\\n**Why other options miss:**\\n- *Monitoring vital signs* is mandatory in Phase I to ensure safe response to activity.\\n- *Determining daily energy expenditure* informs later goal setting and can be estimated without stressing the myocardium.\\n\\n**Book anchor:** AACVPR Guidelines and AOTA cardiac rehab resources state that resistive strength testing is deferred until Phase II after physician clearance.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "answerKey": [
       "A"
     ],
@@ -1727,7 +1727,7 @@
     "answerKey": [
       "A"
     ],
-    "content": "**Why this is right:** The rooting reflex causes automatic head turning toward tactile stimuli near the mouth and should integrate by 3-4 months. Persistence at age three disrupts grooming tasks. **Why the others miss:** Landau relates to prone postural extension and Moro involves startle responses—neither matches the observed oral-seeking behavior.",
+    "content": "**Why this is right:** The rooting reflex causes automatic head turning toward tactile stimuli near the mouth and should integrate by 3-4 months. Persistence at age three disrupts grooming tasks. **Why the others miss**\n\nLandau relates to prone postural extension and Moro involves startle responses—neither matches the observed oral-seeking behavior.",
     "bookAnswer": {
       "title": "AOTA Occupational Therapy Practice Framework (OTPF-4)",
       "excerpt": "The OTPF-4 outlines the process of designing, implementing, and evaluating occupation-based services for individuals, groups, and populations.",
@@ -1815,7 +1815,7 @@
   },
   {
     "order": 51,
-    "headline": "",
+    "headline": "Baseline question 051",
     "images": [],
     "content": "We have not imported the written prompt for this knowledge card yet. Review the summary below or the book anchor to keep moving.",
     "bookAnswer": {
@@ -1869,7 +1869,7 @@
   },
   {
     "order": 54,
-    "headline": "",
+    "headline": "Baseline question 054",
     "images": [],
     "content": "---\n\n## **?? What NBCOT Is Testing**\n\nThis item evaluates your ability to:\n\n* Apply correct **clinical documentation practices**  \n* Distinguish between **objective data** and **clinical interpretation**  \n* Use appropriate **language and structure** in SOAP notes  \n* Reflect **functional performance** and **progress toward goals**\n\n---\n\n## **? Why Your Answer Is Correct**\n\nIn the **Assessment section** of a SOAP note, the OTR should:\n\n* Interpret the **significance** of the objective findings  \n* Describe the **level of assistance** required  \n* Reflect on the **client's progress** toward goals\n\n\"The patient required moderate assist to follow spinal precautions during ADL\" is:\n\n* A **clinical judgment** based on observed performance  \n* Specific and measurable (moderate assist \\= quantifiable support)  \n* Directly related to the **intervention goal** of independent use of precautions\n\nThis statement helps guide future treatment planning and communicates clearly with the care team.\n\n---\n\n## **? Why the Other Options Are Incorrect**\n\n| Option | Why It's Inappropriate for the \"A\" Section |\n| ----- | ----- |\n| **\"The patient will be instructed…\"** | Future-oriented-belongs in the **Plan (\"P\")** section |\n| **\"The patient would benefit from…\"** | Vague and speculative-doesn't reflect actual performance or progress |\n\n---",
     "bookAnswer": {
@@ -1887,7 +1887,7 @@
   },
   {
     "order": 55,
-    "headline": "",
+    "headline": "Baseline question 055",
     "images": [],
     "content": "We have not imported the written prompt for this knowledge card yet. Review the summary below or the book anchor to keep moving.",
     "bookAnswer": {
@@ -1905,7 +1905,7 @@
   },
   {
     "order": 56,
-    "headline": "",
+    "headline": "Baseline question 056",
     "images": [],
     "content": "Yes Keely, your selected answer-**\"Identify classroom activities that are causing the discomfort\"**-is absolutely **correct** ?. This NBCOT question is designed to assess your ability to apply **self-management strategies** for a client with **rheumatoid arthritis (RA)** in a **real-world occupational context**, especially one that involves **repetitive hand use** and **joint stress**.\n\n---\n\n## **?? What NBCOT Is Testing**\n\nThis item evaluates your ability to:\n\n* Apply **client-centered problem solving**  \n* Use **activity analysis** to identify pain triggers  \n* Promote **self-management** and **joint protection principles**  \n* Integrate OT strategies into **daily routines and work environments**\n\n---\n\n## **? Why Your Answer Is Correct**\n\nRA is a **chronic inflammatory condition** that affects the **small joints**, especially in the hands. For a kindergarten teacher, classroom tasks like:\n\n* Cutting, writing, manipulating small objects  \n* Frequent lifting or gripping  \n   can exacerbate **MCP joint inflammation** and pain.\n\nBy identifying which **specific classroom activities** are causing discomfort, the OTR can:\n\n* Target those tasks for **modification or adaptation**  \n* Educate the client on **joint protection techniques**  \n* Reduce **flare-ups** and improve **functional endurance**\n\nThis approach is **collaborative**, **empowering**, and rooted in **activity analysis**-a core OT skill.\n\n---\n\n## **? Why the Other Options Are Incorrect**\n\n| Option | Why It's Not Appropriate |\n| ----- | ----- |\n| **Increase anti-inflammatory meds** | Outside OT scope-medication changes must be guided by a physician |\n| **Promote MCP ulnar deviation** | This would **worsen joint deformity**-OTs aim to **prevent** ulnar drift, not encourage it |\n\n---\n\n## **?? Textbook Tie-In**\n\n* **Pedretti's** and **TherapyEd** emphasize:  \n  * **Joint protection**, **energy conservation**, and **task modification**  \n  * Importance of **identifying aggravating activities** through **contextual analysis**  \n* OTPF-4 supports **health management** and **work participation** through **self-management strategies**\n\n---",
     "bookAnswer": {
@@ -1923,7 +1923,7 @@
   },
   {
     "order": 57,
-    "headline": "",
+    "headline": "Baseline question 057",
     "images": [],
     "content": "We have not imported the written prompt for this knowledge card yet. Review the summary below or the book anchor to keep moving.",
     "bookAnswer": {
@@ -1941,7 +1941,7 @@
   },
   {
     "order": 58,
-    "headline": "",
+    "headline": "Baseline question 058",
     "images": [],
     "content": "We have not imported the written prompt for this knowledge card yet. Review the summary below or the book anchor to keep moving.",
     "bookAnswer": {
@@ -1959,7 +1959,7 @@
   },
   {
     "order": 59,
-    "headline": "",
+    "headline": "Baseline question 059",
     "images": [],
     "content": "---\n\n## **?? What NBCOT Is Testing**\n\nThis item assesses your ability to:\n\n* Recognize when a client's **cognitive status** limits their ability to make **safe, informed decisions**  \n* Apply **ethical and legal principles** around **surrogate decision-making**  \n* Prioritize **safety and support systems** in discharge planning  \n* Collaborate with **family members, caregivers, and interdisciplinary teams**\n\n---\n\n## **? Why Your Answer Is Correct**\n\nA client with **moderate dementia** may:\n\n* Have **impaired judgment**, **memory**, and **executive functioning**  \n* Be unable to fully understand or weigh the risks and benefits of discharge options  \n* Require support from a **legally authorized surrogate** (e.g., healthcare proxy, guardian, family member)\n\nInvolving a surrogate ensures:\n\n* Decisions are made in the client's **best interest**  \n* The discharge plan reflects **safety**, **support needs**, and **realistic expectations**  \n* The OTR remains within their **scope of practice**, facilitating-not directing-placement decisions\n\n---\n\n## **? Why the Other Options Are Less Appropriate**\n\n| Option | Why It's Not the Best Choice |\n| ----- | ----- |\n| **Provide a list of discharge options to the patient** | Assumes the patient has **full decision-making capacity**, which is unlikely with moderate dementia |\n| **Encourage the patient to advocate for their preferred site** | May lead to **unsafe or unrealistic choices** due to cognitive limitations-OT must prioritize safety and support |\n\n---",
     "bookAnswer": {
@@ -2337,7 +2337,7 @@
   },
   {
     "order": 80,
-    "headline": "",
+    "headline": "Baseline question 080",
     "images": [],
     "content": "**\"Stiffening of extremities with rhythmic, bilateral jerking of limbs\"**-is absolutely correct ?  \n---\n\n## **?? What NBCOT Is Testing Here**\n\nThis question is designed to assess your ability to:\n\n* **Recognize seizure types based on clinical presentation**  \n* Apply **clinical reasoning** to identify symptoms that require immediate safety precautions  \n* Understand how **neurological conditions** impact occupational performance and intervention planning\n\nNBCOT wants to know: Can you quickly identify a **tonic-clonic seizure** and respond appropriately in a real-world setting?\n\n---\n\n## **?? Why Your Answer Is Correct**\n\nA **tonic-clonic seizure** (formerly called \"grand mal\") has two distinct phases:\n\n| Phase | Symptoms |\n| ----- | ----- |\n| **Tonic** | Sudden loss of consciousness, stiffening of muscles |\n| **Clonic** | Rhythmic, bilateral jerking of limbs |\n\nThese seizures often last 1-3 minutes and may be followed by confusion, fatigue, or incontinence. Safety is paramount-OTs must ensure the client is protected from injury during and after the episode.\n\n---\n\n## **?? Why the Other Options Are Incorrect**\n\n| Option | Why It's Not Correct |\n| ----- | ----- |\n| **1\\. Sudden movement of a single body part with no change in vital signs** | Describes a **simple motor seizure** (e.g., focal myoclonic), not tonic-clonic. No loss of consciousness or bilateral involvement. |\n| **2\\. Abruptly stopping an activity with a blank stare and fluttering eyelids** | Classic signs of an **absence seizure** (petit mal), typically seen in children. Brief and subtle, not tonic-clonic. |\n\n---\n\n## **?? Study Tip**\n\nWant to lock this in? I can build you a **printable seizure comparison chart** that maps:\n\n* Seizure types  \n* Key symptoms  \n* OT safety protocols  \n* Postictal considerations",
     "bookAnswer": {
@@ -2789,7 +2789,7 @@
     "answerKey": [
       "B"
     ],
-    "content": "**Why this is right:** Acute carpal tunnel symptoms require reducing inflammation and protecting the median nerve; rest, splinting, and gentle gliding decrease compression. Resistive exercise or stress loading can aggravate symptoms and is reserved for later stages.",
+    "content": "**Why this is right:** Acute carpal tunnel symptoms require reducing inflammation and protecting the median nerve; rest, splinting, and gentle gliding decrease compression. Resistive exercise or stress loading can aggravate symptoms and is reserved for later stages.\n\n**Why the others miss**\n\nDistractor analysis pending curator review.",
     "bookAnswer": {
       "title": "Pedretti & Early, Occupational Therapy for Physical Dysfunction",
       "excerpt": "Chapter 21 reviews progressive neurologic conditions, emphasizing energy conservation, caregiver partnership, and adaptive equipment.",

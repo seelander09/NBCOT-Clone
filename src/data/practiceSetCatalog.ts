@@ -1,7 +1,7 @@
-import practiceQuestions from "./practiceQuestions";
-import practiceQuestions4 from "./practiceQuestions4";
+import { practiceTestSets, type PracticeTestSetDefinition, type PracticeTestSetStatus } from "./practiceTestSets";
+import type { PracticeQuestion } from "./practiceQuestions";
 
-export type PracticeSetStatus = "available" | "in_progress" | "coming_soon";
+export type PracticeSetStatus = PracticeTestSetStatus;
 
 export type PracticeSetCoverage = {
   rationale: number;
@@ -23,7 +23,7 @@ export type PracticeSetCatalogEntry = {
   coverage: PracticeSetCoverage;
 };
 
-function computeCoverage(questions: typeof practiceQuestions): PracticeSetCoverage {
+function computeCoverage(questions: PracticeQuestion[]): PracticeSetCoverage {
   if (!questions.length) {
     return { rationale: 0, bookAnchor: 0, remediation: 0 };
   }
@@ -57,36 +57,28 @@ function computeCoverage(questions: typeof practiceQuestions): PracticeSetCovera
   };
 }
 
-export const practiceSetCatalog: PracticeSetCatalogEntry[] = [
-  {
-    id: "otr-baseline",
-    slug: "/practice-test",
-    title: "OTR Baseline Practice Test",
-    description:
-      "100 curated questions designed to mirror the overall NBCOT blueprint, complete with rationales and remediation links.",
-    questionCount: practiceQuestions.length,
-    releaseDate: "2025-02-01",
-    status: "available",
-    domains: ["Domain 1", "Domain 2", "Domain 3", "Domain 4"],
-    sessionStorageKey: "nbcot-practice-session-v1",
-    analyticsStorageKey: "nbcot-practice-analytics-v1",
-    coverage: computeCoverage(practiceQuestions),
-  },
-  {
-    id: "otr-set-4",
-    slug: "/practice-test-4",
-    title: "OTR Practice Test 4",
-    description:
-      "Upcoming full-length exam sourced from the October ingestion batch. Currently in metadata clean-up and rationale drafting.",
-    questionCount: practiceQuestions4.length,
-    status: "in_progress",
-    domains: ["Domain 2", "Domain 3"],
-    sessionStorageKey: "nbcot-practice-session-otr4",
-    analyticsStorageKey: "nbcot-practice-analytics-otr4",
-    coverage: computeCoverage(practiceQuestions4),
-  },
-];
+function toCatalogEntry(set: PracticeTestSetDefinition): PracticeSetCatalogEntry {
+  return {
+    id: set.id,
+    slug: set.slug,
+    title: set.title,
+    description: set.description,
+    questionCount: set.questions.length,
+    releaseDate: set.releaseDate,
+    status: set.status,
+    domains: set.domains,
+    sessionStorageKey: set.sessionStorageKey,
+    analyticsStorageKey: set.analyticsStorageKey,
+    coverage: computeCoverage(set.questions),
+  };
+}
+
+export const practiceSetCatalog: PracticeSetCatalogEntry[] = practiceTestSets.map(toCatalogEntry);
 
 export function getPracticeSetBySlug(slug: string): PracticeSetCatalogEntry | undefined {
   return practiceSetCatalog.find((entry) => entry.slug === slug);
+}
+
+export function getPracticeSetById(id: string): PracticeSetCatalogEntry | undefined {
+  return practiceSetCatalog.find((entry) => entry.id === id);
 }

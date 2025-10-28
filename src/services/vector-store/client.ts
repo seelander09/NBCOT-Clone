@@ -14,6 +14,7 @@ type RemediationRequest = {
   domain?: string;
   keywords?: string[];
   limit?: number;
+  testId?: string;
 };
 
 type FlashcardSeedRequest = {
@@ -87,6 +88,7 @@ export async function searchRemediationItems(request: RemediationRequest) {
         domain: request.domain,
         keywords: request.keywords,
         limit,
+        testId: request.testId,
       }),
     });
 

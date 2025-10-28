@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 
-import practiceQuestions from "@/data/practiceQuestions";
+import {
+  availablePracticeTestQuestionRecords,
+  getPracticeQuestionsForSet,
+  PracticeTestQuestionRecord,
+} from "@/data/practiceTestSets";
 import { searchRemediationItems } from "@/services/vector-store/client";
 import { searchNbcotSources } from "@/services/vector-store/qdrant";
 
@@ -14,6 +18,7 @@ type RemediationRequestBody = {
   prompt?: string;
   limit?: number;
   domain?: string;
+  testId?: string;
 };
 
 export async function POST(request: Request) {
@@ -43,6 +48,7 @@ export async function POST(request: Request) {
   const questionId = isNonEmptyString(body?.questionId) ? body!.questionId.trim() : undefined;
   const domain = isNonEmptyString(body?.domain) ? body!.domain.trim() : undefined;
   const limit = typeof body?.limit === "number" && body.limit > 0 ? Math.min(body.limit, 5) : 3;
+  const testId = isNonEmptyString(body?.testId) ? body!.testId.trim() : undefined;
 
   if (process.env.NBCOT_VECTOR_FIXTURE === "mock") {
     return NextResponse.json({
@@ -111,6 +117,7 @@ export async function POST(request: Request) {
         domain,
         keywords: searchKeywords,
         limit,
+        testId,
       });
 
       if (items.length > 0) {
@@ -143,6 +150,7 @@ export async function POST(request: Request) {
     keywords: searchKeywords,
     limit,
     excludeId: questionId,
+    testId,
   });
 
   return NextResponse.json({ items: fallbackItems });
@@ -152,18 +160,28 @@ type LocalRemediationParams = {
   keywords: string[];
   limit: number;
   excludeId?: string;
+  testId?: string;
 };
 
-function buildLocalRemediation({ keywords, limit, excludeId }: LocalRemediationParams) {
+function buildLocalRemediation({ keywords, limit, excludeId, testId }: LocalRemediationParams) {
   if (!keywords.length) {
     return [];
   }
 
   const terms = keywords.map((keyword) => keyword.toLowerCase());
 
-  const matches = practiceQuestions
-    .filter((question) => question.id !== excludeId)
-    .map((question) => {
+  let searchPool: PracticeTestQuestionRecord[] = availablePracticeTestQuestionRecords;
+  if (testId) {
+    const setRecords = getPracticeQuestionsForSet(testId);
+    if (setRecords.length > 0) {
+      searchPool = setRecords;
+    }
+  }
+
+  const matches = searchPool
+    .filter((record) => record.question.id !== excludeId)
+    .map((record) => {
+      const { question } = record;
       const haystack = [
         question.content,
         question.bookAnswer?.excerpt ?? "",
@@ -175,27 +193,21 @@ function buildLocalRemediation({ keywords, limit, excludeId }: LocalRemediationP
         .toLowerCase();
 
       const score = terms.reduce((count, term) => (haystack.includes(term) ? count + 1 : count), 0);
-
-      if (score === 0) {
-        return null;
-      }
-
       return {
+        record,
         question,
         score,
       };
     })
-    .filter(
-      (entry): entry is { question: (typeof practiceQuestions)[number]; score: number } =>
-        entry !== null,
-    )
+    .filter((entry) => entry.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 
-  return matches.map(({ question }) => {
+  return matches.map(({ record, question }) => {
     const title = question.bookAnswer?.title ?? question.headline;
     const excerpt = question.bookAnswer?.excerpt ?? question.content.slice(0, 320);
-    const source = question.bookAnswer?.source;
+    const source =
+      question.bookAnswer?.source ?? `${record.setTitle}${testId ? "" : " (practice library)"}`;
 
     return {
       id: question.id,
