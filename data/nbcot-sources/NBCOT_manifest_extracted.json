@@ -1,0 +1,2170 @@
+{
+  "Creator": "Adobe InDesign 20.1 (Windows)",
+  "CreatorVersion": "20.1.0.71",
+  "Version": "1.0",
+  "coverImage": {
+    "height": "518px",
+    "imageFile": "Thumbnails/Cover/cover.png",
+    "width": "400px"
+  },
+  "documentDescription": "This is the official electronic version of the NBCOT Study Guide for the OTR Exam.",
+  "documentName": "NBCOT Study Guide for the OTR Certification Examination",
+  "gaAnalyticsInfo": {
+    "cookieConsentBannerText": "",
+    "enableCookieConsentBannerOption": "0",
+    "measurementId": ""
+  },
+  "isRightToLeftBinding": "false",
+  "isSearchTextEnabled": true,
+  "pages": [
+    {
+      "height": "792px",
+      "html": "publication.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-1.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-1.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-2.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-2.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-3.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-3.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-4.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-4.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-5.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-5.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-6.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-6.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-7.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-7.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-8.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-8.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-9.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-9.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-10.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-10.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-11.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-11.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-12.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-12.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-13.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-13.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-14.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-14.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-15.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-15.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-16.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-16.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-17.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-17.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-18.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-18.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-19.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-19.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-20.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-20.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-21.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-21.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-22.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-22.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-23.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-23.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-24.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-24.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-25.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-25.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-26.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-26.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-27.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-27.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-28.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-28.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-29.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-29.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-30.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-30.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-31.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-31.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-32.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-32.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-33.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-33.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-34.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-34.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-35.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-35.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-36.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-36.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-37.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-37.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-38.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-38.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-39.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-39.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-40.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-40.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-41.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-41.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-42.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-42.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-43.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-43.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-44.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-44.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-45.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-45.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-46.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-46.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-47.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-47.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-48.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-48.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-49.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-49.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-50.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-50.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-51.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-51.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-52.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-52.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-53.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-53.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-54.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-54.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-55.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-55.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-56.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-56.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-57.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-57.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-58.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-58.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-59.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-59.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-60.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-60.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-61.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-61.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-62.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-62.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-63.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-63.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-64.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-64.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-65.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-65.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-66.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-66.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-67.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-67.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-68.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-68.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-69.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-69.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-70.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-70.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-71.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-71.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-72.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-72.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-73.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-73.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-74.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-74.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-75.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-75.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-76.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-76.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-77.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-77.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-78.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-78.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-79.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-79.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-80.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-80.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-81.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-81.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-82.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-82.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-83.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-83.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-84.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-84.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-85.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-85.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-86.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-86.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-87.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-87.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-88.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-88.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-89.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-89.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-90.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-90.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-91.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-91.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-92.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-92.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-93.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-93.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-94.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-94.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-95.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-95.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-96.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-96.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-97.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-97.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-98.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-98.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-99.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-99.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-100.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-100.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-101.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-101.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-102.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-102.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-103.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-103.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-104.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-104.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-105.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-105.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-106.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-106.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-107.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-107.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-108.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-108.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-109.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-109.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-110.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-110.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-111.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-111.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-112.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-112.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-113.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-113.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-114.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-114.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-115.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-115.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-116.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-116.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-117.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-117.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-118.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-118.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-119.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-119.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-120.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-120.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-121.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-121.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-122.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-122.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-123.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-123.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-124.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-124.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-125.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-125.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-126.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-126.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-127.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-127.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-128.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-128.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-129.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-129.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-130.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-130.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-131.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-131.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-132.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-132.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-133.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-133.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-134.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-134.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-135.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-135.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-136.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-136.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-137.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-137.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-138.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-138.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-139.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-139.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-140.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-140.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-141.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-141.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-142.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-142.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-143.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-143.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-144.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-144.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-145.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-145.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-146.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-146.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-147.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-147.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-148.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-148.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-149.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-149.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-150.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-150.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-151.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-151.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-152.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-152.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-153.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-153.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-154.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-154.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-155.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-155.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-156.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-156.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-157.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-157.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-158.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-158.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-159.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-159.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-160.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-160.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-161.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-161.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-162.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-162.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-163.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-163.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-164.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-164.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-165.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-165.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-166.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-166.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-167.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-167.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-168.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-168.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-169.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-169.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-170.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-170.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-171.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-171.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-172.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-172.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-173.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-173.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-174.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-174.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-175.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-175.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-176.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-176.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-177.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-177.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-178.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-178.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-179.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-179.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-180.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-180.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-181.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-181.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-182.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-182.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-183.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-183.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-184.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-184.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-185.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-185.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-186.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-186.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-187.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-187.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-188.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-188.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-189.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-189.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-190.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-190.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-191.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-191.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-192.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-192.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-193.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-193.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-194.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-194.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-195.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-195.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-196.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-196.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-197.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-197.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-198.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-198.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-199.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-199.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-200.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-200.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-201.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-201.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-202.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-202.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-203.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-203.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-204.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-204.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-205.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-205.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-206.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-206.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-207.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-207.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-208.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-208.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-209.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-209.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-210.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-210.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-211.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-211.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-212.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-212.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-213.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-213.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-214.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-214.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-215.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-215.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-216.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-216.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-217.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-217.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-218.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-218.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-219.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-219.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-220.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-220.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-221.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-221.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-222.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-222.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-223.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-223.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-224.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-224.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-225.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-225.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-226.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-226.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-227.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-227.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-228.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-228.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-229.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-229.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-230.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-230.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-231.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-231.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-232.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-232.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-233.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-233.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-234.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-234.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-235.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-235.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-236.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-236.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-237.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-237.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-238.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-238.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-239.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-239.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-240.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-240.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-241.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-241.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-242.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-242.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-243.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-243.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-244.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-244.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-245.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-245.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-246.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-246.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-247.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-247.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-248.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-248.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-249.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-249.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-250.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-250.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-251.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-251.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-252.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-252.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-253.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-253.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-254.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-254.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-255.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-255.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-256.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-256.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-257.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-257.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-258.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-258.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-259.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-259.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-260.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-260.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-261.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-261.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-262.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-262.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-263.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-263.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-264.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-264.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-265.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-265.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-266.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-266.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    },
+    {
+      "height": "792px",
+      "html": "publication-267.html",
+      "thumbnailHeight": "324px",
+      "thumbnailPath": "Thumbnails/publication-267.jpg",
+      "thumbnailWidth": "250px",
+      "width": "612px"
+    }
+  ],
+  "shareImage": {
+    "height": "1200px",
+    "imageFile": "Thumbnails/Share/share.png",
+    "width": "927px"
+  }
+}
