@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "questions:check": "tsx scripts/questions-check.ts",
+    "set4:generate": "tsx scripts/set4-generate-rationales.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",

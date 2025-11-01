@@ -1,0 +1,11 @@
+{
+  "answerKey": [
+    "A"
+  ],
+  "rationale": "**Why this is right**\nPlaceholder rationale for OTR Practice Test 4 - Q023. Selected option A pending LLM review.\n\n**Why the others miss**\nThis section will explain distractors after the generator step is wired.\n\n> Options\n- A. O8000OCO0000000000000800000 Ge™ Oo",
+  "bookAnchor": null,
+  "confidence": 0.3,
+  "notes": "Stub generator output. Replace with LLM-backed rationale. (Provider error: Provider request failed with status 401: {\n    \"error\": {\n        \"message\": \"Incorrect API key provided: REDACTED****_KEY. You can find your API key at https://platform.openai.com/account/api-keys.\",\n        \"type\": \"invalid_request_error\",\n        \"param\": null,\n        \"code\": \"invalid_api_key\"\n    }\n}\n)",
+  "provider": "stub",
+  "mode": "fallback"
+}

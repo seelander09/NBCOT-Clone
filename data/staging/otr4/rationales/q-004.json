@@ -2,13 +2,10 @@
   "answerKey": [
     "A"
   ],
-  "rationale": "A 95° seat-to-back angle with a slight recline (3°-5°) can lead to pelvic instability, particularly in individuals with muscular dystrophy, as they may lack the necessary muscle strength to maintain optimal positioning. This angle can promote internal rotation of the hips due to insufficient support and control, which is critical for maintaining proper alignment and stability.",
-  "bookAnchor": {
-    "title": "TBD",
-    "excerpt": ""
-  },
-  "confidence": 0.85,
-  "notes": "Consider the client's specific needs and the potential for customized seating solutions to enhance stability and comfort.",
-  "provider": "openai",
-  "mode": "provider"
+  "rationale": "**Why this is right**\nPlaceholder rationale for OTR Practice Test 4 - Q004. Selected option A pending LLM review.\n\n**Why the others miss**\nThis section will explain distractors after the generator step is wired.\n\n> Options\n- A. Pelvic instability with internal rotation of the hips\n- B. Improved postural control with decreased sacral pressure CO Inefficient wheelchair propulsion with decreased lumbar support\n- C. ) COOOOOOOOOOOCOOOOO0O000000000 = 80",
+  "bookAnchor": null,
+  "confidence": 0.3,
+  "notes": "Stub generator output. Replace with LLM-backed rationale.",
+  "provider": "stub",
+  "mode": "fallback"
 }
