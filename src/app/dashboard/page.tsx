@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { requireAuth } from "@/lib/auth";
+import { AnalyticsSummary } from "./_components/analytics-summary";
 
 export const metadata: Metadata = {
   title: "Dashboard preview",
@@ -53,6 +54,7 @@ export default async function DashboardPage() {
             </p>
           </article>
         </section>
+        <AnalyticsSummary />
         <section className="rounded-3xl bg-slate-900 p-8 text-slate-100">
           <h2 className="font-heading text-2xl text-white">Integration notes</h2>
           <p className="mt-2 text-sm text-slate-300">
