@@ -36,7 +36,7 @@ export default defineConfig({
       : 'npm run dev -- --hostname 127.0.0.1 --port 3000',
     port: 3000,
     env: {
-      SKIP_AUTH: 'true',
+      SKIP_AUTH: process.env.PLAYWRIGHT_SKIP_AUTH ?? 'true',
       NBCOT_VECTOR_FIXTURE: 'mock',
       NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: '',
       STRIPE_SECRET_KEY: '',

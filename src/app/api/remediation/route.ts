@@ -5,9 +5,6 @@ import {
   getPracticeQuestionsForSet,
   PracticeTestQuestionRecord,
 } from "@/data/practiceTestSets";
-import { searchRemediationItems } from "@/services/vector-store/client";
-import { searchNbcotSources } from "@/services/vector-store/qdrant";
-
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
 }
@@ -72,6 +69,7 @@ export async function POST(request: Request) {
 
   if (queryText.length > 0) {
     try {
+      const { searchNbcotSources } = await import("@/services/vector-store/qdrant");
       const vectorMatches = await searchNbcotSources({
         query: queryText,
         limit,
@@ -113,6 +111,7 @@ export async function POST(request: Request) {
 
   if (hasVectorStore) {
     try {
+      const { searchRemediationItems } = await import("@/services/vector-store/client");
       const items = await searchRemediationItems({
         domain,
         keywords: searchKeywords,
