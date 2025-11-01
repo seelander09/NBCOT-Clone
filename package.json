@@ -19,6 +19,7 @@
     "process:otr-outline": "tsx scripts/process-otr-outline.ts",
     "process:otpf4": "tsx scripts/process-otpf4.ts",
     "test:e2e": "playwright test",
+    "e2e:ci": "playwright test tests/e2e/fake-student-flows.spec.ts --project=chromium --reporter=line",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:codegen": "playwright codegen"
   },

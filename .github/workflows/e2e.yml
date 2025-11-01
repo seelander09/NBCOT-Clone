@@ -1,0 +1,57 @@
+name: e2e
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  playwright-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Install Playwright (Chromium only)
+        run: npx playwright install --with-deps chromium
+
+      - name: Seed fake students
+        run: npx tsx scripts/create-fake-students.ts
+
+      - name: Mock Stripe completion (optional)
+        if: ${{ !cancelled() }}
+        env:
+          STRIPE_TEST_EMAIL: test.student30@example.com
+        run: npx tsx scripts/mock-stripe-complete.ts
+
+      - name: Run Playwright tests
+        env:
+          PLAYWRIGHT_SKIP_AUTH: 'false'
+          SKIP_AUTH: 'false'
+        run: npm run e2e:ci
+
+      - name: Delete fake students
+        if: ${{ always() }}
+        run: npx tsx scripts/delete-fake-students.ts
+
+      - name: Upload Playwright report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/**
+            test-results/**
+          if-no-files-found: ignore
+
+
