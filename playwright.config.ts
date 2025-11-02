@@ -29,6 +29,29 @@ export default defineConfig({
         headless: !!process.env.CI,
       },
     },
+    {
+      name: 'headed',
+      testMatch: /fake-student.*\.spec\.ts/,
+      use: {
+        ...devices['Desktop Chrome'],
+        headless: false,
+        slowMo: 200,
+        video: 'on',
+        trace: 'on',
+      },
+    },
+    {
+      name: 'mobile-chromium',
+      use: {
+        ...devices['iPhone 13'],
+      },
+    },
+    {
+      name: 'mobile-tablet',
+      use: {
+        ...devices['iPad Pro'],
+      },
+    },
   ],
   webServer: {
     command: process.env.CI

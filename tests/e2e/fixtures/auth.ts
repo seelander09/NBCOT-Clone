@@ -31,6 +31,9 @@ export const test = base.extend<
   },
   loginAs: async ({ page, loginState }, use) => {
     async function loginAs(email: string) {
+      const normalizedEmail = email.toLowerCase();
+      console.log(`[auth-fixture] Logging in as fake student: ${normalizedEmail}`);
+
       // Clear any existing cookies and storage first
       await page.context().clearCookies();
       await page.goto('http://127.0.0.1:3000');
@@ -40,13 +43,34 @@ export const test = base.extend<
       });
 
       const user = await prisma.user.findUnique({
-        where: { email: email.toLowerCase() },
+        where: { email: normalizedEmail },
         select: { id: true, email: true, firstName: true, lastName: true },
       });
 
       if (!user) {
-        throw new Error(`No user found for ${email}. Run create-fake-students.ts first.`);
+        // Check if similar emails exist for better error message
+        const similarUsers = await prisma.user.findMany({
+          where: {
+            email: {
+              contains: normalizedEmail.split('@')[0],
+            },
+          },
+          select: { email: true },
+          take: 5,
+        });
+
+        const suggestion = similarUsers.length > 0
+          ? ` Did you mean one of: ${similarUsers.map((u) => u.email).join(', ')}?`
+          : '';
+
+        throw new Error(
+          `No user found for ${email}.${suggestion} Run 'npx tsx scripts/create-fake-students.ts' first to create fake student accounts.`,
+        );
       }
+
+      console.log(
+        `[auth-fixture] Found user: ${user.firstName} ${user.lastName} (${user.email}, ID: ${user.id})`,
+      );
 
       if (loginState.currentSessionToken) {
         await prisma.session.deleteMany({ where: { sessionToken: loginState.currentSessionToken } });
@@ -66,6 +90,8 @@ export const test = base.extend<
         },
       });
 
+      console.log(`[auth-fixture] Created session token: ${sessionToken.substring(0, 8)}...`);
+
       await page.context().addCookies([
         {
           name: 'next-auth.session-token',
@@ -83,6 +109,8 @@ export const test = base.extend<
       await expect(
         page.getByRole('heading', { name: new RegExp(`Welcome back,`, 'i') }),
       ).toBeVisible();
+
+      console.log(`[auth-fixture] Successfully logged in as ${user.firstName} ${user.lastName}`);
     }
 
     await use(loginAs);
@@ -102,19 +130,26 @@ export const test = base.extend<
   },
   setEntitlementStatus: async ({}, use) => {
     async function setEntitlementStatus(email: string, status: PurchaseStatus) {
+      const normalizedEmail = email.toLowerCase();
+      console.log(`[auth-fixture] Setting entitlement status for ${normalizedEmail} to ${status}`);
+
       const user = await prisma.user.findUnique({
-        where: { email: email.toLowerCase() },
+        where: { email: normalizedEmail },
         select: { id: true },
       });
 
       if (!user) {
-        throw new Error(`No user found for ${email}.`);
+        throw new Error(
+          `No user found for ${email}. Run 'npx tsx scripts/create-fake-students.ts' first to create fake student accounts.`,
+        );
       }
 
-      await prisma.purchase.updateMany({
+      const result = await prisma.purchase.updateMany({
         where: { userId: user.id },
         data: { status },
       });
+
+      console.log(`[auth-fixture] Updated ${result.count} purchase(s) for user ${normalizedEmail}`);
     }
 
     await use(setEntitlementStatus);

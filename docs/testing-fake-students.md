@@ -12,6 +12,7 @@ This workspace now includes 30 fixture accounts (`test.student01@example.com` �
 | `delete-fake-students.ts` | Removes every fake student and related data | `npx tsx scripts/delete-fake-students.ts` |
 | `mock-stripe-complete.ts` | Simulates a successful Stripe checkout for a target student | `STRIPE_TEST_EMAIL=test.student30@example.com npx tsx scripts/mock-stripe-complete.ts` |
 | `rotate-revoked-fake-students.ts` | Rotates which fake students are revoked (CANCELED) | `npx tsx scripts/rotate-revoked-fake-students.ts --count 5 --start 1` |
+| `seed-fake-student-analytics.ts` | Generates localStorage analytics data for fake students | `npx tsx scripts/seed-fake-student-analytics.ts --student=test.student1@example.com --set=otr-baseline` or `--all` |
 
 Set `TEST_STUDENT_REVOKE_COUNT` to change how many accounts are revoked and `TEST_USER_PASSWORD` / `TEST_ACCESS_PRODUCT_SKU` if you need different credentials or products.
 
@@ -19,9 +20,30 @@ Set `TEST_STUDENT_REVOKE_COUNT` to change how many accounts are revoked and `TES
 
 **Important:** Fake student tests require `SKIP_AUTH=false` to use real authentication. If a dev server is already running, stop it first so Playwright can start a fresh server with the correct env vars.
 
+#### Watching Tests in Browser (Recommended)
+
+To see tests execute in real-time with visible browser interaction:
+
+```bash
+npm run test:watch
+```
+
+This opens Playwright UI mode with the `headed` project configuration, which includes:
+- Visible browser windows (`headless: false`)
+- Slow-motion interactions (200ms delay) for easier observation
+- Video recording enabled for all tests
+- Trace viewer enabled for debugging
+
+#### Test Specs
+
 | Spec | What it checks | Command |
 | --- | --- | --- |
 | `tests/e2e/fake-student-flows.spec.ts` | Login greets students, practice lab/practice test access, exam journey, revoked-user gating, dashboard placeholders | `$env:PLAYWRIGHT_SKIP_AUTH="false"; $env:SKIP_AUTH="false"; npx playwright test fake-student-flows.spec.ts` (PowerShell) or `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test fake-student-flows.spec.ts` (Bash) |
+| `tests/e2e/practice-set-catalog.spec.ts` | Catalog browsing, completion badges, metadata display, navigation between sets | `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test practice-set-catalog.spec.ts` |
+| `tests/e2e/multi-set-analytics.spec.ts` | Cross-set analytics separation, aggregation on dashboard, export integrity | `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test multi-set-analytics.spec.ts` |
+| `tests/e2e/remediation-coverage.spec.ts` | Remediation API success rate (80% metric), empty/multi-item handling, testId parameter | `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test remediation-coverage.spec.ts` |
+| `tests/e2e/dashboard-populated.spec.ts` | Dashboard with populated analytics, AnalyticsSummary component, export functionality | `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test dashboard-populated.spec.ts` |
+| `tests/e2e/fake-student-mobile.spec.ts` | Mobile viewport testing, touch targets, responsive layouts | `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test fake-student-mobile.spec.ts --project=mobile-chromium` |
 | `tests/e2e/practice-test-ux.spec.ts` | Timers, keyboard shortcuts, multi-select rules, export validation, remediation variants | `npx playwright test practice-test-ux.spec.ts` |
 | `tests/e2e/practice-test-visual.spec.ts` | Visual snapshots for unanswered/selected/revealed/summary states | `npx playwright test practice-test-visual.spec.ts` |
 | `tests/e2e/a11y-practice-test.spec.ts` | Axe-core a11y sweep on practice test | `npx playwright test a11y-practice-test.spec.ts` |
@@ -31,6 +53,20 @@ Set `TEST_STUDENT_REVOKE_COUNT` to change how many accounts are revoked and `TES
 | `tests/e2e/curator-validation.spec.ts` | Runs questions-check script and verifies artifacts | `npx playwright test curator-validation.spec.ts` |
 
 The spec relies on the scripts above to prepare the dataset (create fixtures first, optionally revoke a subset, then run the Playwright suite).
+
+#### Test Annotations and Debugging
+
+All fake student tests include:
+- **Test annotations**: Each test includes `test.info().annotations` with descriptions and fake student emails
+- **Console logging**: Auth fixture logs which student is logging in and session token info
+- **Trace viewer**: When tests fail, run `npx playwright show-trace test-results/.../trace.zip` to debug
+- **Video recording**: All headed tests record video (stored in `test-results/`)
+
+To debug a specific test:
+1. Run `npm run test:watch` and select the test in UI mode
+2. Watch it execute step-by-step in the browser
+3. If it fails, check the trace viewer or video recording
+4. Review console logs for auth fixture details
 
 ## Manual Testing Flow
 
@@ -54,10 +90,49 @@ The spec relies on the scripts above to prepare the dataset (create fixtures fir
 7. **Cleanup**
    - When finished, run `npx tsx scripts/delete-fake-students.ts` to reset the environment before the next test cycle.
 
+## Troubleshooting
+
+### SKIP_AUTH Issues
+
+If you see "Welcome back, Test Pilot" instead of the fake student's name:
+1. Stop any running dev server: `Get-NetTCPConnection -LocalPort 3000 | Select-Object -ExpandProperty OwningProcess | ForEach-Object { Stop-Process -Id $_ -Force }`
+2. Set environment variables before running tests: `$env:PLAYWRIGHT_SKIP_AUTH="false"; $env:SKIP_AUTH="false"`
+3. Run tests with explicit flags to ensure Playwright starts a fresh server
+
+### Fake Student Not Found
+
+If you see "No user found for test.student1@example.com":
+1. Run `npx tsx scripts/create-fake-students.ts` to create all 30 fake student accounts
+2. Verify with `npx tsx scripts/report-fake-students.ts`
+3. Check the error message - it may suggest similar email addresses if there's a typo
+
+### Analytics Data Seeding
+
+To pre-populate analytics data for more realistic dashboard testing:
+```bash
+# Generate analytics for a specific student
+npx tsx scripts/seed-fake-student-analytics.ts --student=test.student1@example.com --set=otr-baseline
+
+# Generate analytics for all fake students
+npx tsx scripts/seed-fake-student-analytics.ts --all
+```
+
+The script outputs localStorage commands that you can copy into the browser console after logging in as that student.
+
 ## Additional Ideas
 
-- Rotate revoked accounts to cover both “expired access” and “active subscriber” scenarios within the same suite.
-- Extend `create-fake-students.ts` to seed baseline analytics or exam sessions for pre-populated dashboards.
+- Rotate revoked accounts to cover both "expired access" and "active subscriber" scenarios within the same suite.
+- Use `seed-fake-student-analytics.ts` to pre-populate analytics for dashboard testing
+- Run mobile-specific tests with `--project=mobile-chromium` or `--project=mobile-tablet` to verify responsive behavior
 - Record any bugs or UX snags in a shared sheet so the same credentials can be used to reproduce issues.
 
-Let me know if you need scripted login helpers, Playwright fixtures, or more nuanced dataset variations.
+## Test Project Configurations
+
+Playwright includes several project configurations for different testing scenarios:
+
+- **`chromium`**: Standard headless/headed Chrome (default for CI)
+- **`headed`**: Visible browser with slow-motion for watching tests (`headless: false`, `slowMo: 200`)
+- **`mobile-chromium`**: iPhone 13 viewport for mobile testing
+- **`mobile-tablet`**: iPad Pro viewport for tablet testing
+
+Use `--project=<name>` to select a specific project when running tests.

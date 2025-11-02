@@ -1,0 +1,65 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - text: Start for free
+        - heading "Create an account to unlock the full StudyPack clone experience." [level=1] [ref=e5]
+        - paragraph [ref=e6]: Choose a plan, complete checkout, and launch into adaptive exams, flashcards, and analytics. While payments are in flight, use the preview login to explore the dashboard.
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - heading "Create your account" [level=2] [ref=e9]
+          - paragraph [ref=e10]: We'll store your profile, study preferences, and future purchases under this login.
+          - generic [ref=e11]:
+            - generic [ref=e12]:
+              - generic [ref=e13]: First name (optional)
+              - textbox "First name (optional)" [ref=e14]:
+                - /placeholder: Jamie
+            - generic [ref=e15]:
+              - generic [ref=e16]: Last name (optional)
+              - textbox "Last name (optional)" [ref=e17]:
+                - /placeholder: Rivera
+            - generic [ref=e18]:
+              - generic [ref=e19]: Email
+              - textbox "Email Email" [ref=e20]:
+                - /placeholder: you@school.edu
+            - generic [ref=e21]:
+              - generic [ref=e22]: Password
+              - textbox "Password Password" [ref=e23]:
+                - /placeholder: Minimum 8 characters
+            - button "Create account" [ref=e24]
+          - paragraph [ref=e25]: By creating an account you agree to future Terms and Privacy updates once billing goes live.
+        - generic [ref=e26]:
+          - heading "Preview login" [level=2] [ref=e27]
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - strong [ref=e30]: 1. Enter the seeded credentials
+              - paragraph [ref=e31]: We'll route you into the protected dashboard placeholder immediately.
+            - listitem [ref=e32]:
+              - strong [ref=e33]: 2. Explore the platform
+              - paragraph [ref=e34]: Review exam templates, flashcard decks, and upcoming analytics panels.
+            - listitem [ref=e35]:
+              - strong [ref=e36]: 3. Upgrade with Stripe
+              - paragraph [ref=e37]: Once you're ready, continue to secure checkout to activate full access.
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - generic [ref=e40]: Email
+              - textbox [ref=e41]: candidate@example.com
+            - generic [ref=e42]:
+              - generic [ref=e43]: Password
+              - textbox [ref=e44]: LetMeIn123!
+            - button "Sign in" [ref=e45]
+          - paragraph [ref=e46]: "Demo account: candidate@example.com / LetMeIn123!"
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: Prefer to talk it through?
+            - paragraph [ref=e49]:
+              - text: Reach out to the team via
+              - link "Contact" [ref=e50] [cursor=pointer]:
+                - /url: /contact
+              - text: to coordinate cohort onboarding or institution billing.
+  - button "Open Next.js Dev Tools" [ref=e56] [cursor=pointer]:
+    - img [ref=e57]
+  - alert [ref=e60]
+```
