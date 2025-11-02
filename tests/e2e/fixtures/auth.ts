@@ -31,6 +31,14 @@ export const test = base.extend<
   },
   loginAs: async ({ page, loginState }, use) => {
     async function loginAs(email: string) {
+      // Clear any existing cookies and storage first
+      await page.context().clearCookies();
+      await page.goto('http://127.0.0.1:3000');
+      await page.evaluate(() => {
+        localStorage.clear();
+        sessionStorage.clear();
+      });
+
       const user = await prisma.user.findUnique({
         where: { email: email.toLowerCase() },
         select: { id: true, email: true, firstName: true, lastName: true },

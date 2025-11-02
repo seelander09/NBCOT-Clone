@@ -23,8 +23,10 @@ test.beforeEach(async ({ page }) => {
       await test.step(`Login as ${email}`, async () => {
         await loginAs(email);
         const expectedName = email.match(/test\.student(\d+)/i)?.[1] ?? '';
+        // Fake students are created with firstName "Test{number}" and lastName "Student"
+        // So the display name will be "Test{number} Student"
         await expect(page.getByRole('heading', { level: 1, name: /Welcome back/i })).toContainText(
-          new RegExp(`Test${expectedName}`, 'i'),
+          new RegExp(`Test${expectedName}\\s+Student`, 'i'),
         );
         await logout();
       });

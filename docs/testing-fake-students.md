@@ -17,9 +17,11 @@ Set `TEST_STUDENT_REVOKE_COUNT` to change how many accounts are revoked and `TES
 
 ### Automated Playwright coverage
 
+**Important:** Fake student tests require `SKIP_AUTH=false` to use real authentication. If a dev server is already running, stop it first so Playwright can start a fresh server with the correct env vars.
+
 | Spec | What it checks | Command |
 | --- | --- | --- |
-| `tests/e2e/fake-student-flows.spec.ts` | Login greets students, practice lab/practice test access, exam journey, revoked-user gating, dashboard placeholders | `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test fake-student-flows.spec.ts` |
+| `tests/e2e/fake-student-flows.spec.ts` | Login greets students, practice lab/practice test access, exam journey, revoked-user gating, dashboard placeholders | `$env:PLAYWRIGHT_SKIP_AUTH="false"; $env:SKIP_AUTH="false"; npx playwright test fake-student-flows.spec.ts` (PowerShell) or `PLAYWRIGHT_SKIP_AUTH=false SKIP_AUTH=false npx playwright test fake-student-flows.spec.ts` (Bash) |
 | `tests/e2e/practice-test-ux.spec.ts` | Timers, keyboard shortcuts, multi-select rules, export validation, remediation variants | `npx playwright test practice-test-ux.spec.ts` |
 | `tests/e2e/practice-test-visual.spec.ts` | Visual snapshots for unanswered/selected/revealed/summary states | `npx playwright test practice-test-visual.spec.ts` |
 | `tests/e2e/a11y-practice-test.spec.ts` | Axe-core a11y sweep on practice test | `npx playwright test a11y-practice-test.spec.ts` |
